@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aura Michaell Massage</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet" />  <style>
+    /* ================== Base & Parallax ================== */
+    body {
+      margin: 0;
+      padding: 0 0 40px;
+      font-family: 'Tenor Sans', serif;
+      background: url('pozadi.jpg') center/cover fixed no-repeat;
+      /* background-attachment: fixed provides parallax */
+      color: #3e2f2a;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ================== Header / Banner ================== */
+    .header-banner { width: 100%; height: auto; }
+
+    /* ================== Hero Section w/ Shine ================== */
+    .hero-title {
+      display: flex;
+      align-items: center;
+      padding: 40px 20px 20px;
+      gap: 10px;
+    }
+    .hero-title h1 {
+      flex: 1;
+      margin: 0;
+      font-size: 48px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: transparent;
+      background: linear-gradient(90deg, #7c4a27, #3e2f2a, #7c4a27);
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shine 3s infinite;
+      white-space: nowrap;
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+    }
+    @keyframes shine {
+      0%   { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .hero-logo { width: 250px; height: auto; }
+
+    /* ================== Intro Text ================== */
+    p.intro {
+      margin: 10px 20px;
+      font-size: 20px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* ================== Order & Ripple Button ================== */
+    .order-box {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+      margin: 10px 20px 0;
+      padding: 10px 20px;
+      background-color: #7c4a27;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .order-box span.ripple {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 50%;
+      transform: scale(0);
+      pointer-events: none;
+      animation: ripple 0.6s linear;
+    }
+    @keyframes ripple { to { transform: scale(4); opacity: 0; } }
+
+    /* ================== Contacts & Animated Underline ================== */
+    .contact-section {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: -5px 20px 20px;
+      padding: 10px 20px;
+      border: 2px solid #7c4a27;
+      border-radius: 30px;
+      width: auto;
+    }
+    .contact-item { display: flex; align-items: center; font-size: 20px; }
+    .contact-icon { font-size: 24px; margin-right: 10px; }
+    .contact-text a {
+      position: relative;
+      color: inherit;
+      text-decoration: none;
+      padding-bottom: 2px;
+    }
+    .contact-text a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: 0;
+      width: 100%; height: 2px;
+      background: #7c4a27;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .contact-text a:hover::after { transform: scaleX(1); }
+
+    /* ================== Tilt Effect on About ================== */
+    .tilt {
+      transition: transform .2s ease;
+      transform-style: preserve-3d;
+    }
+    .tilt:hover {
+      transform: perspective(500px) rotateY(5deg) rotateX(5deg);
+    }
+
+    /* ================== Discount Bubble ================== */
+    .discount-bubble {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 160px;
+      height: 160px;
+      background: #7c4a27;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      font-weight: bold;
+      z-index: 999;
+    }
+    .discount-main { font-size: 36px; }
+    .discount-sub  { margin-top: 6px; font-size: 16px; }
+
+    /* ================== Video Section ================== */
+    .video-section {
+      margin: 80px 20px 0;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .video-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .video-frame {
+      display: inline-block;
+      max-width: 90%;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    video { width: 100%; display: block; }
+
+    /* ================== About Sections ================== */
+    .about-section { margin-top: 20px; text-align: center; }
+    .about-section img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 90%; max-width: 400px;
+      border-radius: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .about-section img.visible { opacity: 1; transform: translateY(0); }
+
+    /* ================== Side-by-Side on Desktop ================== */
+    .about-row { display: block; }
+    @media (min-width: 768px) {
+      .about-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .about-row img { width: 45%; max-width: 400px; }
+    }
+
+    /* ================== Footer ================== */
+    .footer-logo { margin-top: 20px; text-align: center; }
+    .footer-logo img {
+      display: block; margin: 0 auto;
+      width: 90%; max-width: 400px;
+    }
+
+    /* ================== Responsive ================== */
+    @media (max-width: 600px) {
+      .hero-title { flex-direction: column; align-items: center; }
+      .hero-title h1 { font-size: 36px; white-space: normal; }
+      .hero-logo { height: 300px; margin-top: 10px; }
+      .order-box { margin: 8px 20px 0; }
+      .contact-section { margin: 0 20px 20px; }
+      .video-section { padding: 0 10px; }
+      p.intro { padding: 0 10px; }
+    }
+  </style></head>
+<body>
+  <!-- Banner -->
+  <img src="levyroh.png" alt="Banner" class="header-banner" />  <!-- Hero Section -->  <div class="hero-title">
+    <h1>AURA MICHAELL MASSAGE</h1>
+    <img src="logo.png" alt="Logo" class="hero-logo" />
+  </div>  <!-- Intro Text -->  <p class="intro">
+    Vítejte na stránkách profesionální masérky zaměřené na zdraví, relaxaci a harmonii těla i mysli.
+  </p>  <!-- Order Box -->  <div class="order-box">Objednejte se přes:</div>  <!-- Contacts Box -->  <div class="contact-section">
+    <div class="contact-item">
+      <span class="contact-icon">🌐</span>
+      <span class="contact-text">
+        <a href="https://www.instagram.com/aura_michaell_massage" target="_blank" class="instagram">@aura_michaell_massage</a>
+      </span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📞</span>
+      <span class="contact-text"><a href="tel:+420735068229">735 068 229</a></span>
+    </div>
+  </div>  <!-- Discount Bubble -->  <div class="discount-bubble">
+    <div class="discount-main">-200,-</div>
+    <div class="discount-sub">Každá 10. masáž</div>
+  </div>  <!-- Video Section -->  <div class="video-section" id="videoSection">
+    <h2 style="color: #7c4a27; margin-bottom: 20px;">Ceník masáží</h2>
+    <div class="video-frame">
+      <video autoplay muted loop playsinline>
+        <source src="cenik.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>  <!-- About Sections -->  <div class="about-section">
+    <img src="prostor.jpg" alt="Prostor kde se tělo nadechne" class="fade-edge" id="img1" />
+  </div>  <!-- Info & Praxe Side by Side -->  <div class="about-section about-row">
+    <img src="info.png" alt="Masérka" id="img2" class="tilt" />
+    <img src="praxe.png" alt="Praxe a vzdělání" id="img3" class="tilt" />
+  </div>  <!-- Footer Logo -->  <div class="footer-logo">
+    <img src="logo.png" alt="Logo" />
+  </div>  <!-- Intersection Observer & Ripple Script -->  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1 });
+
+      observer.observe(document.getElementById('videoSection'));
+      ['img1','img2','img3'].forEach(id => observer.observe(document.getElementById(id)));
+
+      // Ripple effect
+      document.querySelector('.order-box').addEventListener('click', (e) => {
+        const span = document.createElement('span');
+        span.classList.add('ripple');
+        const rect = e.currentTarget.getBoundingClientRect();
+        span.style.left = e.clientX - rect.left - 50 + 'px';
+        span.style.top = e.clientY - rect.top - 50 + 'px';
+        e.currentTarget.appendChild(span);
+        setTimeout(() => span.remove(), 600);
+      });
+    });
+  </script></body>
+</html>
