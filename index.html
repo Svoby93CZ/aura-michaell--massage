@@ -23,190 +23,326 @@
     }
 
     /* Mobile-first základ */
-    :root { --pad: 10px; }
+    :root {
+      --pad:10px;
+      --gap:10px;
+      --accent:#7c4a27;
+      --border:#5c3520;
+    }
     body {
-      margin: 0;
-      padding: 0 var(--pad) 40px;
-      font-family: 'Tenor Sans', serif;
-      background: url('pozadi.jpg') center/cover fixed no-repeat;
-      color: #3e2f2a;
+      margin:0;
+      padding:0 var(--pad) 40px;
+      font-family:'Tenor Sans', serif;
+      background:url('pozadi.jpg') center/cover fixed no-repeat;
+      color:#3e2f2a;
     }
-    .container {
-      width: 100%;
-      margin: 0 auto;
-      padding: 0;
-    }
-    img, video, iframe, svg {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
+    .container { width:100%; margin:0 auto; padding:0; }
+    img, video, iframe { display:block; max-width:100%; height:auto; }
 
     /* Header */
     header {
-      margin: 0 calc(-1 * var(--pad));
-      padding: 0;
-      text-align: center;
+      margin:0 calc(-1*var(--pad));
+      padding:0;
+      text-align:center;
     }
     .header-banner {
-      width: calc(100% + 2 * var(--pad));
-      border-radius: 0;
+      width:calc(100% + 2*var(--pad));
+      border-radius:0;
     }
 
     /* Hero */
     .hero-title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
-      text-align: center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      margin-bottom:30px;
+      text-align:center;
     }
     .hero-title h1 {
-      font-size: 60px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg,#7c4a27,#3e2f2a,#7c4a27);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-      margin: 0;
-      animation: shine 4s infinite;
-      word-wrap: break-word;
+      font-size:60px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      background:linear-gradient(90deg,var(--accent),#3e2f2a,var(--accent));
+      -webkit-background-clip:text;
+      color:transparent;
+      text-shadow:1px 1px 2px rgba(0,0,0,0.25);
+      margin:0;
+      animation:shine 4s infinite;
+      word-wrap:break-word;
     }
-    .hero-logo { width: 200px; }
+    .logo-bubble {
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      background:#DCC7B1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 30px rgba(0,0,0,0.9);
+    }
+    .logo-bubble img {
+      width:70%;
+      height:auto;
+      display:block;
+    }
     @keyframes shine {
-      from { background-position: -200% 0 } to { background-position: 200% 0 }
+      from{background-position:-200% 0}
+      to{background-position:200% 0}
     }
 
     /* Úvod + kontakty */
-    #hero { text-align: center; margin-bottom: 40px; }
-    #hero .intro { font-size: 23px; line-height:1.0; margin-bottom:40px; }
-    .contact-group { display: flex; flex-direction: column; gap:12px; align-items:center; }
+    #hero {
+      text-align:center;
+      margin-bottom:40px;
+    }
+    #hero .intro {
+      font-size:23px;
+      line-height:1;
+      margin-bottom:40px;
+    }
+    .contact-group {
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+    }
     .order-box, .contact-box {
-      width:240px; padding:8px 16px; border-radius:30px; text-align:center;
+      width:240px;
+      padding:8px 16px;
+      border-radius:30px;
+      text-align:center;
     }
     .order-box {
-      background:#7c4a27; color:#fff; font-size:23px; cursor:pointer;
+      background:var(--accent);
+      color:#fff;
+      font-size:23px;
+      cursor:pointer;
     }
     .contact-box {
-      background:#fff; border:2px solid #7c4a27;
+      background:#fff;
+      border:2px solid var(--accent);
     }
     .contact-item {
-      display:flex; align-items:center; justify-content:center; font-size:16px; margin:4px 0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      margin:4px 0;
     }
-    .contact-icon { width:20px; height:20px; margin-right:8px; }
+    .contact-icon {
+      width:20px;
+      height:20px;
+      margin-right:8px;
+    }
     .contact-box a {
-      color:inherit; text-decoration:none; position:relative; padding-bottom:2px;
+      color:inherit;
+      text-decoration:none;
+      position:relative;
+      padding-bottom:2px;
     }
     .contact-box a::after {
-      content:''; position:absolute; left:0; bottom:0;
-      width:100%; height:2px; background:#7c4a27;
-      transform:scaleX(0); transform-origin:left;
+      content:'';
+      position:absolute;
+      left:0; bottom:0;
+      width:100%; height:2px;
+      background:var(--accent);
+      transform:scaleX(0);
+      transform-origin:left;
       transition:transform .3s ease;
     }
-    .contact-box a:hover::after { transform:scaleX(1); }
+    .contact-box a:hover::after {
+      transform:scaleX(1);
+    }
 
-    /* Ceník + sleva */
-    #pricing {
-      display:flex; flex-direction:column; align-items:center;
-      gap:16px; margin-bottom:60px;
+    /* Ceník + sleva v rámečku */
+    .offer-box {
+      border:2px solid var(--border);
+      background:rgba(0,0,0,0);
+      border-radius:16px;
+      padding:16px;
+      margin-bottom:20px;
     }
     .discount-bubble {
-      padding:12px 24px; background:#7c4a27; color:#fff;
-      border-radius:24px; border:2px solid #5c3520;
-      text-align:center; font-family:'Raleway',sans-serif;
+      padding:12px 24px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:24px;
+      border:2px solid var(--border);
+      text-align:center;
+      font-family:'Raleway',sans-serif;
+      margin:0 auto;
     }
-    .discount-main { font-size:23px; font-weight:600; }
-    .discount-sub  { font-size:42px; font-weight:700; margin-top:6px; }
-    .video-frame {
-      width:100%; border-radius:16px; overflow:hidden;
-      box-shadow:0 6px 16px rgba(0,0,0,0.2);
+    .discount-main {
+      font-size:23px;
+      font-weight:600;
+    }
+    .discount-sub {
+      font-size:42px;
+      font-weight:700;
+      margin-top:6px;
+    }
+    .card-info {
+      background:rgba(124,74,39,0.2);
+      padding:12px 16px;
+      border-radius:16px;
+      text-align:center;
+      font-size:18px;
+      font-weight:600;
+      color:#3e2f2a;
+      margin:20px auto;
+      max-width:90%;
+    }
+    .cards {
+      display:flex;
+      justify-content:center;
+      gap:var(--gap);
+      margin-top:12px;
+    }
+    .cards img {
+      width: calc((100% - var(--gap)) / 2);
+      border-radius:12px;
+      filter:drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+      cursor:pointer;
+      transition:transform .2s;
+    }
+    .cards img:hover {
+      transform:scale(1.03);
     }
 
-    /* Hodnocení – nový obdélník */
-    #rating .rating {
-  /* zamiř z pevné šířky na auto */
-  width: auto;
-  display: inline-flex;        /* roztáhne se podle počtu hvězd */
-  padding: 8px 16px;
-  background: #97755C;
-  border: 2px solid #5c3520;
-  border-radius: 24px;
-  gap: 8px;
-      
+    /* Video ceník mimo rámeček */
+    #pricing .video-frame {
+      width:100%;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:0 6px 16px rgba(0,0,0,0.2);
+      margin-top:20px;
     }
-    #rating .rating .star {
-      width: 32px;
-      height: 32px;
-      fill: none;
-      stroke: #362005;
-      stroke-width: 2;
-      filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
-      cursor: pointer;
-      transition: fill .2s, transform .2s;
+
+    /* Lightbox modal */
+    .modal {
+      display:none;
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.8);
+      justify-content:center; align-items:center;
+      z-index:1000;
     }
-    #rating .rating .star.filled { fill: #ffd700; }
-    #rating .rating .star:hover,
-    #rating .rating .star:hover ~ .star {
-      transform: scale(1.2);
+    .modal.show {
+      display:flex;
+    }
+    .modal img {
+      max-width:90%; max-height:90%;
+      margin:auto;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.5);
     }
 
     /* O mně */
-    #about { margin-bottom:60px; }
-    .about-text { font-size:16px; line-height:1.5; text-align:center; margin-bottom:20px; }
-    .about-row { display:flex; flex-direction:column; gap:12px; }
-    .about-row img { width:100%; border-radius:16px; }
+    #about {
+      margin-bottom:60px;
+    }
+    .about-text {
+      font-size:16px;
+      line-height:1.5;
+      text-align:center;
+      margin-bottom:20px;
+    }
+    .about-text h2 {
+      margin-bottom:8px;
+    }
+    .about-row {
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .about-row img {
+      width:100%;
+      border-radius:16px;
+    }
 
     /* Prostor + mapa */
-    #location { margin-bottom:60px; }
-    .prostor-map { display:flex; flex-direction:column; gap:16px; }
+    #location {
+      margin-bottom:60px;
+    }
+    .prostor-map {
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
     .prostor-img img {
-      width:100%; border-radius:16px;
+      width:100%;
+      border-radius:16px;
       box-shadow:0 4px 10px rgba(0,0,0,0.2);
     }
     .map-container {
-      position:relative; width:100%; padding-top:56.25%;
-      border:2px solid #5c3520; border-radius:10px;
-      overflow:hidden; background:#fff;
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border:2px solid var(--border);
+      border-radius:10px;
+      overflow:hidden;
+      background:#fff;
     }
     .map-container iframe {
-      position:absolute; top:0; left:0; width:100%; height:100%; border:0;
+      position:absolute;
+      top:0; left:0;
+      width:100%; height:100%;
+      border:0;
     }
     .address-box {
-      margin-top:8px; background:rgba(255,255,255,0.6);
-      padding:8px; border-radius:10px;
-      font-size:16px; font-style:italic; text-align:center;
+      margin-top:8px;
+      background:rgba(255,255,255,0.6);
+      padding:8px;
+      border-radius:10px;
+      font-size:16px;
+      font-style:italic;
+      text-align:center;
       color:#3e2f2a;
     }
 
     /* Scroll-to-top */
     #scrollTopBtn {
-      position:fixed; bottom:20px; right:20px;
-      width:44px; height:44px; background:rgba(124,74,39,0.85);
+      position:fixed;
+      bottom:20px; right:20px;
+      width:44px; height:44px;
+      background:rgba(124,74,39,0.85);
       color:#fff; border:none; border-radius:50%;
       font-size:24px; cursor:pointer;
       opacity:0; visibility:hidden;
       transition:opacity .3s, visibility .3s;
       z-index:1000;
     }
-    #scrollTopBtn.show { opacity:1; visibility:visible; }
-    #scrollTopBtn:hover { background:rgba(124,74,39,1); }
+    #scrollTopBtn.show {
+      opacity:1; visibility:visible;
+    }
+    #scrollTopBtn:hover {
+      background:rgba(124,74,39,1);
+    }
 
     /* Footer */
-    footer { text-align:center; margin-top:40px; }
-    footer img { width:80px; opacity:0.8; }
+    footer {
+      text-align:center;
+      margin-top:20px;
+    }
+    footer img {
+      width:80px; opacity:0.8;
+    }
   </style>
 </head>
 <body>
   <div class="container">
+
     <header>
       <img src="levyroh.png" alt="Banner" class="header-banner" />
     </header>
 
     <div class="hero-title">
       <h1>Aura Michaell Massage</h1>
-      <img src="logo.png" alt="Logo" class="hero-logo" />
+      <div class="logo-bubble">
+        <img src="logo.png" alt="Logo" />
+      </div>
     </div>
 
     <section id="hero">
@@ -228,35 +364,29 @@
       </div>
     </section>
 
-    <section id="pricing">
+    <!-- Sekce sleva a karty v rámečku -->
+    <section id="offer" class="offer-box">
       <div class="discount-bubble">
         <div class="discount-main">Každá desátá masáž</div>
         <div class="discount-sub">−200 Kč</div>
       </div>
+
+      <div class="card-info">
+        Každý zákazník obdrží Bonusovou kartičku na kterou bude sbírat samolepky, aby mohl obdržet slevu.
+      </div>
+
+      <div class="cards">
+        <img src="karta1.jpg" alt="Věrnostní karta – přední strana" data-full="karta1.jpg">
+        <img src="karta2.jpg" alt="Věrnostní karta – zadní strana" data-full="karta2.jpg">
+      </div>
+    </section>
+
+    <!-- Video ceník mimo rámeček -->
+    <section id="pricing">
       <div class="video-frame">
         <video autoplay muted loop playsinline>
           <source src="cenik.mp4" type="video/mp4" />
         </video>
-      </div>
-    </section>
-
-    <section id="rating">
-      <div class="rating">
-        <svg class="star" data-value="1" viewBox="0 0 24 24">
-          <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>
-        </svg>
-        <svg class="star" data-value="2" viewBox="0 0 24 24">
-          <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>
-        </svg>
-        <svg class="star" data-value="3" viewBox="0 0 24 24">
-          <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>
-        </svg>
-        <svg class="star" data-value="4" viewBox="0 0 24 24">
-          <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>
-        </svg>
-        <svg class="star" data-value="5" viewBox="0 0 24 24">
-          <polygon points="12,2 15,9 22,9 17,14 18,21 12,17 6,21 7,14 2,9 9,9"/>
-        </svg>
       </div>
     </section>
 
@@ -277,7 +407,7 @@
     <section id="location">
       <div class="prostor-map">
         <div class="prostor-img">
-          <img src="prostor.jpg" alt="Prostor kde se tělo nadechne" />
+          <img src="prostor.jpg" alt="Prostor, kde se tělo nadechne" />
         </div>
         <div class="map-address">
           <div class="map-container">
@@ -295,6 +425,12 @@
     <footer>
       <img src="logo.png" alt="Footer Logo" />
     </footer>
+
+  </div>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="modal">
+    <img src="" alt="Rozšířený náhled" id="lightbox-img">
   </div>
 
   <!-- Scroll-to-top tlačítko -->
@@ -311,22 +447,18 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
 
-      // Rating
-      const stars = document.querySelectorAll('#rating .star');
-      let currentRating = 0;
-      stars.forEach(star => {
-        star.addEventListener('mouseover', () => highlightStars(+star.dataset.value));
-        star.addEventListener('mouseout',  () => highlightStars(currentRating));
-        star.addEventListener('click',     () => {
-          currentRating = +star.dataset.value;
-          highlightStars(currentRating);
+      // Lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      document.querySelectorAll('.cards img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.dataset.full;
+          lightbox.classList.add('show');
         });
       });
-      function highlightStars(rating) {
-        stars.forEach(s =>
-          s.classList.toggle('filled', +s.dataset.value <= rating)
-        );
-      }
+      lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('show');
+      });
     });
   </script>
 </body>
