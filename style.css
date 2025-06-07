@@ -85,10 +85,33 @@ header {
     margin-bottom: 40px;
 }
 
+/* — ÚVODNÍ TEXT — */
 #hero .intro {
+    /* ► barva rámečku a pozadí = --accent ◄ */
+    background: var(--accent);   /* plná barva accentu */
+    color: #fff;                 /* světlý text pro kontrast */
+    border: 2px solid var(--accent);
+
+    border-radius: 20px;
+    padding: 16px 24px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28), 0 12px 36px rgba(124, 74, 39, 0.35);
+
     font-size: 23px;
-    margin-bottom: 40px;
+    line-height: 1.3;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+
+    display: inline-block;
 }
+
+/* volitelné větší odsazení/fon-size na desktopu */
+@media (min-width: 601px) {
+  #hero .intro {
+    font-size: 26px;
+    padding: 24px 36px;
+  }
+}
+
+.stack-desktop span { display: inline; white-space: nowrap; }
 
 /* Contact */
 .contact-group {
@@ -355,18 +378,41 @@ footer img {
 
 /* Responsive styles */
 @media (min-width: 601px) {
+    .header-banner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 550px;    /* pevná nebo max šířka dle potřeby */
+        max-width: 600px;
+        height: auto;
+        margin: 0;
+        z-index: 10;
+    }
+
+    .stack-desktop span { display: block; }
+
     body {
         padding: 20px 80px 80px;
         font-size: 18px;
     }
 
+    .hero-title {
+        /* vycentrované už nepotřebujeme */
+        align-items: flex-end;  /* děti (h1 + logo) doprava */
+        margin-left: auto;      /* celý blok odsuneme k pravému okraji */
+        text-align: right;      /* zarovnání textu dovnitř h1 */
+    }
+
     .hero-title h1 {
-        font-size: 80px;
+        font-size: 70px;        /* už máš – jen připomínka */
+        text-shadow: 4px 4px 18px rgba(60, 30, 10, 0.55), 0 8px 32px rgba(0,0,0,0.32);
     }
 
     .logo-bubble {
         width: 250px;
         height: 250px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .about-row {
@@ -410,4 +456,29 @@ footer img {
     .offer-pricing-wrapper #pricing .video-frame {
         width: 100%;
     }
+
+    /* větší samotný box můžeš vynechat,
+     ale o pár pixelů navíc vypadá lépe */
+  .contact-box {
+    width: 300px;         /* původně 240px */
+    padding: 10px 20px;   /* trochu víc prostoru kolem textu */
+  }
+
+  /* zvětšené písmo v řádcích kontaktů */
+  .contact-box .contact-item {
+    font-size: 20px;      /* původně 16px */
+  }
+
+  /* zvětšená ikona */
+  .contact-box .contact-icon {
+    width: 28px;          /* původně 20px */
+    height: 28px;
+    margin-right: 10px;   /* ať drží hezký odstup od textu */
+  }
+
+  /* zajistí, že SVG/PNG uvnitř ikony vyplní celý span */
+  .contact-box .contact-icon img {
+    width: 100%;
+    height: auto;
+  }
 }
