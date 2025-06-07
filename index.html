@@ -1,74 +1,180 @@
-<!DOCTYPE html><html lang="cs">
+<!DOCTYPE html>
+<html lang="cs">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Aura Michaell Massage</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Vlastní styl -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <div class="container">
-    <header><img src="levyroh.png" alt="Banner" class="header-banner"></header>
+    <!-- ─────────── Hlavička ─────────── -->
+    <header>
+      <img src="levyroh.png" alt="Banner" class="header-banner" />
+    </header>
+
+    <!-- ─────────── Hero sekce ─────────── -->
     <div class="hero-title">
-      <h1>Aura Michaell Massage</h1>
-      <div class="logo-bubble"><img src="logo.png" alt="Logo"></div>
+      <h1 class="stack-desktop">
+      <span>Aura</span>
+      <span>Michaell</span>
+      <span>Massage</span>
+      </h1>
     </div>
+
+      <div class="logo-bubble">
+        <img src="logo.png" alt="Logo" />
+      </div>
+    </div>
+
     <section id="hero">
-      <p class="intro">Vítejte na stránkách profesionální masérky zaměřené na zdraví, relaxaci a harmonii těla i mysli.</p>
+      <p class="intro">
+        Vítejte na stránkách profesionální masérky zaměřené na zdraví, relaxaci a harmonii těla i mysli.
+      </p>
+<!-- ─────────── O mně ─────────── -->
+    <section id="about">
+      <div class="about-text">
+        <h2>Něco o mně</h2>
+        <p>
+          Jmenuji se Michaela a masáže jsou mou vášní i cestou k uzdravení. Přijďte zažít profesionální péči,
+          kde se tělo i mysl uvolní a nastartuje novou energii.
+        </p>
+      </div>
+
+      <div class="about-row">
+        <img src="info.png"  alt="Masérka"          />
+        <img src="praxe.png" alt="Praxe a vzdělání" />
+      </div>
+    </section>
       <div class="contact-group">
         <div class="order-box">Objednejte se přes:</div>
+
         <div class="contact-box">
-          <div class="contact-item"><span class="contact-icon"><img src="instalogo.png" alt="Instagram"></span><a href="https://www.instagram.com/aura_michaell_massage" target="_blank">@aura_michaell_massage</a></div>
-          <div class="contact-item"><span class="contact-icon">📞</span><a href="tel:+420735068229">735 068 229</a></div>
+          <div class="contact-item">
+            <span class="contact-icon">
+              <img src="instalogo.png" alt="Instagram" />
+            </span>
+            <a href="https://www.instagram.com/aura_michaell_massage" target="_blank">@aura_michaell_massage</a>
+          </div>
+
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <a href="tel:+420735068229">735&nbsp;068&nbsp;229</a>
+          </div>
         </div>
       </div>
-    </section><!--  OFFER + PRICING WRAPPER (for desktop flex) -->
-<div class="offer-pricing-wrapper">
-  <section id="offer" class="offer-box">
-    <div class="discount-bubble"><div class="discount-main">Každá desátá masáž</div><div class="discount-sub">−200 Kč</div></div>
-    <div class="card-info">Každý zákazník obdrží Bonusovou kartičku aby mohl dostat slevu.</div>
-    <div class="cards">
-      <img src="karta1.jpg" alt="Věrnostní karta – přední strana" data-full="karta1.jpg">
-      <img src="karta2.jpg" alt="Věrnostní karta – zadní strana" data-full="karta2.jpg">
-    </div>
-  </section>
-  <section id="pricing">
-    <div class="video-frame">
-      <video autoplay muted loop playsinline>
-        <source src="cenik_web_compatible.mp4" type="video/mp4">
-        Váš prohlížeč nepodporuje přehrávání videa.
-      </video>
-    </div>
-  </section>
-</div>
+    </section>
 
-<section id="about">
-  <div class="about-text"><h2>Něco o mně</h2><p>Jmenuji se Michaela a masáže jsou mou vášní i cestou k uzdravení. Přijďte zažít profesionální péči, kde se tělo i mysl uvolní a nastartuje novou energii.</p></div>
-  <div class="about-row"><img src="info.png" alt="Masérka"><img src="praxe.png" alt="Praxe a vzdělání"></div>
-</section>
+    <!-- ─────────── Nabídka + Ceník ─────────── -->
+    <div class="offer-pricing-wrapper">
+      <!-- Rámeček se slevou -->
+      <section id="offer" class="offer-box">
+        <div class="discount-bubble">
+          <div class="discount-main">Každá desátá masáž</div>
+          <div class="discount-sub">−200&nbsp;Kč</div>
+        </div>
 
-<section id="location">
-  <div class="prostor-map">
-    <div class="prostor-img"><img src="prostor.jpg" alt="Prostor, kde se tělo nadechne"></div>
-    <div class="map-address">
-      <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.2279483963184!2d17.46164577507499!3d49.98833567150761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471228518dfe30d7%3A0xb41100387e55d03e!2sDr.%20E.%20Bene%C5%A1e%201497%2F21%2C%20792%2001%20Brunt%C3%A1l!5e0!3m2!1scs!2scz!4v1745601494312!5m2!1scs!2scz" allowfullscreen loading="lazy"></iframe></div>
-      <div class="address-box">Dr. E. Beneše 1497/21<br>792 01 Bruntál<br>1. patro</div>
+        <div class="card-info">
+          Každý zákazník obdrží Bonusovou kartičku aby mohl dostat slevu.
+        </div>
+
+        <div class="cards">
+          <img src="karta1.jpg" alt="Věrnostní karta – přední strana" data-full="karta1.jpg" />
+          <img src="karta2.jpg" alt="Věrnostní karta – zadní strana"  data-full="karta2.jpg" />
+        </div>
+      </section>
+
+      <!-- Video ceníku -->
+      <section id="pricing">
+        <div class="video-frame">
+          <video autoplay muted loop playsinline>
+            <source src="cenik_web_compatible.mp4" type="video/mp4" />
+            Váš prohlížeč nepodporuje přehrávání videa.
+          </video>
+        </div>
+      </section>
     </div>
+
+    <!-- ─────────── Prostor + Mapa ─────────── -->
+    <section id="location">
+      <div class="prostor-map">
+        <div class="prostor-img">
+          <img src="prostor.jpg" alt="Prostor, kde se tělo nadechne" />
+        </div>
+
+        <div class="map-address">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.2279483963184!2d17.46164577507499!3d49.98833567150761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471228518dfe30d7%3A0xb41100387e55d03e!2sDr.%20E.%20Bene%C5%A1e%201497%2F21%2C%20792%2001%20Brunt%C3%A1l!5e0!3m2!1scs!2scz!4v1745601494312!5m2!1scs!2scz"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="address-box">
+            Dr.&nbsp;E.&nbsp;Beneše&nbsp;1497/21<br>
+            792&nbsp;01&nbsp;Bruntál<br>
+            1.&nbsp;patro
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── Patička ─────────── -->
+    <footer>
+      <img src="logo.png" alt="Footer Logo" />
+    </footer>
   </div>
-</section>
 
-<footer><img src="logo.png" alt="Footer Logo"></footer>
+  <!-- ─────────── Lightbox modal ─────────── -->
+  <div id="lightbox" class="modal">
+    <img id="lightbox-img" src="" alt="Rozšířený náhled" />
+  </div>
 
-  </div>  <!--  LIGHTBOX MODAL -->  <div id="lightbox" class="modal"><img src="" alt="Rozšířený náhled" id="lightbox-img"></div>
-  <!--  SCROLL BUTTON -->
-  <button id="scrollTopBtn" aria-label="Zpět nahoru">⬆</button>  <script>
-    document.addEventListener('DOMContentLoaded',()=>{
-      const scrollBtn=document.getElementById('scrollTopBtn');
-      window.addEventListener('scroll',()=>{scrollBtn.classList.toggle('show',window.scrollY>100);});
-      scrollBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
-      const lightbox=document.getElementById('lightbox');const lightboxImg=document.getElementById('lightbox-img');
-      document.querySelectorAll('.cards img').forEach(img=>{img.addEventListener('click',()=>{lightboxImg.src=img.dataset.full;lightbox.classList.add('show');});});
-      lightbox.addEventListener('click',()=>{lightbox.classList.remove('show');});
+  <!-- ─────────── Tlačítko nahoru ─────────── -->
+  <button id="scrollTopBtn" aria-label="Zpět nahoru">⬆</button>
+
+  <!-- ─────────── Skript ─────────── -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      /* === Scroll-to-top === */
+      const scrollBtn = document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll', () => {
+        scrollBtn.classList.toggle('show', window.scrollY > 100);
+      });
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      /* === Lightbox === */
+      const lightbox    = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+
+      // Otevření obrázku
+      document.querySelectorAll('.cards img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = img.dataset.full;
+          lightbox.classList.add('show');
+        });
+      });
+
+      // Zavření kliknutím kamkoliv na overlay
+      lightbox.addEventListener('click', () => {
+        lightbox.classList.remove('show');
+      });
+
+      // Zavření klávesou ESC
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+          lightbox.classList.remove('show');
+        }
+      });
     });
-  </script></body>
+  </script>
+</body>
 </html>
