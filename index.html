@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Aura Michaell Massage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --pad:10px; --gap:10px; --accent:#7c4a27; --border:#5c3520; }
+    body { margin:0; padding:0 var(--pad) 40px; font-family:'Tenor Sans',serif; background:url('pozadi.jpg') center/cover fixed no-repeat; color:#3e2f2a; }
+    .container{width:100%;margin:0 auto;}
+    img,video,iframe{display:block;max-width:100%;height:auto;}
+    header{margin:0 calc(-1*var(--pad));text-align:center;}
+    .header-banner{width:calc(100% + 2*var(--pad));}
+    .hero-title{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:30px;text-align:center;}
+    .hero-title h1{font-size:60px;text-transform:uppercase;letter-spacing:1px;background:linear-gradient(90deg,var(--accent),#3e2f2a,var(--accent));-webkit-background-clip:text;color:transparent;text-shadow:1px 1px 2px rgba(0,0,0,.25);margin:0;animation:shine 4s infinite;}
+    @keyframes shine{from{background-position:-200% 0}to{background-position:200% 0}}
+    .logo-bubble{width:200px;height:200px;border-radius:50%;background:#DCC7B1;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(0,0,0,.9);}
+    .logo-bubble img{width:70%;}
+    #hero{text-align:center;margin-bottom:40px;}
+    #hero .intro{font-size:23px;margin-bottom:40px;}
+    .contact-group{display:flex;flex-direction:column;gap:12px;align-items:center;}
+    .order-box,.contact-box{width:240px;padding:8px 16px;border-radius:30px;text-align:center;}
+    .order-box{background:var(--accent);color:#fff;font-size:23px;}
+    .contact-box{background:#fff;border:2px solid var(--accent);}
+    .contact-item{display:flex;align-items:center;justify-content:center;font-size:16px;margin:4px 0;}
+    .contact-icon{width:20px;height:20px;margin-right:8px;}
+    .contact-box a{color:inherit;text-decoration:none;position:relative;padding-bottom:2px;}
+    .contact-box a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+    .contact-box a:hover::after{transform:scaleX(1);}
+    .offer-box{border:2px solid var(--border);background:rgba(0,0,0,0);border-radius:16px;padding:16px;}
+    .discount-bubble{padding:12px 24px;background:var(--accent);color:#fff;border-radius:24px;border:2px solid var(--border);text-align:center;font-family:'Raleway',sans-serif;margin:0 auto;}
+    .discount-main{font-size:23px;font-weight:600;}
+    .discount-sub{font-size:42px;font-weight:700;margin-top:6px;}
+    .card-info{background:rgba(124,74,39,.2);padding:12px 16px;border-radius:16px;text-align:center;font-size:18px;font-weight:600;color:#3e2f2a;margin:20px auto;max-width:90%;}
+    .cards{display:flex;justify-content:center;gap:var(--gap);margin-top:12px;}
+    .cards img{width:calc((100% - var(--gap))/2);border-radius:12px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));cursor:pointer;transition:transform .2s;}
+    .cards img:hover{transform:scale(1.03);}
+    #pricing .video-frame{width:100%;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.2);}
+    #about{margin-bottom:60px;}
+    .about-text{font-size:16px;text-align:center;margin-bottom:20px;}
+    .about-row{display:flex;flex-direction:column;gap:12px;}
+    .about-row img{width:100%;border-radius:16px;}
+    #location{margin-bottom:60px;}
+    .prostor-map{display:flex;flex-direction:column;gap:16px;}
+    .prostor-img img{width:100%;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.2);}
+    .map-container{position:relative;width:100%;padding-top:56.25%;border:2px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;}
+    .map-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+    .address-box{margin-top:8px;background:rgba(255,255,255,.6);padding:8px;border-radius:10px;font-size:16px;text-align:center;color:#3e2f2a;}
+    footer{text-align:center;margin-top:20px;}
+    footer img{width:80px;opacity:.8;}
+    .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);justify-content:center;align-items:center;z-index:1000;}
+    .modal.show{display:flex;}
+    .modal img{max-width:90%;max-height:90%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.5);}
+    #scrollTopBtn{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:rgba(124,74,39,.85);color:#fff;border:none;border-radius:50%;font-size:24px;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:1000;}
+    #scrollTopBtn.show{opacity:1;visibility:visible;}
+    @media(min-width:601px){
+      body{padding:20px 80px 80px;font-size:18px;}
+      .hero-title h1{font-size:80px;}
+      .logo-bubble{width:250px;height:250px;}
+      .about-row{flex-direction:row;justify-content:center;}
+      .about-row img{width:45%;}
+      .prostor-map{flex-direction:row;gap:30px;}
+      .prostor-img,.map-address{flex:1;}
+      .offer-pricing-wrapper{display:flex;flex-direction:row;justify-content:center;align-items:flex-start;gap:40px;margin-bottom:60px;}
+      .offer-pricing-wrapper #offer{flex:1 1 45%;max-width:480px;}
+      .offer-pricing-wrapper #pricing{flex:1 1 45%;max-width:420px;}
+      .offer-pricing-wrapper #pricing .video-frame{width:100%;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><img src="levyroh.png" alt="Banner" class="header-banner"></header>
+    <div class="hero-title">
+      <h1>Aura Michaell Massage</h1>
+      <div class="logo-bubble"><img src="logo.png" alt="Logo"></div>
+    </div>
+    <section id="hero">
+      <p class="intro">Vítejte na stránkách profesionální masérky zaměřené na zdraví, relaxaci a harmonii těla i mysli.</p>
+      <div class="contact-group">
+        <div class="order-box">Objednejte se přes:</div>
+        <div class="contact-box">
+          <div class="contact-item"><span class="contact-icon"><img src="instalogo.png" alt="Instagram"></span><a href="https://www.instagram.com/aura_michaell_massage" target="_blank">@aura_michaell_massage</a></div>
+          <div class="contact-item"><span class="contact-icon">📞</span><a href="tel:+420735068229">735 068 229</a></div>
+        </div>
+      </div>
+    </section><!--  OFFER + PRICING WRAPPER (for desktop flex) -->
+<div class="offer-pricing-wrapper">
+  <section id="offer" class="offer-box">
+    <div class="discount-bubble"><div class="discount-main">Každá desátá masáž</div><div class="discount-sub">−200 Kč</div></div>
+    <div class="card-info">Každý zákazník obdrží Bonusovou kartičku aby mohl dostat slevu.</div>
+    <div class="cards">
+      <img src="karta1.jpg" alt="Věrnostní karta – přední strana" data-full="karta1.jpg">
+      <img src="karta2.jpg" alt="Věrnostní karta – zadní strana" data-full="karta2.jpg">
+    </div>
+  </section>
+  <section id="pricing">
+    <div class="video-frame">
+      <video autoplay muted loop playsinline><source src="cenik.mp4" type="video/mp4"></video>
+    </div>
+  </section>
+</div>
+<section id="about">
+  <div class="about-text"><h2>Něco o mně</h2><p>Jmenuji se Michaela a masáže jsou mou vášní i cestou k uzdravení. Přijďte zažít profesionální péči, kde se tělo i mysl uvolní a nastartuje novou energii.</p></div>
+  <div class="about-row"><img src="info.png" alt="Masérka"><img src="praxe.png" alt="Praxe a vzdělání"></div>
+</section>
+
+<section id="location">
+  <div class="prostor-map">
+    <div class="prostor-img"><img src="prostor.jpg" alt="Prostor, kde se tělo nadechne"></div>
+    <div class="map-address">
+      <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.2279483963184!2d17.46164577507499!3d49.98833567150761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471228518dfe30d7%3A0xb41100387e55d03e!2sDr.%20E.%20Bene%C5%A1e%201497%2F21%2C%20792%2001%20Brunt%C3%A1l!5e0!3m2!1scs!2scz!4v1745601494312!5m2!1scs!2scz" allowfullscreen loading="lazy"></iframe></div>
+      <div class="address-box">Dr. E. Beneše 1497/21<br>792 01 Bruntál<br>1. patro</div>
+    </div>
+  </div>
+</section>
+
+<footer><img src="logo.png" alt="Footer Logo"></footer>
+
+  </div>  <!--  LIGHTBOX MODAL -->  <div id="lightbox" class="modal"><img src="" alt="Rozšířený náhled" id="lightbox-img"></div>
+  <!--  SCROLL BUTTON -->
+  <button id="scrollTopBtn" aria-label="Zpět nahoru">⬆</button>  <script>
+    document.addEventListener('DOMContentLoaded',()=>{
+      const scrollBtn=document.getElementById('scrollTopBtn');
+      window.addEventListener('scroll',()=>{scrollBtn.classList.toggle('show',window.scrollY>100);});
+      scrollBtn.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+      const lightbox=document.getElementById('lightbox');const lightboxImg=document.getElementById('lightbox-img');
+      document.querySelectorAll('.cards img').forEach(img=>{img.addEventListener('click',()=>{lightboxImg.src=img.dataset.full;lightbox.classList.add('show');});});
+      lightbox.addEventListener('click',()=>{lightbox.classList.remove('show');});
+    });
+  </script></body>
+</html>
