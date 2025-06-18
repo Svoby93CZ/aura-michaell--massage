@@ -21,19 +21,24 @@ img, video, iframe {
   height: auto;
 }
 header {
-  margin: 0 calc(-1 * var(--pad));
-  text-align: center;
+  position: relative;    /* zajistí, že .header-banner je vztažen k headeru */
+  min-height: 0;
+  padding: 0;
+  margin: 0;
 }
 .header-banner {
-  width: calc(100% + 2 * var(--pad));
+  display: none; /* Skryje obrázek levyroh.png */
 }
 .hero-title {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 24px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 0;      /* Zarovnání na levou stranu */
 }
 .hero-title h1 {
   font-size: 60px;
@@ -46,22 +51,32 @@ header {
   text-shadow: 1px 1px 2px rgba(0,0,0,.25);
   margin: 0;
   animation: shine 4s infinite;
+  text-align: left;
+  line-height: 1.1;
+  max-width: 420px;
+  margin-left: 0;      /* Žádné odsazení vpravo od banneru */
 }
 @keyframes shine {
   from { background-position: -200% 0 }
   to { background-position: 200% 0 }
 }
+/* Zmenšení a stylování bubliny s logem */
 .logo-bubble {
-  width: 200px;
-  height: 200px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   background: #DCC7B1;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,.9);
+  box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  flex-shrink: 0;
+  margin-right: 16px;
 }
-.logo-bubble img { width: 70%; }
+
+.logo-bubble img {
+  width: 60%;
+}
 #hero {
   text-align: center;
   margin-bottom: 40px;
@@ -72,9 +87,10 @@ header {
 }
 .contact-group {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
   align-items: center;
+  gap: 16px;
+  justify-content: center;
 }
 .order-box, .contact-box {
   width: 240px;
