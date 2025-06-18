@@ -296,6 +296,43 @@ footer img {
   opacity: 1;
   visibility: visible;
 }
+.voucher-btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 14px 60px;
+  font-size: 40px;
+  font-family: 'Style Script', cursive; /* nový font */
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s;
+  letter-spacing: 2px; /* zvětší mezeru mezi písmeny */
+}
+.voucher-btn:hover {
+  background: #5c3520;
+}
+.voucher-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.voucher-img {
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.voucher-img:hover {
+  transform: scale(1.05);
+}
+.voucher-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
 @media (min-width: 601px) {
   body { padding: 20px 80px 80px; font-size: 18px; }
   .hero-title h1 { font-size: 80px; }
