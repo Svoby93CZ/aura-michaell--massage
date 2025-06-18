@@ -1,21 +1,44 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported Versions
+## ✅ Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Tato tabulka uvádí, které verze projektu aktuálně dostávají bezpečnostní aktualizace:
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Verze  | Podporováno     |
+|--------|------------------|
+| 5.1.x  | ✅ Podporováno   |
+| 5.0.x  | ❌ Nepodporováno |
+| 4.0.x  | ✅ Podporováno   |
+| < 4.0  | ❌ Nepodporováno |
 
-## Reporting a Vulnerability
+Doporučujeme vždy používat nejnovější verzi, aby bylo zajištěno maximální zabezpečení.
 
-Use this section to tell people how to report a vulnerability.
+---
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+## 📢 Hlášení zranitelností
+
+Chceme, aby naše služby byly bezpečné nejen pro nás, ale hlavně pro návštěvníky a klienty.
+
+Pokud objevíte chybu, podezřelé chování nebo potenciální zranitelnost v našem webovém projektu, postupujte následovně:
+
+1. **Kontaktujte nás co nejdříve** na adrese:  
+   📧 `aura.michaell@protonmail.com`
+
+2. **Popište problém co nejpodrobněji**, včetně:
+   - odkazu na stránku nebo soubor, kde se chyba objevila,
+   - přesného chování, které považujete za problém,
+   - (volitelně) návrhu, jak by se dala situace opravit.
+
+3. Naše reakční doba je obvykle **do 7 pracovních dnů**.  
+   Pokud bude chyba potvrzena jako relevantní bezpečnostní riziko, co nejdříve ji opravíme.
+
+---
+
+## 🙏 Děkujeme
+
+Děkujeme, že nám pomáháte udržovat náš web a služby bezpečné.  
+Vaše spolupráce je pro nás důležitá.
+
+---
+
+*Projekt Aura Michaell Massage je malý, ale bezpečnost nebereme na lehkou váhu.*
