@@ -389,12 +389,12 @@ footer img {
     text-align: left;
   }
   .logo-bubble {
-    width: 80px !important;
-    height: 80px !important;
+    width: 160px !important;
+    height: 160px !important;
     margin: 0 0 0 0;
   }
   .logo-bubble img {
-    width: 65%;
+    width: 110%;
   }
   .contact-group {
     flex-direction: column;
