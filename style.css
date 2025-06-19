@@ -553,4 +553,23 @@ footer img {
     margin-top: 0.7rem;
     font-size: 0.95em;
   }
+    #impressum ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  /* Label nad hodnotou */
+  #impressum ul li strong {
+    display: block;
+    width: auto;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+
+  /* Trochu zvětšit odsazení textu */
+  #impressum ul {
+    padding: 0 1rem;
+  }
 }
