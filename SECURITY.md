@@ -1,19 +1,3 @@
-# 🔐 Security Policy
-
-## ✅ Supported Versions
-
-Tato tabulka uvádí, které verze projektu aktuálně dostávají bezpečnostní aktualizace:
-
-| Verze  | Podporováno     |
-|--------|------------------|
-| 5.1.x  | ✅ Podporováno   |
-| 5.0.x  | ❌ Nepodporováno |
-| 4.0.x  | ✅ Podporováno   |
-| < 4.0  | ❌ Nepodporováno |
-
-Doporučujeme vždy používat nejnovější verzi, aby bylo zajištěno maximální zabezpečení.
-
----
 
 ## 📢 Hlášení zranitelností
 
