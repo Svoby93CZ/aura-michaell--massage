@@ -29,6 +29,20 @@ header {
 .header-banner {
   display: none; /* Skryje obrázek levyroh.png */
 }
+/* 1) Zrušte rámeček a stín u samotného <img> */
+.privacy-hero img {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  display: block;      /* odstraní případné inline-gap kolem obrázku */
+}
+
+/* 2) Pokud měl kontejner .privacy-hero bílý podklad nebo padding, odeberte ho */
+.privacy-hero {
+  background: transparent;
+  padding: 0;
+  margin: 2rem 0;      /* ponechte jen spodní a horní odsazení, jak potřebujete */
+}
 .hero-title {
   display: flex;
   flex-direction: row;
