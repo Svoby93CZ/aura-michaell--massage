@@ -34,5 +34,49 @@ document.addEventListener('DOMContentLoaded', () => {
     voucherBtn.addEventListener('click', () => {
       voucherGallery.style.display = voucherGallery.style.display === 'none' ? 'flex' : 'none';
     });
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('openingModal');
+      const closeBtn = document.getElementById('closeOpeningModal');
+
+      // Zobrazit modal
+      modal.style.display = 'flex';
+
+      // Zavřít kliknutím na křížek
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      // Zavřít kliknutím mimo obsah
+      modal.addEventListener('click', e => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+
+      // (volitelné) Jednou za session
+      // if (!sessionStorage.getItem('openedSoonShown')) {
+      //   modal.style.display = 'flex';
+      //   sessionStorage.setItem('openedSoonShown', '1');
+      // }
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Otevření modálního okna po načtení stránky
+  const openingModal = document.getElementById('opening-modal');
+  const closeBtn = document.querySelector('.opening-modal__close');
+
+  if (openingModal) {
+    openingModal.style.display = 'flex';
+    // Zavření kliknutím na tlačítko nebo mimo obrázek
+    closeBtn.addEventListener('click', () => {
+      openingModal.style.display = 'none';
+    });
+    openingModal.addEventListener('click', (e) => {
+      if (e.target === openingModal) {
+        openingModal.style.display = 'none';
+      }
+    });
   }
 });
