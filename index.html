@@ -11,11 +11,6 @@
 <body>
   <div class="container">
 
-    <!-- Header -->
-    <header>
-      <img src="levyroh.png" alt="Banner" class="header-banner" style="display:none;">
-    </header>
-
     <!-- Hero Section -->
     <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
       <h1>Aura Michaell Massage</h1>
@@ -35,7 +30,13 @@
             <span class="contact-icon">
               <img src="instalogo.png" alt="Instagram">
             </span>
-            <a href="https://www.instagram.com/aura_michaell_massage" target="_blank">@aura_michaell_massage</a>
+            <a href="https://www.instagram.com/aura_michaell_massage" target="_blank"> aura_michaell_massage</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">
+              <img src="fb.png" alt="Facebook">
+            </span>
+            <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Aura Michaell Massage</a>
           </div>
           <div class="contact-item">
             <span class="contact-icon">📞</span>
@@ -73,13 +74,6 @@
           </div>
         </div>
       </section>
-      <!-- <section id="pricing">
-        <div class="video-frame">
-          <video autoplay muted loop playsinline>
-            <source src="cenik_web_compatible.mp4" type="video/mp4">
-          </video>
-        </div>
-      </section> --> 
     </div>
 
     <!-- About -->
@@ -119,21 +113,24 @@
     <section id="impressum" class="section imprint">
       <h2>Impressum</h2>
       <ul>
-        <li><strong>Provozovatel:</strong> Michaela Svobodová</li>
-        <li><strong>Adresa:</strong> Šmilovského 663/1, 792 01, Bruntál</li>
-        <li><strong>IČO:</strong> 23405830</li>
-        <!-- <li><strong>DIČ:</strong> CZ987654321</li> -->
-        <!-- <li><strong>Živnostenské oprávnění:</strong> č. ŽÚ/00001234/2023</li> -->
-        <li><strong>Kontaktní email:</strong> <a href="mailto:aura.michaell@seznam.cz">aura.michaell@seznam.cz</a></li>
-        <li><strong>Telefon:</strong> +420 735 068 229</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Provozovatel:</strong> Michaela Svobodová – Aura Michaell Massage</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Sídlo:</strong> Šmilovského 663/1, 792 01 Bruntál, Česká republika</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>IČO:</strong> 23405830</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Kontaktní email:</strong> <a href="mailto:aura.michaell@seznam.cz">aura.michaell@seznam.cz</a></li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Telefon:</strong> +420 735 068 229</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Provozní doba:</strong> Po–Pá 9:00–18:00 (dle objednávek)</li>
+        <li style="font-family: 'Roboto', Arial, sans-serif;"><strong>Datová schránka:</strong> přidáme později</li>
       </ul>
     </section>
+
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-widgets">
         <h2>Zásady ochrany osobních údajů</h2>
-        <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR). Více informací naleznete v<a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+        <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
+        <h4>Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
         <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a href="#impressum">Impressum</a>
         <a href="privacy-policy.html">Ochrana osobních údajů</a>
       </div>
@@ -142,16 +139,21 @@
       </div>
       <img src="logo.png" alt="Footer Logo">
     </footer>
-
   </div>
-
   <!-- Lightbox Modal -->
   <div id="lightbox" class="modal">
     <img src="" alt="Rozšířený náhled" id="lightbox-img">
   </div>
-
   <!-- Scroll Button -->
   <button id="scrollTopBtn" aria-label="Zpět nahoru">⬆</button>
+
+  <!-- Opening Modal -->
+  <div id="opening-modal" class="opening-modal">
+    <div class="opening-modal__content">
+      <img src="otevirame-brzy.jpg" alt="Otevíráme brzy" class="opening-modal__img">
+      <button class="opening-modal__close" aria-label="Zavřít">&times;</button>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>
