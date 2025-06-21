@@ -205,6 +205,7 @@ header {
 
 /* O MNĚ */
 #about { margin-bottom: 60px; }
+<<<<<<< HEAD
 .about-text {
   font-size: 16px;
   text-align: center;
@@ -220,6 +221,8 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+=======
+>>>>>>> 401185e (Initial commit – hotovo s tím GDPR peklem)
 .about-row {
   display: flex;
   flex-direction: column;
@@ -616,4 +619,15 @@ footer img {
   #impressum ul {
     padding: 0 1rem;
   }
+<<<<<<< HEAD
+=======
+}
+@media (min-width: 800px) {
+  .privacy-hero img {
+    width: 23%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+>>>>>>> 401185e (Initial commit – hotovo s tím GDPR peklem)
 }
