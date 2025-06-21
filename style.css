@@ -4,6 +4,8 @@
   --accent: #7c4a27;
   --border: #5c3520;
 }
+
+/* ZÁKLADNÍ STYLY */
 body {
   margin: 0;
   padding: 0 var(--pad) 40px;
@@ -20,29 +22,19 @@ img, video, iframe {
   max-width: 100%;
   height: auto;
 }
+
+/* HEADER */
 header {
-  position: relative;    /* zajistí, že .header-banner je vztažen k headeru */
+  position: relative;
   min-height: 0;
   padding: 0;
   margin: 0;
 }
 .header-banner {
-  display: none; /* Skryje obrázek levyroh.png */
-}
-/* 1) Zrušte rámeček a stín u samotného <img> */
-.privacy-hero img {
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  display: block;      /* odstraní případné inline-gap kolem obrázku */
+  display: none;
 }
 
-/* 2) Pokud měl kontejner .privacy-hero bílý podklad nebo padding, odeberte ho */
-.privacy-hero {
-  background: transparent;
-  padding: 0;
-  margin: 2rem 0;      /* ponechte jen spodní a horní odsazení, jak potřebujete */
-}
+/* HERO SEKCE */
 .hero-title {
   display: flex;
   flex-direction: row;
@@ -65,15 +57,14 @@ header {
   text-align: left;
   line-height: 1.1;
   max-width: 420px;
-  margin-left: 0;      /* Žádné odsazení vpravo od banneru */
+  margin-left: 0;
 }
 @keyframes shine {
   from { background-position: -200% 0 }
   to { background-position: 200% 0 }
 }
-/* Zmenšení a stylování bubliny s logem */
 .logo-bubble {
-  margin-left: 80px;   /* větší mezera mezi textem a bublinou */
+  margin-left: 80px;
   width: 108px;
   height: 108px;
   border-radius: 50%;
@@ -83,9 +74,8 @@ header {
   justify-content: center;
   box-shadow: 0 4px 15px rgba(0,0,0,.5);
   flex-shrink: 0;
-  border: 2px solid #3e2f2a; /* tenká tmavá linka */
+  border: 2px solid #3e2f2a;
 }
-
 .logo-bubble img {
   width: 120%;
 }
@@ -97,6 +87,8 @@ header {
   font-size: 23px;
   margin-bottom: 40px;
 }
+
+/* KONTAKTNÍ SEKCE */
 .contact-group {
   display: flex;
   flex-direction: row;
@@ -126,10 +118,10 @@ header {
   font-size: 16px;
   margin: 4px 0;
 }
-.contact-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 8px;
+.contact-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
 }
 .contact-box a {
   color: inherit;
@@ -152,6 +144,8 @@ header {
 .contact-box a:hover::after {
   transform: scaleX(1);
 }
+
+/* NABÍDKA A CENÍK */
 .offer-box {
   border: 2px solid var(--border);
   background: rgba(0,0,0,0);
@@ -208,6 +202,8 @@ header {
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(0,0,0,.2);
 }
+
+/* O MNĚ */
 #about { margin-bottom: 60px; }
 .about-text {
   font-size: 16px;
@@ -223,6 +219,8 @@ header {
   width: 100%;
   border-radius: 16px;
 }
+
+/* PROSTOR A MAPA */
 #location { margin-bottom: 60px; }
 .prostor-map {
   display: flex;
@@ -260,6 +258,8 @@ header {
   text-align: center;
   color: #3e2f2a;
 }
+
+/* FOOTER */
 footer {
   text-align: center;
   margin-top: 20px;
@@ -268,6 +268,26 @@ footer img {
   width: 80px;
   opacity: .8;
 }
+.site-footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #5a3e2b;
+}
+.footer-widgets a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #7c4a27;
+}
+.footer-widgets a:hover {
+  text-decoration: underline;
+}
+.footer-copy {
+  margin-top: 1rem;
+}
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -287,6 +307,42 @@ footer img {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,.5);
 }
+.opening-modal {
+  display: flex;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.opening-modal__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.opening-modal__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.opening-modal__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.2em 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* SCROLL BUTTON */
 #scrollTopBtn {
   position: fixed;
   bottom: 20px;
@@ -308,6 +364,8 @@ footer img {
   opacity: 1;
   visibility: visible;
 }
+
+/* VOUCHERY */
 .voucher-btn {
   background: linear-gradient(180deg, var(--accent), #5c3520);
   color: #fff;
@@ -322,13 +380,11 @@ footer img {
   letter-spacing: 2px;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
-
 .voucher-btn:hover {
   background: #3e2f2a;
   transform: scale(1.05);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
-
 .voucher-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -351,13 +407,14 @@ footer img {
   text-align: center;
 }
 .voucher-note {
-  font-family: 'Tenor Sans', serif; /* stejný font jako zbytek stránky */
+  font-family: 'Tenor Sans', serif;
   font-size: 15px;
   color: #3e2f2a;
   margin-top: 6px;
   margin-bottom: 10px;
   letter-spacing: 0.5px;
 }
+
 /* IMPRESSUM & PRIVACY */
 .section {
   padding: 3rem 1rem;
@@ -375,7 +432,7 @@ footer img {
 }
 .section ul li strong {
   display: inline-block;
-  width: 150px;
+  width: 230px;
 }
 .section.imprint {
   background: #f9f6f2;
@@ -387,25 +444,7 @@ footer img {
   max-width: 800px;
 }
 
-/* FOOTER */
-.site-footer {
-  background-color: #ffffff;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #5a3e2b;
-}
-.footer-widgets a {
-  margin: 0 0.5rem;
-  text-decoration: none;
-  color: #7c4a27;
-}
-.footer-widgets a:hover {
-  text-decoration: underline;
-}
-.footer-copy {
-  margin-top: 1rem;
-}
+/* --- DESKTOP ÚPRAVY --- */
 @media (min-width: 601px) {
   body { padding: 20px 80px 80px; font-size: 18px; }
   .hero-title h1 { font-size: 80px; }
@@ -426,6 +465,8 @@ footer img {
   .offer-pricing-wrapper #pricing { flex: 1 1 45%; max-width: 420px; }
   .offer-pricing-wrapper #pricing .video-frame { width: 100%; }
 }
+
+/* --- MOBILNÍ REŽIM --- */
 @media (max-width: 600px) {
   body {
     padding: 0 4vw 40px 4vw;
@@ -524,10 +565,7 @@ footer img {
   footer img {
     width: 60px;
   }
-}
-
-/* --- MOBILNÍ REŽIM --- */
-@media (max-width: 600px) {
+  /* IMPRESSUM mobilně */
   .section {
     padding: 1.5rem 0.5rem;
     max-width: 100%;
@@ -553,22 +591,18 @@ footer img {
     margin-top: 0.7rem;
     font-size: 0.95em;
   }
-    #impressum ul li {
+  #impressum ul li {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 1rem;
   }
-
-  /* Label nad hodnotou */
   #impressum ul li strong {
     display: block;
     width: auto;
     margin-bottom: 0.25rem;
     font-weight: 600;
   }
-
-  /* Trochu zvětšit odsazení textu */
   #impressum ul {
     padding: 0 1rem;
   }
