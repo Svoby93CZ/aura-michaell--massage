@@ -1,0 +1,619 @@
+:root {
+  --pad: 10px;
+  --gap: 10px;
+  --accent: #7c4a27;
+  --border: #5c3520;
+}
+
+/* ZÁKLADNÍ STYLY */
+body {
+  margin: 0;
+  padding: 0 var(--pad) 40px;
+  font-family: 'Tenor Sans', serif;
+  background: url('pozadi.jpg') center/cover fixed no-repeat;
+  color: #3e2f2a;
+}
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+img, video, iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+.header-banner {
+  display: none;
+}
+
+/* HERO SEKCE */
+.hero-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.hero-title h1 {
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent), #3e2f2a, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 6px rgba(60,30,10,0.25), 0 0 1px #2b1c12;
+  margin: 0;
+  animation: shine 4s infinite;
+  text-align: left;
+  line-height: 1.1;
+  max-width: 420px;
+  margin-left: 0;
+}
+@keyframes shine {
+  from { background-position: -200% 0 }
+  to { background-position: 200% 0 }
+}
+.logo-bubble {
+  margin-left: 80px;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: #DCC7B1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  flex-shrink: 0;
+  border: 2px solid #3e2f2a;
+}
+.logo-bubble img {
+  width: 120%;
+}
+#hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+#hero .intro {
+  font-size: 23px;
+  margin-bottom: 40px;
+}
+
+/* KONTAKTNÍ SEKCE */
+.contact-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  justify-content: center;
+}
+.order-box, .contact-box {
+  width: 240px;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-align: center;
+}
+.order-box {
+  background: var(--accent);
+  color: #fff;
+  font-size: 23px;
+}
+.contact-box {
+  background: #fff;
+  border: 2px solid var(--accent);
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 4px 0;
+}
+.contact-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.contact-box a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+}
+.contact-box a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.contact-box a:hover::after {
+  transform: scaleX(1);
+}
+
+/* NABÍDKA A CENÍK */
+.offer-box {
+  border: 2px solid var(--border);
+  background: rgba(0,0,0,0);
+  border-radius: 16px;
+  padding: 16px;
+}
+.discount-bubble {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 24px;
+  border: 2px solid var(--border);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 auto;
+}
+.discount-main {
+  font-size: 23px;
+  font-weight: 600;
+}
+.discount-sub {
+  font-size: 42px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+.card-info {
+  background: rgba(124,74,39,.2);
+  padding: 12px 16px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3e2f2a;
+  margin: 20px auto;
+  max-width: 90%;
+}
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+  margin-top: 12px;
+}
+.cards img {
+  width: calc((100% - var(--gap)) / 2);
+  border-radius: 12px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
+  cursor: pointer;
+  transition: transform .2s;
+}
+.cards img:hover { transform: scale(1.03); }
+#pricing .video-frame {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+}
+
+/* O MNĚ */
+#about { margin-bottom: 60px; }
+.about-text {
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: rgba(102, 102, 102, 0.348); /* tmavý průhledný rámeček */
+  color: #000000;
+  border-radius: 14px;                /* lehce zaoblené rohy */
+  padding: 24px 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  display: block;              /* změna z inline-block na block */
+  max-width: 100%;             /* roztáhne na celou šířku */
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.about-row img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+/* PROSTOR A MAPA */
+#location { margin-bottom: 60px; }
+.prostor-map {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.prostor-img img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.address-box {
+  margin-top: 8px;
+  background: rgba(255,255,255,.6);
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 23px;
+  text-align: center;
+  color: #3e2f2a;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+footer img {
+  width: 80px;
+  opacity: .8;
+}
+.site-footer {
+  background-color: #ffffff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+  color: #5a3e2b;
+}
+.footer-widgets a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #7c4a27;
+}
+.footer-widgets a:hover {
+  text-decoration: underline;
+}
+.footer-copy {
+  margin-top: 1rem;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.show { display: flex; }
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.5);
+}
+.opening-modal {
+  display: flex;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.opening-modal__content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.opening-modal__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+.opening-modal__close {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  background: #fff;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 0.2em 0.6em;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* SCROLL BUTTON */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(124,74,39,.85);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+  z-index: 1000;
+}
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* VOUCHERY */
+.voucher-btn {
+  background: linear-gradient(180deg, var(--accent), #5c3520);
+  color: #fff;
+  border: 2px solid #3e2f2a;
+  border-radius: 24px;
+  padding: 14px 60px;
+  font-size: 40px;
+  font-family: 'Style Script', cursive;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.voucher-btn:hover {
+  background: #3e2f2a;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+.voucher-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.voucher-img {
+  width: 180px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+.voucher-img:hover {
+  transform: scale(1.05);
+}
+.voucher-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+.voucher-note {
+  font-family: 'Tenor Sans', serif;
+  font-size: 15px;
+  color: #3e2f2a;
+  margin-top: 6px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* IMPRESSUM & PRIVACY */
+.section {
+  padding: 3rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #4b3a2e;
+}
+.section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+.section ul li strong {
+  display: inline-block;
+  width: 230px;
+}
+.section.imprint {
+  background: #f9f6f2;
+  border: 2px solid #e0d2c0;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(124,74,39,0.07);
+  padding: 2.5rem 1.5rem;
+  margin: 2.5rem auto;
+  max-width: 800px;
+}
+
+/* --- DESKTOP ÚPRAVY --- */
+@media (min-width: 601px) {
+  body { padding: 20px 80px 80px; font-size: 18px; }
+  .hero-title h1 { font-size: 80px; }
+  .logo-bubble { width: 250px; height: 250px; }
+  .about-row { flex-direction: row; justify-content: center; }
+  .about-row img { width: 45%; }
+  .prostor-map { flex-direction: row; gap: 30px; }
+  .prostor-img, .map-address { flex: 1; }
+  .offer-pricing-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  .offer-pricing-wrapper #offer { flex: 1 1 45%; max-width: 480px; }
+  .offer-pricing-wrapper #pricing { flex: 1 1 45%; max-width: 420px; }
+  .offer-pricing-wrapper #pricing .video-frame { width: 100%; }
+}
+
+/* --- MOBILNÍ REŽIM --- */
+@media (max-width: 600px) {
+  body {
+    padding: 0 4vw 40px 4vw;
+    font-size: 16px;
+  }
+  .container {
+    width: 100%;
+    padding: 0;
+  }
+  .hero-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+  }
+  .hero-title h1 {
+    font-size: 32px;
+    max-width: 100%;
+    text-align: left;
+  }
+  .logo-bubble {
+    width: 160px !important;
+    height: 160px !important;
+    margin: 0 0 0 0;
+  }
+  .logo-bubble img {
+    width: 110%;
+  }
+  .contact-group {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+  .order-box, .contact-box {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 8px;
+  }
+  .cards {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .cards img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .voucher-gallery {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .voucher-img {
+    width: 90vw;
+    max-width: 320px;
+  }
+  .about-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .about-row img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .prostor-map {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .prostor-img img {
+    width: 100%;
+    max-width: 320px;
+  }
+  .map-container {
+    padding-top: 60vw;
+    min-height: 180px;
+  }
+  .address-box {
+    font-size: 14px;
+  }
+  .discount-bubble {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+  .discount-sub {
+    font-size: 28px;
+  }
+  .card-info {
+    font-size: 15px;
+    padding: 8px 8px;
+  }
+  .voucher-btn {
+    font-size: 20px;
+    padding: 10px 18px;
+  }
+  footer img {
+    width: 60px;
+  }
+  /* IMPRESSUM mobilně */
+  .section {
+    padding: 1.5rem 0.5rem;
+    max-width: 100%;
+    font-size: 0.98rem;
+  }
+  .section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .section ul li strong {
+    width: 110px;
+    font-size: 0.98rem;
+  }
+  .site-footer {
+    padding: 1.2rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  .footer-widgets a {
+    margin: 0 0.3rem;
+    font-size: 1rem;
+  }
+  .footer-copy {
+    margin-top: 0.7rem;
+    font-size: 0.95em;
+  }
+  #impressum ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  #impressum ul li strong {
+    display: block;
+    width: auto;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+  }
+  #impressum ul {
+    padding: 0 1rem;
+  }
+}
