@@ -205,24 +205,6 @@ header {
 
 /* O MNĚ */
 #about { margin-bottom: 60px; }
-<<<<<<< HEAD
-.about-text {
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 20px;
-  background: rgba(102, 102, 102, 0.348); /* tmavý průhledný rámeček */
-  color: #000000;
-  border-radius: 14px;                /* lehce zaoblené rohy */
-  padding: 24px 16px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
-  display: block;              /* změna z inline-block na block */
-  max-width: 100%;             /* roztáhne na celou šířku */
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-=======
->>>>>>> 401185e (Initial commit – hotovo s tím GDPR peklem)
 .about-row {
   display: flex;
   flex-direction: column;
@@ -619,8 +601,6 @@ footer img {
   #impressum ul {
     padding: 0 1rem;
   }
-<<<<<<< HEAD
-=======
 }
 @media (min-width: 800px) {
   .privacy-hero img {
@@ -629,5 +609,4 @@ footer img {
     display: block;
     margin: 0 auto;
   }
->>>>>>> 401185e (Initial commit – hotovo s tím GDPR peklem)
 }
