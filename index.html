@@ -32,22 +32,19 @@
         <a href="#cenik">Ceník</a>
         <a href="#about">Info o mně</a>
       </nav> -->
-      <div class="contact-group">
-        <div class="order-box">Objednejte se přes:</div>
-        <div class="contact-box">
-          <div class="contact-item">
-            <span class="contact-icon">
-              <img src="instalogo.png" alt="Instagram">
-            </span>
-            <a href="https://www.instagram.com/aura_michaell_massage" target="_blank"> aura_michaell_massage</a>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">
-              <img src="fb.png" alt="Facebook">
-            </span>
-            <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Aura Michaell Massage</a>
+      <div class="contact-group" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="order-box" style="margin-bottom: 18px;">Objednejte se přes:</div>
+        <div class="reservio-box">
+          <div class="reservio-center">
+            <div class="reservio-button-container"
+              data-text="Reservio"
+              data-size="large"
+              data-color="#795C34"
+              data-url="https://aura-michaell-massage.reservio.com">
+            </div>
           </div>
         </div>
+        <script src="https://cdn.reservio.com/widget/button-bundle.js"></script>
       </div>
     </section>
 
@@ -129,14 +126,16 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="footer-widgets">
-        <h2>Zásady ochrany osobních údajů</h2>
-        <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
-        <h4>Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+      <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
+        <h2 style="flex-basis: 100%; text-align: center;">Zásady ochrany osobních údajů</h2>
+        <h4 style="flex-basis: 100%; text-align: center;">Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
+        <h4 style="flex-basis: 100%; text-align: center;">Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+        <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
         <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
         <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#impressum">Impressum</a>
-        <a href="privacy-policy.html">Ochrana osobních údajů</a>
+        <a href="#impressum" style="margin-left: 18px;">Impressum</a>
+        <a href="privacy-policy.html" style="margin-left: 18px;">Ochrana osobních údajů</a>
       </div>
       <div class="footer-copy">
         © 2025 Aura Michaell Massage. Všechna práva vyhrazena.
