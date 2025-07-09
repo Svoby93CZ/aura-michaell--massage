@@ -934,16 +934,24 @@ footer img {
 @media (max-width: 700px) {
   .cenik-table {
     max-width: 100vw;
+    width: 100vw;
+    min-width: 0;
     padding: 8px 0;
     border-radius: 0;
     margin: 0 0 24px 0;
     box-shadow: 0 2px 12px rgba(124,74,39,0.10);
+    overflow-x: auto;
   }
   .cenik-inner {
     border-radius: 0;
     margin-bottom: 14px;
     box-shadow: none;
     background: #fff8f2;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+    overflow-x: auto;
+    display: block;
   }
   .cenik-inner td, .cenik-inner th {
     padding: 10px 4px;
@@ -958,6 +966,7 @@ footer img {
     white-space: normal;
     overflow: visible;
     text-overflow: unset;
+    word-break: break-word;
   }
   .cenik-inner tr td:last-child {
     min-width: 60px;
@@ -976,14 +985,18 @@ footer img {
     width: 100%;
   }
   .masaz-info-bubble {
-    left: 50%;
-    top: 100%;
-    transform: translate(-50%, 10px);
-    min-width: 0;
-    max-width: 95vw;
-    padding: 14px 8px 14px 8px;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    min-width: 0 !important;
+    max-width: 96vw !important;
+    width: 96vw !important;
+    padding: 14px 8px 14px 8px !important;
     font-size: 0.98em;
-    position: fixed;
+    position: fixed !important;
     z-index: 1001;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 }
