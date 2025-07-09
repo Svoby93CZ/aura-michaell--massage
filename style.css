@@ -99,30 +99,46 @@ header {
 /* NAVIGACE V HERO SEKCI */
 .hero-nav {
   display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
   justify-content: center;
-  gap: 32px;
-  margin: 24px 0 32px 0;
-  background: rgba(124, 74, 39, 0.13); /* jemný hnědý průhledný rámeček */
-  border: 2px solid #7c4a27;
-  border-radius: 24px;
-  padding: 14px 0;
-  box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+  align-items: center;
+  margin: 18px 0 24px 0;
+  font-size: 1.08em;
 }
-.hero-nav a {
+
+.hero-nav a, .hero-nav .nav-reservio {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 18px;
+  background: #fff8f2;
+  color: #7c4a27;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.18s, color 0.18s;
+  margin: 0 2px;
+}
+
+.hero-nav a:hover, .hero-nav .nav-reservio:hover a {
   background: #ab754e;
   color: #fff;
-  padding: 10px 28px;
-  border-radius: 24px;
-  text-decoration: none;
-  font-family: 'Raleway', sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: background 0.2s, color 0.2s;
 }
-.hero-nav a:hover {
-  background: #3e2f2a;
-  color: #e0b07a;
+
+@media (max-width: 600px) {
+  .hero-nav {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1em;
+    align-items: stretch;
+  }
+  .hero-nav a, .hero-nav .nav-reservio {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    margin: 0;
+    border-radius: 14px;
+    font-size: 1.08em;
+  }
 }
 
 /* KONTAKTNÍ SEKCE */
