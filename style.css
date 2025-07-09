@@ -999,17 +999,31 @@ footer img {
 }
 @media (min-width: 701px) {
   .cenik-mobile-list {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 32px;
-    max-width: 1100px;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    max-width: 1200px;
     margin: 0 auto 48px auto;
     padding: 0 24px;
   }
+  .cenik-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    max-width: 420px;
+  }
+  .cenik-column + .cenik-column {
+    border-left: 3px solid #e0d3c2;
+    padding-left: 48px;
+    margin-left: 0;
+  }
   .cenik-section-title {
-    grid-column: 1 / -1;
-    font-size: 1.5em;
-    margin: 48px 0 18px 0;
+    font-size: 1.4em;
+    margin: 0 0 12px 0;
     text-align: left;
     background: none;
     border-bottom: 2px solid #e0d3c2;
@@ -1021,17 +1035,18 @@ footer img {
   .cenik-mobile-item {
     background: #fff8f2;
     border: 2px solid #e0d3c2;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(124,74,39,0.09);
-    padding: 28px 28px 20px 28px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+    padding: 22px 18px 18px 18px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    position: relative;
-    transition: box-shadow 0.2s, transform 0.2s;
+    gap: 10px;
     min-width: 0;
-    max-width: 520px;
-    margin: 0 auto;
+    min-height: 120px; /* původně 210px */
+    max-width: 100%;
+    height: 120px;     /* původně 210px */
+    justify-content: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
   .cenik-mobile-item:hover {
     box-shadow: 0 8px 32px rgba(124,74,39,0.18);
@@ -1040,18 +1055,18 @@ footer img {
   .cenik-mobile-title {
     font-weight: 800;
     color: #7c4a27;
-    font-size: 1.18em;
+    font-size: 1.08em;
     margin-bottom: 2px;
     letter-spacing: 0.2px;
   }
   .cenik-mobile-price {
     color: #3e2f2a;
-    font-size: 1.18em;
+    font-size: 1.08em;
     font-weight: 700;
     align-self: flex-end;
     background: #e9e0d6;
-    border-radius: 10px;
-    padding: 6px 18px;
+    border-radius: 8px;
+    padding: 4px 14px;
     margin-top: 2px;
     box-shadow: 0 2px 8px rgba(124,74,39,0.07);
   }
@@ -1059,7 +1074,7 @@ footer img {
     background: none;
     border: none;
     color: #7c4a27;
-    font-size: 1.08em;
+    font-size: 1em;
     cursor: pointer;
     margin-left: 0;
     margin-top: 8px;
@@ -1078,13 +1093,15 @@ footer img {
     color: #3e2f2a;
     border: 1.5px solid #d2bfa7;
     border-radius: 12px;
-    padding: 16px 18px;
-    font-size: 1.04em;
-    margin-top: 10px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
     box-shadow: 0 4px 18px rgba(60,30,10,0.10);
-    position: relative;
+    position: static; /* bylo: relative */
     z-index: 2;
     animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
   }
   .cenik-mobile-item.active .cenik-mobile-info {
     display: block;
@@ -1105,5 +1122,20 @@ footer img {
     font-size: 1em;
     font-weight: 500;
     color: #4b3a2e;
+  }
+  /* Ostatní masáže pod sloupci, centrované */
+  .cenik-other-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+  .cenik-other-wrapper .cenik-mobile-item {
+    min-width: 320px;
+    max-width: 420px;
+    /* height: 160px;  <-- tuto řádku SMAŽTE nebo zakomentujte */
   }
 }
