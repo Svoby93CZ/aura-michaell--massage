@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Ceník | Aura Michaell Massage</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&family=Style+Script&family=Neonderthaw&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .cenik-table {
+      max-width: 750px !important;
+      width: 100%;
+      margin: 0 auto 40px auto;
+    }
+    .cenik-inner td {
+      white-space: nowrap;
+    }
+    .cenik-inner tr td:first-child {
+      width: 70%;
+      min-width: 320px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cenik-inner tr td:last-child {
+      width: 1%;
+      white-space: nowrap;
+      text-align: right;
+      background: #e9e0d6; /* tmavší pozadí pro ceny */
+      color: #3e2f2a;
+      font-weight: 700;
+      border-radius: 8px;
+    }
+    .cenik-inner tr td:last-child {
+      border-left: 2px solid #d2bfa7;
+    }
+    .masaz-row { position: relative; }
+    .info-btn {
+      background: none;
+      border: none;
+      color: #7c4a27;
+      font-size: 1.1em;
+      cursor: pointer;
+      margin-left: 6px;
+      vertical-align: middle;
+      padding: 0;
+    }
+    .masaz-info {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 110%;
+      z-index: 10;
+      background: #fff8f2;
+      color: #3e2f2a;
+      border: 1px solid #d2bfa7;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 0.98em;
+      min-width: 260px;
+      max-width: 340px;
+      box-shadow: 0 4px 18px rgba(60,30,10,0.12);
+    }
+    @media (max-width: 700px) {
+      .masaz-info {
+        position: static;
+        margin-top: 8px;
+        min-width: 0;
+        max-width: 100%;
+      }
+    }
+    .masaz-info-bubble {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      z-index: 10;
+      background: #fff;
+      color: #3e2f2a;
+      border: 1px solid #d2bfa7;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 0.9em;
+      white-space: normal;
+      max-width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .masaz-info-close {
+      background: none;
+      border: none;
+      color: #7c4a27;
+      font-size: 1.2em;
+      cursor: pointer;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
+      <h1>Ceník masáží</h1>
+      <div class="logo-bubble">
+        <img src="logo.png" alt="Logo">
+      </div>
+    </div>
+    <section id="cenik" style="margin-top: 32px;">
+      <div class="cenik-table">
+        <table style="width:100%; border-collapse:collapse; font-size:1.08em;">
+          <thead>
+            <tr style="background: #f7f2ed; color: #7c4a27;">
+              <th style="padding: 12px 8px; border-bottom: 2px solid #7c4a27; text-align:left;">Nabídka služeb</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <button class="cenik-toggle" type="button" onclick="toggleCenikSection('klasicke')">
+                  <span>▶</span> Klasické masáže
+                </button>
+                <table id="cenik-klasicke" class="cenik-inner" style="display:none; width:100%;">
+                  <tbody>
+                    <th style="padding: 12px 8px; border-bottom: 2px solid #7c4a27; text-align:left;">
+                      <h2>Co je klasická masáž?</h2>
+                      <h4>Klasická masáž je tradiční forma masáže, která se zaměřuje na uvolnění svalového napětí, zlepšení krevního oběhu a celkovou relaxaci těla.<br></h4>
+                      <h4>Provádí se pomocí různých technik, jako je hnětení, tření, tepání a protahování.<br></h4>
+                      <h4>Nejčastěji se masírují záda, šíje, ramena a končetiny.<br></h4>
+                      <h4>Klasická masáž pomáhá zmírnit stres, bolesti svalů i únavu a podporuje regeneraci organismu.<br></h4>
+                    </th>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Záda/šíje (60 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/8cc1ae74-f248-41f5-b532-87a75d527a49" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">800 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Záda (45 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/a92421fc-d090-4019-86ab-1755535844a5" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">600 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Záda/šíje/dolních končetin ze zadu (90 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/920debf7-eded-4359-8a81-3b99f8329bcf" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">1 100 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Záda/šíje/dolních končetin ze zadu/ze předu (120 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/cfbda387-3f4c-4ddb-bf89-9f553735ee35" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">1 400 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Dolních končetiny ze zadu/ze předu (60 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/5fc39bb3-7e02-4078-8a4f-857194b828a4" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">750 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Dlních končetin ze zadu (30 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/cdd9d157-6b1c-46a9-b2a6-9f854ff60cb9" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">300 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Dolních končetin ze předu (30 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/e114d069-2856-4e8b-8448-455734d0edae" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">300 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Horních končetin (30 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Bolesti svalů a zad</li>
+                            <li>Stres a napětí</li>
+                            <li>Únava a vyčerpání</li>
+                            <li>Ztuhlost svalů</li>
+                            <li>Zlepšení krevního a lymfatického oběhu</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Horečka a akutní infekce</li>
+                            <li>Kožní onemocnění nebo poranění kůže</li>
+                            <li>Křečové žíly (v místě výskytu)</li>
+                            <li>Nádorová onemocnění</li>
+                            <li>Krvácivé stavy nebo riziko trombózy</li>
+                            <a href="https://aura-michaell-massage.reservio.com/services/cfc019ba-80cc-4efd-a9f1-0183bde08544" target="_blank" rel="noopener noreferrer" class="info-btn">
+                              Rezervace online
+                            </a>
+                          </ul>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">500 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <button class="cenik-toggle" type="button" onclick="toggleCenikSection('sportovni')">
+                  <span>▶</span> Sportovní masáže
+                </button>
+                <table id="cenik-sportovni" class="cenik-inner sportovni-oddeleni" style="display:none; width:100%;">
+                  <tbody>
+                    <th style="padding: 12px 8px; border-bottom: 2px solid #7c4a27; text-align:left;">
+                      <h2>Co je sportovní masáž?</h2>
+                      <h4>Sportovní masáž je dynamická a cílená masáž určená především pro aktivní osoby a sportovce.<br></h4>
+                      <h4>Pomáhá připravit svaly na výkon, urychluje regeneraci po zátěži a předchází zraněním.<br></h4>
+                      <h4>Může být prováděna před výkonem (<strong style="color:#92ab4e;">aktivační</strong>), po výkonu (<strong style="color:#4eaba0;">regenerační</strong>) nebo jako součást pravidelné péče o pohybový aparát.<br></h4>
+                    </th>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Záda/šíje (40 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Ztuhlé nebo přetížené svaly</li>
+                            <li>Příprava na sportovní výkon</li>
+                            <li>Regenerace po fyzické námaze</li>
+                            <li>Prevence svalových poranění</li>
+                            <li>Zlepšení pohyblivosti a výkonnosti</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Akutní úrazy (např. výrony, natržení svalů)</li>
+                            <li>Horečka, infekce</li>
+                            <li>Záněty svalů nebo kloubů</li>
+                            <li>Kožní onemocnění v místě masáže</li>
+                            <li>Srdeční onemocnění nebo vysoký krevní tlak (<strong style="color:#af4238;">bez lékařského souhlasu</strong>)</li>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/cc7f914d-b398-4a1f-bb89-9c20d39eafd0" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">650 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Šíje (15 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Ztuhlé nebo přetížené svaly</li>
+                            <li>Příprava na sportovní výkon</li>
+                            <li>Regenerace po fyzické námaze</li>
+                            <li>Prevence svalových poranění</li>
+                            <li>Zlepšení pohyblivosti a výkonnosti</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Akutní úrazy (např. výrony, natržení svalů)</li>
+                            <li>Horečka, infekce</li>
+                            <li>Záněty svalů nebo kloubů</li>
+                            <li>Kožní onemocnění v místě masáže</li>
+                            <li>Srdeční onemocnění nebo vysoký krevní tlak (<strong style="color:#af4238;">bez lékařského souhlasu</strong>)</li>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/c9febe66-1ee5-497a-bc5c-e087dd1d9e07" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">180 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Zad/šíje/dolních kočetin ze zadu/ze předu (110 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Ztuhlé nebo přetížené svaly</li>
+                            <li>Příprava na sportovní výkon</li>
+                            <li>Regenerace po fyzické námaze</li>
+                            <li>Prevence svalových poranění</li>
+                            <li>Zlepšení pohyblivosti a výkonnosti</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Akutní úrazy (např. výrony, natržení svalů)</li>
+                            <li>Horečka, infekce</li>
+                            <li>Záněty svalů nebo kloubů</li>
+                            <li>Kožní onemocnění v místě masáže</li>
+                            <li>Srdeční onemocnění nebo vysoký krevní tlak (<strong style="color:#af4238;">bez lékařského souhlasu</strong>)</li>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/fb4065e8-74fe-47c6-b6fe-10246772fca6" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">1 250 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Dolních končetin ze zadu/ze předu (110 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Ztuhlé nebo přetížené svaly</li>
+                            <li>Příprava na sportovní výkon</li>
+                            <li>Regenerace po fyzické námaze</li>
+                            <li>Prevence svalových poranění</li>
+                            <li>Zlepšení pohyblivosti a výkonnosti</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Akutní úrazy (např. výrony, natržení svalů)</li>
+                            <li>Horečka, infekce</li>
+                            <li>Záněty svalů nebo kloubů</li>
+                            <li>Kožní onemocnění v místě masáže</li>
+                            <li>Srdeční onemocnění nebo vysoký krevní tlak (<strong style="color:#af4238;">bez lékařského souhlasu</strong>)</li>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/11af849a-d558-4a49-84da-691967541069" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">650 Kč</td>
+                    </tr>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Horních končetin + rameno (40 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <strong class="indikace">Indikace</strong><strong> (kdy je masáž vhodná):</strong>
+                          <ul>
+                            <li>Ztuhlé nebo přetížené svaly</li>
+                            <li>Příprava na sportovní výkon</li>
+                            <li>Regenerace po fyzické námaze</li>
+                            <li>Prevence svalových poranění</li>
+                            <li>Zlepšení pohyblivosti a výkonnosti</li>
+                          </ul>
+                          <strong class="kontraindikace">Kontraindikace</strong><strong> (kdy se masáž nedoporučuje):</strong>
+                          <ul>
+                            <li>Akutní úrazy (např. výrony, natržení svalů)</li>
+                            <li>Horečka, infekce</li>
+                            <li>Záněty svalů nebo kloubů</li>
+                            <li>Kožní onemocnění v místě masáže</li>
+                            <li>Srdeční onemocnění nebo vysoký krevní tlak (<strong style="color:#af4238;">bez lékařského souhlasu</strong>)</li>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/1b6bdcdd-3390-4be2-94fc-10db7507a18f" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">400 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <table class="cenik-inner" style="width:100%;">
+                  <tbody>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Baňkování (50 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <h5>Baňkování je tradiční terapeutická metoda, při které se na pokožku přikládají speciální skleněné, silikonové nebo plastové baňky, ve kterých se vytvoří podtlak.</h5>
+                          <h5>Tím dochází k prokrvení tkání, uvolnění svalového napětí, podpoře lymfatického systému a detoxikaci organismu.</h5>
+                          <h5>Baňkování se často používá k úlevě od bolesti zad, svalových blokád nebo při nachlazení. Ošetření může zanechat dočasné kruhové otlaky na kůži.</h5>
+                          </ul>
+                          <a href="https://aura-michaell-massage.reservio.com/services/6be9b101-bbf4-40af-baf2-1f3fa1195b03" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">800 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <table class="cenik-inner" style="width:100%;">
+                  <tbody>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Lávové kameny (50 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <h5>Masáž lávovými kameny je relaxační a terapeutická technika, při které se používají nahřáté hladké lávové kameny.</h5>
+                          <h5>Teplo z kamenů proniká hluboko do svalů, uvolňuje napětí, zlepšuje krevní oběh a podporuje detoxikaci organismu.</h5>
+                          <h5>Masáž navozuje hlubokou relaxaci, ulevuje od stresu a pomáhá obnovit energetickou rovnováhu těla.</h5>
+                          <a href="https://aura-michaell-massage.reservio.com/services/40f64f4e-c7d7-4656-bcaa-9c5f2ab7b188" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">800 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <table class="cenik-inner" style="width:100%;">
+                  <tbody>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Antistresová masáž hlavy (30 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <h5>Antistresová masáž hlavy je relaxační technika zaměřená na uvolnění napětí v oblasti hlavy, šíje a temene.</h5>
+                          <h5>Pomáhá zmírnit stres, bolesti hlavy, únavu a podporuje duševní rovnováhu.</h5>
+                          <h5>Masáž zlepšuje prokrvení pokožky hlavy, může podpořit růst vlasů a navodit pocit celkového uvolnění.</h5>
+                          <h5>Provádí se jemnými tahy, tlakem prstů a krouživými pohyby</h5>
+                          <a href="https://aura-michaell-massage.reservio.com/services/322423c0-bdda-49e4-bb01-dc289824e725" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">400 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" style="padding:0;">
+                <table class="cenik-inner" style="width:100%;">
+                  <tbody>
+                    <tr class="masaz-row" onclick="showMasazInfo(this)">
+                      <td>
+                        Relaxační masáž obličeje a dekoltu (30 min)
+                        <div class="masaz-info-bubble">
+                          <button class="masaz-info-close" onclick="closeMasazInfo(event)">&times;</button>
+                          <h5>Relaxační masáž obličeje a dekoltu je jemná a uklidňující masážní technika zaměřená na uvolnění napětí ve svalech obličeje, krku a horní části hrudníku.</h5>
+                          <h5>Pomáhá zlepšit prokrvení, podpořit lymfatický odtok, redukovat stres a navodit pocit hluboké relaxace.</h5>
+                          <h5>Masáž může zároveň přispět k osvěžení vzhledu pleti, zmírnění otoků a zlepšení její elasticity.</h5>
+                          <a href="https://aura-michaell-massage.reservio.com/services/789051db-4d63-4b75-8e9a-bdd1e25814e3" target="_blank" rel="noopener noreferrer" class="info-btn">
+                            Rezervace online
+                          </a>
+                        </div>
+                      </td>
+                      <td style="text-align:right;">400 Kč</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="max-width: 600px; margin: 0 auto; color: #3e2f2a; font-size: 1.04em; line-height: 1.6;">
+        <h1 style="color:#7c4a27; font-size:1.2em; margin-top:0;">Jak probíhá masáž?</h1>
+        <ul style="margin:0 0 18px 0; padding-left:18px;">
+          <li><h3>Individuální přístup a konzultace před masáží</h3></li>
+          <li><h3>Použití kvalitních přírodních olejů</h3></li>
+          <li><h3>Možnost zakoupení dárkových poukazů na místě</h3></li>
+          <li><h3>Platba v hotovosti (v budoucnu možno kartou)</h3></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
+        <h2 style="flex-basis: 100%; text-align: center;">Zásady ochrany osobních údajů</h2>
+        <h4 style="flex-basis: 100%; text-align: center;">Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
+        <h4 style="flex-basis: 100%; text-align: center;">Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+        <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
+        <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
+        <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="#impressum" style="margin-left: 18px;">Impressum</a>
+        <a href="privacy-policy.html" style="margin-left: 18px;">Ochrana osobních údajů</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 Aura Michaell Massage. Všechna práva vyhrazena.
+      </div>
+      <img src="logo.png" alt="Footer Logo">
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -83,9 +83,17 @@ header {
   text-align: center;
   margin-bottom: 40px;
 }
-#hero .intro {
-  font-size: 23px;
+#hero .intro,
+#poukazy .intro {
+  font-size: 1.35em;
+  color: #000000;
+  text-align: center;
   margin-bottom: 40px;
+  text-shadow:
+    0 2px 8px rgba(60,30,10,0.25),
+    0 0 2px #000;
+  letter-spacing: 0.2px;
+  line-height: 1.5;
 }
 
 /* NAVIGACE V HERO SEKCI */
@@ -330,16 +338,15 @@ footer img {
 .modal {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.8);
+  z-index: 2000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
-.modal.show { display: flex; }
+.modal.show, .modal[style*="display: flex"] {
+  display: flex !important;
+}
 .modal img {
   max-width: 90%;
   max-height: 90%;
@@ -481,6 +488,15 @@ footer img {
   padding: 2.5rem 1.5rem;
   margin: 2.5rem auto;
   max-width: 800px;
+}
+.cenik-section-title {
+  color: #7c4a27;
+  font-size: 1.35em;
+  margin: 36px 0 18px 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e0d3c2;
+  padding-bottom: 6px;
 }
 
 /* --- DESKTOP ÚPRAVY --- */
@@ -686,4 +702,214 @@ footer img {
 .reservio-button-container .rv-btn:hover {
   box-shadow: 0 16px 48px rgba(60,30,10,0.38);
   transform: translateY(-3px) scale(1.06);
+}
+.reservio-nav-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #4a2a0d 60%, #7c4a27 100%);
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.18em;
+  font-weight: 800;
+  padding: 13px 34px;
+  border-radius: 28px;
+  margin-left: 24px;
+  box-shadow:
+    0 6px 28px 0 rgba(60,30,10,0.38),
+    0 2px 0 #3e2f2a inset;
+  text-decoration: none;
+  letter-spacing: 0.7px;
+  border: 2px solid #3e2f2a;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 
+    background 0.2s, 
+    color 0.2s, 
+    box-shadow 0.2s, 
+    transform 0.2s,
+    border-color 0.2s;
+}
+.reservio-nav-btn:hover,
+.reservio-nav-btn:focus {
+  background: linear-gradient(90deg, #3e2f2a 70%, #ab754e 100%);
+  color: #ffdcae;
+  box-shadow: 0 12px 40px 0 rgba(60,30,10,0.48);
+  border-color: #ab754e;
+  transform: translateY(-3px) scale(1.07);
+}
+/* --- Ceník masáží --- */
+.cenik-table {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto 40px auto;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgba(124,74,39,0.13);
+  padding: 28px 0 32px 0;
+  background: linear-gradient(135deg, #ffead7 70%, #f7e3c6 100%);
+  border: 2px solid #e0d3c2;
+  transition: box-shadow 0.2s, background 0.2s, min-height 0.3s;
+  overflow: visible;
+}
+.cenik-inner td {
+  white-space: nowrap;
+}
+.cenik-inner tr td:first-child {
+  width: 70%;
+  min-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cenik-inner tr td:last-child {
+  width: 1%;
+  white-space: nowrap;
+  text-align: right;
+  background: #e9e0d6;
+  color: #3e2f2a;
+  font-weight: 700;
+  border-radius: 8px;
+  border-left: 2px solid #d2bfa7;
+}
+.masaz-row {
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.masaz-row:hover, .masaz-row.active {
+  background: #f7e3c6;
+  box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+}
+.masaz-info-bubble {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  z-index: 20;
+  background: #fff8f2;
+  color: #3e2f2a;
+  border: 1.5px solid #d2bfa7;
+  border-radius: 18px;
+  padding: 22px 32px 22px 22px;
+  font-size: 1.05em;
+  min-width: 260px;
+  max-width: 380px;
+  box-shadow: 0 8px 32px rgba(124,74,39,0.18);
+  box-sizing: border-box;
+  animation: fadeInBubble .2s;
+}
+@media (max-width: 700px) {
+  .masaz-info-bubble {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 10px);
+    min-width: 0;
+    max-width: 95vw;
+    padding: 16px 12px 16px 12px;
+    font-size: 1em;
+  }
+}
+.masaz-info-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #7c4a27;
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.masaz-info-bubble ul {
+  margin: 6px 0 10px 18px;
+  padding: 0;
+  font-size: 0.98em;
+}
+@media (max-width: 700px) {
+  .masaz-info-bubble {
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 10px);
+    min-width: 0;
+    max-width: 95vw;
+    padding: 14px 18px 14px 14px;
+  }
+}
+.info-btn {
+  background: none;
+  border: none;
+  color: #7c4a27;
+  font-size: 1.1em;
+  cursor: pointer;
+  margin-left: 6px;
+  vertical-align: middle;
+  padding: 0;
+}
+.masaz-info {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  z-index: 10;
+  background: #fff8f2;
+  color: #3e2f2a;
+  border: 1px solid #d2bfa7;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-size: 0.98em;
+  min-width: 260px;
+  max-width: 340px;
+  box-shadow: 0 4px 18px rgba(60,30,10,0.12);
+}
+@media (max-width: 700px) {
+  .masaz-info {
+    position: static;
+    margin-top: 8px;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+.cenik-toggle {
+  width: 100%;
+  background: #f7f2ed;
+  color: #7c4a27;
+  font-size: 1.08em;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: 14px 0 14px 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.18s;
+  border-bottom: 1px solid #e0d3c2;
+}
+.cenik-toggle:hover,
+.cenik-toggle:focus {
+  background: #e9e0d6;
+}
+.cenik-toggle span {
+  display: inline-block;
+  width: 1.2em;
+  font-size: 1.1em;
+  transition: transform 0.2s;
+}
+.cenik-inner {
+  background: #ffe8d2; /* tmavší odstín než #ab754e */
+  border-radius: 0 0 12px 12px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 12px rgba(124,74,39,0.04);
+}
+
+/* Oddělení sekcí v ceníku tmavou linkou */
+.cenik-inner.sportovni-oddeleni {
+  border-bottom: 3px solid #7c4a27;
+  margin-bottom: 32px;
+}
+.masaz-info-bubble strong.indikace {
+  color: #92ab4e;
+}
+.masaz-info-bubble strong.kontraindikace {
+  color: #af4238;
 }

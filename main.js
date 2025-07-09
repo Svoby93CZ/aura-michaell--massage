@@ -80,3 +80,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+function toggleCenikSection(section) {
+  const table = document.getElementById('cenik-' + section);
+  const btn = table.previousElementSibling;
+  const icon = btn.querySelector('span');
+  if (table.style.display === 'none' || table.style.display === '') {
+    table.style.display = 'table';
+    icon.textContent = '▼';
+  } else {
+    table.style.display = 'none';
+    icon.textContent = '▶';
+  }
+}
+
+function toggleMasazInfo(row) {
+  // Zavře všechny ostatní info
+  document.querySelectorAll('.masaz-row').forEach(function(tr) {
+    if (tr !== row) {
+      tr.classList.remove('active');
+      let info = tr.querySelector('.masaz-info');
+      if(info) info.style.display = 'none';
+    }
+  });
+  // Přepne aktuální info
+  let info = row.querySelector('.masaz-info');
+  if (info) {
+    if (info.style.display === 'block') {
+      info.style.display = 'none';
+      row.classList.remove('active');
+    } else {
+      info.style.display = 'block';
+      row.classList.add('active');
+    }
+  }
+}
+
+function showMasazInfo(row) {
+  // Zavřít všechny ostatní bubliny
+  document.querySelectorAll('.masaz-info-bubble').forEach(bubble => bubble.style.display = 'none');
+  document.querySelectorAll('.masaz-row').forEach(tr => tr.classList.remove('active'));
+  // Zobrazit bublinu v aktuálním řádku
+  const bubble = row.querySelector('.masaz-info-bubble');
+  if (bubble) {
+    bubble.style.display = 'block';
+    row.classList.add('active');
+
+    // Přidat posluchač pro zavření kliknutím mimo bublinu
+    setTimeout(() => {
+      function outsideClick(e) {
+        if (!bubble.contains(e.target) && !row.contains(e.target)) {
+          bubble.style.display = 'none';
+          row.classList.remove('active');
+          document.removeEventListener('mousedown', outsideClick);
+        }
+      }
+      document.addEventListener('mousedown', outsideClick);
+    }, 10);
+  }
+}
+
+function closeMasazInfo(e) {
+  e.stopPropagation();
+  const bubble = e.target.closest('.masaz-info-bubble');
+  if (bubble) {
+    bubble.style.display = 'none';
+    const row = bubble.closest('.masaz-row');
+    if (row) row.classList.remove('active');
+  }
+}

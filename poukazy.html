@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Dárkové poukazy | Aura Michaell Massage</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&family=Style+Script&family=Neonderthaw&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
+      <h1>Dárkové poukazy</h1>
+      <div class="logo-bubble">
+        <img src="logo.png" alt="Logo">
+      </div>
+    </div>
+
+    <section id="poukazy">
+      <p class="intro">
+        Udělejte radost svým blízkým dárkovým poukazem na masáž.<br>
+        Poukazy lze zakoupit pouze osobně v salónu.
+      </p>
+      <div class="voucher-gallery" style="margin-top: 20px;">
+        <img src="Poukazy/Poukaz 200,-.jpg" alt="Poukaz 200 Kč" class="voucher-img">
+        <img src="Poukazy/Poukaz 500,-.jpg" alt="Poukaz 500 Kč" class="voucher-img">
+        <img src="Poukazy/Poukaz 800,-.jpg" alt="Poukaz 800 Kč" class="voucher-img">
+        <img src="Poukazy/Poukaz 1000,-.jpg" alt="Poukaz 1000 Kč" class="voucher-img">
+        <img src="Poukazy/Poukaz 1500,-.jpg" alt="Poukaz 1500 Kč" class="voucher-img">
+        <img src="Poukazy/Poukaz 2000,-.jpg" alt="Poukaz 2000 Kč" class="voucher-img">
+      </div>
+    </section>
+
+    <!-- Lightbox pro zobrazení poukazu -->
+    <div id="voucher-lightbox" class="modal" style="display:none;">
+      <img src="" alt="Náhled poukazu" id="voucher-lightbox-img" style="max-width:90vw; max-height:90vh; border-radius:14px;">
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
+        <a href="index.html">Domů</a>
+        <a href="privacy-policy.html">Ochrana osobních údajů</a>
+        <a href="#impressum">Impressum</a>
+        <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
+        <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
+        <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
+      <div class="footer-copy">
+        © 2025 Aura Michaell Massage. Všechna práva vyhrazena.
+      </div>
+      <img src="logo.png" alt="Footer Logo">
+    </footer>
+  </div>
+  <script>
+    // Otevření lightboxu po kliknutí na obrázek poukazu
+    document.querySelectorAll('.voucher-img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        document.getElementById('voucher-lightbox-img').src = this.src;
+        document.getElementById('voucher-lightbox').style.display = 'flex';
+      });
+    });
+    // Zavření lightboxu kliknutím mimo obrázek
+    document.getElementById('voucher-lightbox').addEventListener('click', function(e) {
+      if (e.target === this) this.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
