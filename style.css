@@ -941,17 +941,27 @@ footer img {
     margin: 0 0 24px 0;
     box-shadow: 0 2px 12px rgba(124,74,39,0.10);
     overflow-x: auto;
+    /* Přidáno pro lepší mobilní zobrazení */
+    box-sizing: border-box;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .cenik-table > table {
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box;
   }
   .cenik-inner {
     border-radius: 0;
     margin-bottom: 14px;
     box-shadow: none;
     background: #fff8f2;
-    width: 100vw;
+    width: 100%;
     min-width: 0;
-    max-width: 100vw;
+    max-width: 100%;
     overflow-x: auto;
     display: block;
+    box-sizing: border-box;
   }
   .cenik-inner td, .cenik-inner th {
     padding: 10px 4px;
