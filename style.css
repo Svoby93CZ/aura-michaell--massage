@@ -999,6 +999,111 @@ footer img {
 }
 @media (min-width: 701px) {
   .cenik-mobile-list {
-    display: none !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 32px;
+    max-width: 1100px;
+    margin: 0 auto 48px auto;
+    padding: 0 24px;
+  }
+  .cenik-section-title {
+    grid-column: 1 / -1;
+    font-size: 1.5em;
+    margin: 48px 0 18px 0;
+    text-align: left;
+    background: none;
+    border-bottom: 2px solid #e0d3c2;
+    padding-bottom: 8px;
+    color: #7c4a27;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .cenik-mobile-item {
+    background: #fff8f2;
+    border: 2px solid #e0d3c2;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(124,74,39,0.09);
+    padding: 28px 28px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    transition: box-shadow 0.2s, transform 0.2s;
+    min-width: 0;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .cenik-mobile-item:hover {
+    box-shadow: 0 8px 32px rgba(124,74,39,0.18);
+    transform: translateY(-2px) scale(1.015);
+  }
+  .cenik-mobile-title {
+    font-weight: 800;
+    color: #7c4a27;
+    font-size: 1.18em;
+    margin-bottom: 2px;
+    letter-spacing: 0.2px;
+  }
+  .cenik-mobile-price {
+    color: #3e2f2a;
+    font-size: 1.18em;
+    font-weight: 700;
+    align-self: flex-end;
+    background: #e9e0d6;
+    border-radius: 10px;
+    padding: 6px 18px;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(124,74,39,0.07);
+  }
+  .cenik-mobile-info-btn {
+    background: none;
+    border: none;
+    color: #7c4a27;
+    font-size: 1.08em;
+    cursor: pointer;
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-start;
+    padding: 0;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .cenik-mobile-info-btn:hover {
+    color: #ab754e;
+    text-decoration: underline;
+  }
+  .cenik-mobile-info {
+    display: none;
+    background: #fff8f2;
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 16px 18px;
+    font-size: 1.04em;
+    margin-top: 10px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: relative;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+  }
+  .cenik-mobile-item.active .cenik-mobile-info {
+    display: block;
+  }
+  .cenik-mobile-info strong.indikace {
+    color: #92ab4e;
+  }
+  .cenik-mobile-info strong.kontraindikace {
+    color: #af4238;
+  }
+  .cenik-mobile-info ul {
+    margin: 6px 0 10px 18px;
+    padding: 0;
+    font-size: 0.98em;
+  }
+  .cenik-mobile-info h5 {
+    margin: 0 0 8px 0;
+    font-size: 1em;
+    font-weight: 500;
+    color: #4b3a2e;
   }
 }
