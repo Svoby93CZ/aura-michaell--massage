@@ -100,21 +100,44 @@ function setupMasazeModals() {
         // Kopírovat obsah z bubliny do modálu
         modalContent.innerHTML = info.innerHTML;
         
+        // Optimalizace odkazů v modálu pro mobilní zařízení
+        const reservationLink = modalContent.querySelector('.info-btn');
+        if (reservationLink && window.innerWidth < 700) {
+          reservationLink.style.display = 'block';
+          reservationLink.style.marginTop = '20px';
+          reservationLink.style.padding = '12px 16px';
+        }
+        
         // Zobrazit modální okno
         modalOverlay.style.display = 'flex';
         
         // Zamknout scrollování na body
         document.body.style.overflow = 'hidden';
+        
+        // Automaticky scrollovat nahoru v modálním obsahu
+        modalContent.scrollTop = 0;
       }
     });
   });
   
-  // Zavřít modální okno kliknutím na křížek
+  // Vylepšené dotykové události pro zavírací tlačítko modálu
   if (modalClose) {
-    modalClose.addEventListener('click', function() {
+    // Odstranit existující event listenery
+    const newCloseBtn = modalClose.cloneNode(true);
+    modalClose.parentNode.replaceChild(newCloseBtn, modalClose);
+    
+    // Přidat vylepšený event listener pro dotykové ovládání
+    newCloseBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
       modalOverlay.style.display = 'none';
       document.body.style.overflow = '';
     });
+    
+    // Přidat dotykovou oblast kolem tlačítka pro lepší dostupnost na mobilních zařízeních
+    if ('ontouchstart' in window) {
+      newCloseBtn.style.padding = '10px';
+    }
   }
   
   // Zavřít modální okno kliknutím na pozadí

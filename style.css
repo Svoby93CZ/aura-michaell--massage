@@ -1625,10 +1625,88 @@ footer img {
 }
 
 @media (max-width: 700px) {
+  /* Zmenšení přebytečných mezer pro lepší využití místa */
+  .hero-title {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  
+  /* Vylepšení čitelnosti a použitelnosti modálního okna */
   .masaz-modal-container {
-    width: 92%;
+    width: 94%;
     max-width: none;
-    padding: 24px 20px 20px;
+    padding: 20px 16px 16px;
+    margin: 10px;
+    font-size: 15px;
+    max-height: 85vh;
+  }
+  
+  .masaz-modal-close {
+    top: 6px;
+    right: 10px;
+    font-size: 28px; /* Větší zavírací tlačítko pro lepší dotykové ovládání */
+    padding: 5px; /* Zvětšení dotykové plochy */
+  }
+  
+  /* Optimalizace položek ceníku */
+  .cenik-mobile-item {
+    padding: 16px 12px 12px 12px;
+    margin-bottom: 4px;
+  }
+  
+  .cenik-mobile-title {
+    font-size: 1.05em;
+    line-height: 1.3;
+    margin-right: 60px; /* Prostor pro cenu */
+  }
+  
+  .cenik-mobile-price {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+  }
+  
+  /* Optimalizace sekce s vysvětlením jak probíhá masáž */
+  #cenik > div[style*="max-width: 600px"] {
+    padding: 0 8px;
+  }
+  
+  /* Vylepšené čtení textů v modálním okně */
+  .masaz-modal-content ul {
+    padding-left: 20px;
+    margin: 6px 0 12px 0;
+  }
+  
+  .masaz-modal-content .info-btn {
+    display: block; /* Na celou šířku pro lepší dotyková oblast */
+    margin: 16px auto 4px auto;
+    padding: 10px 16px;
+    max-width: 200px;
+    text-align: center;
+  }
+  
+  /* Oprava překrývání textu a obrázků v patičce */
+  .footer-widgets {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 10px;
+  }
+  
+  /* Vylepšení zarovnání a velikostí v sekci "Ostatní služby" */
+  .cenik-other-wrapper .cenik-mobile-item {
+    width: 100%;
+    margin: 0 0 16px 0;
+  }
+}
+
+/* Fixace dotykovosti pro iOS zařízení */
+@media (hover: none) {
+  .cenik-mobile-item:hover {
+    transform: none;
+  }
+  
+  .info-btn, .masaz-modal-close {
+    cursor: default; /* Odstranění kurzoru na dotykových zařízeních */
   }
 }
 
