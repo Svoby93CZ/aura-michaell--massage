@@ -930,7 +930,7 @@ footer img {
 }
 
 /* --- MOBILNÍ REŽIM PRO CENÍK MASÁŽÍ --- */
-/*@media (max-width: 700px) {
+@media (max-width: 700px) {
   .cenik-table {
     display: none !important;
   }
@@ -953,7 +953,7 @@ footer img {
     flex-direction: column;
     gap: 8px;
     position: relative;
-    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný *
+    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
   }
   .cenik-mobile-title {
     font-weight: 700;
@@ -992,7 +992,7 @@ footer img {
     font-size: 1em;
     margin-top: 8px;
     box-shadow: 0 4px 18px rgba(60,30,10,0.10);
-    position: static; /* bylo: relative *
+    position: static; /* bylo: relative */
     z-index: 2;
     animation: fadeInBubble .2s;
     overflow-y: visible;
@@ -1001,7 +1001,7 @@ footer img {
   .cenik-mobile-item.active .cenik-mobile-info {
     display: block;
   }
-}*/
+}
 @media (min-width: 701px) {
   .cenik-mobile-list {
     display: flex !important;
