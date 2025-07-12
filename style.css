@@ -4,7 +4,6 @@
   --accent: #7c4a27;
   --border: #5c3520;
 }
-
 /* ZÁKLADNÍ STYLY */
 body {
   margin: 0;
@@ -334,7 +333,7 @@ footer img {
 .site-footer {
   background-color: #ffffff;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0.8rem 0.5rem; /* původně 2rem 1rem */
   font-size: 0.9rem;
   color: #5a3e2b;
 }
@@ -954,15 +953,16 @@ footer img {
     flex-direction: column;
     gap: 8px;
     position: relative;
+    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
   }
   .cenik-mobile-title {
     font-weight: 700;
     color: #7c4a27;
     font-size: 1.08em;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
   .cenik-mobile-price {
-    color: #3e2f2a;
+    color: #fff;
     font-size: 1.08em;
     font-weight: 700;
     align-self: flex-end;
@@ -986,12 +986,17 @@ footer img {
     display: none;
     background: #fff8f2;
     color: #3e2f2a;
-    border: 1px solid #d2bfa7;
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 0.98em;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
     margin-top: 8px;
-    box-shadow: 0 4px 18px rgba(60,30,10,0.12);
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static; /* bylo: relative */
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
   }
   .cenik-mobile-item.active .cenik-mobile-info {
     display: block;
@@ -1024,7 +1029,7 @@ footer img {
   .cenik-section-title {
     font-size: 1.4em;
     margin: 0 0 12px 0;
-    text-align: left;
+    text-align: center;
     background: none;
     border-bottom: 2px solid #e0d3c2;
     padding-bottom: 8px;
@@ -1042,29 +1047,26 @@ footer img {
     flex-direction: column;
     gap: 10px;
     min-width: 0;
-    min-height: 120px; /* původně 210px */
+    min-height: 120px;
     max-width: 100%;
-    height: 120px;     /* původně 210px */
+    height: 120px;
     justify-content: flex-start;
     transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .cenik-mobile-item:hover {
-    box-shadow: 0 8px 32px rgba(124,74,39,0.18);
-    transform: translateY(-2px) scale(1.015);
+    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
   }
   .cenik-mobile-title {
     font-weight: 800;
-    color: #7c4a27;
+    color: #ffffff;
     font-size: 1.08em;
     margin-bottom: 2px;
     letter-spacing: 0.2px;
   }
   .cenik-mobile-price {
-    color: #3e2f2a;
+    color: #fff;
     font-size: 1.08em;
     font-weight: 700;
     align-self: flex-end;
-    background: #e9e0d6;
+    background: #3e2f2a;
     border-radius: 8px;
     padding: 4px 14px;
     margin-top: 2px;
@@ -1073,7 +1075,7 @@ footer img {
   .cenik-mobile-info-btn {
     background: none;
     border: none;
-    color: #7c4a27;
+    color: #ffffff;
     font-size: 1em;
     cursor: pointer;
     margin-left: 0;
@@ -1138,4 +1140,516 @@ footer img {
     max-width: 420px;
     /* height: 160px;  <-- tuto řádku SMAŽTE nebo zakomentujte */
   }
+  .cenik-mobile-item.bg-masaz-zada,
+  .cenik-mobile-item.bg-masaz-zada-sije,
+  .cenik-mobile-item.bg-masaz-zada-sije-dkz,
+  .cenik-mobile-item.bg-masaz-zada-sije-dkzp {
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+    /* obrázek pozadí nastavte individuálně pro každou třídu */
+  }
+  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkzp {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/kmdkzp.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-dkzp .cenik-mobile-title,
+  .cenik-mobile-item.bg-masaz-dkzp .cenik-mobile-price,
+  .cenik-mobile-item.bg-masaz-dkzp .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg_masaz_dkzp .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.bg-masaz-dkz {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/kmdkz.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-dkz .cenik-mobile-title,
+  .cenik-mobile-item.bg-masaz-dkz .cenik-mobile-price,
+  .cenik-mobile_item.bg_masaz_dkz .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile_item.bg_masaz_dkz .cenik-mobile_info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.bg-masaz-dkp {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/kmdkp.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-dkp .cenik-mobile-title,
+  .cenik-mobile-item.bg_masaz_dkdp .cenik-mobile-price,
+  .cenik-mobile_item.bg_masaz_dkp .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile_item.bg_masaz_dkp .cenik-mobile_info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.bg-masaz-hk {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/kmhk.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-hk .cenik-mobile-title,
+  .cenik-mobile-item.bg_masaz_hk .cenik-mobile-price,
+  .cenik-mobile_item.bg_masaz_hk .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-masaz-hk .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-sportovni-zs {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/smzs.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-sportovni-s {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/sms.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-sportovni-zs .cenik-mobile-title,
+  .cenik-mobile-item.bg-sportovni-zs .cenik-mobile-price,
+  .cenik-mobile-item.bg-sportovni-zs .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-sportovni-s .cenik-mobile-title,
+  .cenik-mobile-item.bg-sportovni-s .cenik-mobile-price,
+  .cenik-mobile-item.bg-sportovni-s .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-sportovni-zs .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-sportovni-s .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-sportovni-zs-dkzp {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/smzsdkzp.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-sportovni-zs-dkzp .cenik-mobile-title,
+  .cenik-mobile-item.bg-sportovni-zs-dkzp .cenik-mobile-price,
+  .cenik-mobile-item.bg-sportovni-zs-dkzp .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-sportovni-zs-dkzp .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-masaz-smdkzp {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/smdkzp.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-smdkzp .cenik-mobile-title,
+  .cenik-mobile-item.bg-masaz-smdkzp .cenik-mobile-price,
+  .cenik-mobile-item.bg-masaz-smdkzp .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-masaz-smdkzp .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.bg-masaz-smhkr {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/smhkr.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-masaz-smhkr .cenik-mobile-title,
+  .cenik-mobile-item.bg-masaz-smhkr .cenik-mobile-price,
+  .cenik-mobile-item.bg-masaz-smhkr .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-masaz-smhkr .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-bankovani {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/banky.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-bankovani .cenik-mobile-title,
+  .cenik-mobile-item.bg-bankovani .cenik-mobile-price,
+  .cenik-mobile-item.bg-bankovani .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-bankovani .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-lavove-kameny {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/lk.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-lavove-kameny .cenik-mobile-title,
+  .cenik-mobile-item.bg-lavove-kameny .cenik-mobile-price,
+  .cenik-mobile-item.bg-lavove-kameny .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-lavove-kameny .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-antistresova-hlava {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/amh.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-antistresova-hlava .cenik-mobile-title,
+  .cenik-mobile-item.bg-antistresova-hlava .cenik-mobile-price,
+  .cenik-mobile-item.bg-antistresova-hlava .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-antistresova-hlava .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+  .cenik-mobile-item.bg-relaxacni-oblicej {
+    background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),
+      url('masaze/rmod.png') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  .cenik-mobile-item.bg-relaxacni-oblicej .cenik-mobile-title,
+  .cenik-mobile-item.bg-relaxacni-oblicej .cenik-mobile-price,
+  .cenik-mobile-item.bg-relaxacni-oblicej .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+  .cenik-mobile-item.bg-relaxacni-oblicej .cenik-mobile-info {
+    background: rgba(255,248,242,0.97);
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static;
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+    text-shadow: none;
+  }
+}
+
+/* Nový společný modální systém pro všechny bubliny */
+.masaz-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(60,30,10,0.5);
+  z-index: 9998;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.masaz-modal-container {
+  background: #fff8f2;
+  color: #3e2f2a;
+  border: 1.5px solid #d2bfa7;
+  border-radius: 12px;
+  padding: 30px 24px 24px;
+  font-size: 1em;
+  box-shadow: 0 8px 32px rgba(60,30,10,0.18);
+  position: relative;
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 560px;
+  width: 80%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: modalFadeIn .2s;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.masaz-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: #7c4a27;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.masaz-modal-content {
+  width: 100%;
+}
+
+.masaz-modal-content .info-btn {
+  display: inline-block;
+  margin-top: 16px;
+  color: #fff;
+  background-color: #7c4a27;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Vizuální úpravy pro rámečky masáží */
+.cenik-mobile-item {
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.15s;
+}
+
+.cenik-mobile-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(124,74,39,0.18) !important;
+  cursor: pointer;
+}
+
+.cenik-mobile-item:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 700px) {
+  .masaz-modal-container {
+    width: 92%;
+    max-width: none;
+    padding: 24px 20px 20px;
+  }
+}
+
+/* Globální definice barev pro indikace a kontraindikace */
+.indikace, strong.indikace {
+  color: #4CAF50 !important; /* Výraznější zelená barva */
+}
+
+.kontraindikace, strong.kontraindikace {
+  color: #f44336 !important; /* Výraznější červená barva */
+}
+
+/* Zajištění konzistence ve všech komponentách */
+.masaz-info-bubble strong.indikace,
+.cenik-mobile-info strong.indikace,
+.masaz-modal-content strong.indikace {
+  color: #4CAF50 !important; /* Zelená */
+}
+
+.masaz-info-bubble strong.kontraindikace,
+.cenik-mobile-info strong.kontraindikace,
+.masaz-modal-content strong.kontraindikace {
+  color: #f44336 !important; /* Červená */
 }

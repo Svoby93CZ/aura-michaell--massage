@@ -7,116 +7,25 @@
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&family=Style+Script&family=Neonderthaw&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-    .cenik-table {
-      max-width: 750px !important;
-      width: 100%;
-      margin: 0 auto 40px auto;
-    }
-    .cenik-inner td {
-      white-space: nowrap;
-    }
-    .cenik-inner tr td:first-child {
-      width: 70%;
-      min-width: 320px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .cenik-inner tr td:last-child {
-      width: 1%;
-      white-space: nowrap;
-      text-align: right;
-      background: #e9e0d6; /* tmavší pozadí pro ceny */
-      color: #3e2f2a;
-      font-weight: 700;
-      border-radius: 8px;
-    }
-    .cenik-inner tr td:last-child {
-      border-left: 2px solid #d2bfa7;
-    }
-    .masaz-row { position: relative; }
-    .info-btn {
-      background: none;
-      border: none;
-      color: #7c4a27;
-      font-size: 1.1em;
-      cursor: pointer;
-      margin-left: 6px;
-      vertical-align: middle;
-      padding: 0;
-    }
-    .masaz-info {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 110%;
-      z-index: 10;
-      background: #fff8f2;
-      color: #3e2f2a;
-      border: 1px solid #d2bfa7;
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-size: 0.98em;
-      min-width: 260px;
-      max-width: 340px;
-      box-shadow: 0 4px 18px rgba(60,30,10,0.12);
-    }
-    @media (max-width: 700px) {
-      .masaz-info {
-        position: static;
-        margin-top: 8px;
-        min-width: 0;
-        max-width: 100%;
-      }
-    }
-    .masaz-info-bubble {
-      display: none;
-      position: absolute;
-      left: 0;
-      top: 100%;
-      z-index: 10;
-      background: #fff;
-      color: #3e2f2a;
-      border: 1px solid #d2bfa7;
-      border-radius: 8px;
-      padding: 10px;
-      font-size: 0.9em;
-      white-space: normal;
-      max-width: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .masaz-info-close {
-      background: none;
-      border: none;
-      color: #7c4a27;
-      font-size: 1.2em;
-      cursor: pointer;
-      position: absolute;
-      right: 8px;
-      top: 8px;
-    }
-  </style>
 </head>
 <body>
   <div class="container">
-    <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
+    <div class="hero-title">
       <h1>Ceník masáží</h1>
       <div class="logo-bubble">
         <img src="logo.png" alt="Logo">
       </div>
     </div>
-    <section id="cenik" style="margin-top: 32px;">
+    <section id="cenik">
       <div class="cenik-mobile-list">
         <div class="cenik-column">
           <div class="cenik-section-title">Klasické masáže</div>
-          <div class="cenik-mobile-item">
+          <!-- Příklad pro jednu masáž, ostatní generujte cyklem nebo include -->
+          <div class="cenik-mobile-item bg-masaz-zada-sije">
             <div class="cenik-mobile-title">Záda/šíje (60 min)</div>
             <div class="cenik-mobile-price">800 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -124,7 +33,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -137,12 +46,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-zada">
             <div class="cenik-mobile-title">Záda (45 min)</div>
             <div class="cenik-mobile-price">600 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -150,7 +58,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -163,12 +71,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-zada-sije-dkz">
             <div class="cenik-mobile-title">Záda/šíje/dolních končetin ze zadu (90 min)</div>
             <div class="cenik-mobile-price">1 100 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -176,7 +83,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -189,12 +96,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-zada-sije-dkzp">
             <div class="cenik-mobile-title">Záda/šíje/dolních končetin ze zadu/ze předu (120 min)</div>
             <div class="cenik-mobile-price">1 400 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -202,7 +108,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -215,12 +121,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-dkzp">
             <div class="cenik-mobile-title">Dolních končetiny ze zadu/ze předu (60 min)</div>
             <div class="cenik-mobile-price">750 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -228,7 +133,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -241,12 +146,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-dkz">
             <div class="cenik-mobile-title">Dolních končetin ze zadu (30 min)</div>
             <div class="cenik-mobile-price">300 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -254,7 +158,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -267,12 +171,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-dkp">
             <div class="cenik-mobile-title">Dolních končetin ze předu (30 min)</div>
             <div class="cenik-mobile-price">300 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -280,7 +183,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -293,12 +196,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-hk">
             <div class="cenik-mobile-title">Horních končetin (30 min)</div>
             <div class="cenik-mobile-price">500 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Bolesti svalů a zad</li>
                 <li>Stres a napětí</li>
@@ -306,7 +208,7 @@
                 <li>Ztuhlost svalů</li>
                 <li>Zlepšení krevního a lymfatického oběhu</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Horečka a akutní infekce</li>
                 <li>Kožní onemocnění nebo poranění kůže</li>
@@ -322,12 +224,11 @@
         </div>
         <div class="cenik-column">
           <div class="cenik-section-title">Sportovní masáže</div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-sportovni-zs">
             <div class="cenik-mobile-title">Záda/šíje (40 min)</div>
             <div class="cenik-mobile-price">650 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Ztuhlé nebo přetížené svaly</li>
                 <li>Příprava na sportovní výkon</li>
@@ -335,7 +236,7 @@
                 <li>Prevence svalových poranění</li>
                 <li>Zlepšení pohyblivosti a výkonnosti</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Akutní úrazy (např. výrony, natržení svalů)</li>
                 <li>Horečka, infekce</li>
@@ -348,12 +249,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-sportovni-s">
             <div class="cenik-mobile-title">Šíje (15 min)</div>
             <div class="cenik-mobile-price">180 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Ztuhlé nebo přetížené svaly</li>
                 <li>Příprava na sportovní výkon</li>
@@ -361,7 +261,7 @@
                 <li>Prevence svalových poranění</li>
                 <li>Zlepšení pohyblivosti a výkonnosti</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Akutní úrazy (např. výrony, natržení svalů)</li>
                 <li>Horečka, infekce</li>
@@ -374,12 +274,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-sportovni-zs-dkzp">
             <div class="cenik-mobile-title">Záda/šíje/dolních kočetin ze zadu/ze předu (110 min)</div>
             <div class="cenik-mobile-price">1 250 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Ztuhlé nebo přetížené svaly</li>
                 <li>Příprava na sportovní výkon</li>
@@ -387,7 +286,7 @@
                 <li>Prevence svalových poranění</li>
                 <li>Zlepšení pohyblivosti a výkonnosti</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Akutní úrazy (např. výrony, natržení svalů)</li>
                 <li>Horečka, infekce</li>
@@ -400,12 +299,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-smdkzp">
             <div class="cenik-mobile-title">Dolních končetin ze zadu/ze předu (110 min)</div>
             <div class="cenik-mobile-price">650 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Ztuhlé nebo přetížené svaly</li>
                 <li>Příprava na sportovní výkon</li>
@@ -413,7 +311,7 @@
                 <li>Prevence svalových poranění</li>
                 <li>Zlepšení pohyblivosti a výkonnosti</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Akutní úrazy (např. výrony, natržení svalů)</li>
                 <li>Horečka, infekce</li>
@@ -426,12 +324,11 @@
               </a>
             </div>
           </div>
-          <div class="cenik-mobile-item">
+          <div class="cenik-mobile-item bg-masaz-smhkr">
             <div class="cenik-mobile-title">Horních končetin + rameno (40 min)</div>
             <div class="cenik-mobile-price">400 Kč</div>
-            <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
             <div class="cenik-mobile-info">
-              <strong class="indikace" style="color:#92ab4e;">Indikace</strong><strong>: kdy je masáž vhodná</strong>
+              <strong class="indikace">Indikace</strong><strong>: kdy je masáž vhodná</strong>
               <ul>
                 <li>Ztuhlé nebo přetížené svaly</li>
                 <li>Příprava na sportovní výkon</li>
@@ -439,7 +336,7 @@
                 <li>Prevence svalových poranění</li>
                 <li>Zlepšení pohyblivosti a výkonnosti</li>
               </ul>
-              <strong class="kontraindikace" style="color:#af4238;">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
+              <strong class="kontraindikace">Kontraindikace</strong><strong>: kdy se masáž nedoporučuje</strong>
               <ul>
                 <li>Akutní úrazy (např. výrony, natržení svalů)</li>
                 <li>Horečka, infekce</li>
@@ -455,11 +352,10 @@
         </div>
       </div>
       <div class="cenik-other-wrapper">
-        <div class="cenik-section-title" style="width:100%;">Ostatní masáže</div>
-        <div class="cenik-mobile-item">
+        <div class="cenik-section-title" style="width:100%;">Ostatní služby</div>
+        <div class="cenik-mobile-item bg-bankovani">
           <div class="cenik-mobile-title">Baňkování (50 min)</div>
           <div class="cenik-mobile-price">800 Kč</div>
-          <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
           <div class="cenik-mobile-info">
             <h5>Baňkování je tradiční terapeutická metoda, při které se na pokožku přikládají speciální skleněné, silikonové nebo plastové baňky, ve kterých se vytvoří podtlak.</h5>
             <h5>Tím dochází k prokrvení tkání, uvolnění svalového napětí, podpoře lymfatického systému a detoxikaci organismu.</h5>
@@ -469,10 +365,9 @@
             </a>
           </div>
         </div>
-        <div class="cenik-mobile-item">
+        <div class="cenik-mobile-item bg-lavove-kameny">
           <div class="cenik-mobile-title">Lávové kameny (50 min)</div>
           <div class="cenik-mobile-price">800 Kč</div>
-          <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
           <div class="cenik-mobile-info">
             <h5>Masáž lávovými kameny je relaxační a terapeutická technika, při které se používají nahřáté hladké lávové kameny.</h5>
             <h5>Teplo z kamenů proniká hluboko do svalů, uvolňuje napětí, zlepšuje krevní oběh a podporuje detoxikaci organismu.</h5>
@@ -482,10 +377,9 @@
             </a>
           </div>
         </div>
-        <div class="cenik-mobile-item">
+        <div class="cenik-mobile-item bg-antistresova-hlava">
           <div class="cenik-mobile-title">Antistresová masáž hlavy (30 min)</div>
           <div class="cenik-mobile-price">400 Kč</div>
-          <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
           <div class="cenik-mobile-info">
             <h5>Antistresová masáž hlavy je relaxační technika zaměřená na uvolnění napětí v oblasti hlavy, šíje a temene.</h5>
             <h5>Pomáhá zmírnit stres, bolesti hlavy, únavu a podporuje duševní rovnováhu.</h5>
@@ -496,10 +390,9 @@
             </a>
           </div>
         </div>
-        <div class="cenik-mobile-item">
+        <div class="cenik-mobile-item bg-relaxacni-oblicej">
           <div class="cenik-mobile-title">Relaxační masáž obličeje a dekoltu (30 min)</div>
           <div class="cenik-mobile-price">400 Kč</div>
-          <button class="cenik-mobile-info-btn" onclick="this.parentNode.classList.toggle('active')">Více informací</button>
           <div class="cenik-mobile-info">
             <h5>Relaxační masáž obličeje a dekoltu je jemná a uklidňující masážní technika zaměřená na uvolnění napětí ve svalech obličeje, krku a horní části hrudníku.</h5>
             <h5>Pomáhá zlepšit prokrvení, podpořit lymfatický odtok, redukovat stres a navodit pocit hluboké relaxace.</h5>
@@ -511,7 +404,7 @@
         </div>
       </div>
       <div style="max-width: 600px; margin: 0 auto; color: #3e2f2a; font-size: 1.04em; line-height: 1.6;">
-        <h1 style="color:#7c4a27; font-size:1.2em; margin-top:0;">Jak probíhá masáž?</h1>
+        <h1 style="color:#7c4a27; font-size:1.2em; margin-top:0; text-align:center;">Jak probíhá masáž?</h1>
         <ul style="margin:0 0 18px 0; padding-left:18px;">
           <li><h3>Individuální přístup a konzultace před masáží</h3></li>
           <li><h3>Použití kvalitních přírodních olejů</h3></li>
@@ -523,14 +416,10 @@
 
     <footer class="site-footer">
       <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
-        <h2 style="flex-basis: 100%; text-align: center;">Zásady ochrany osobních údajů</h2>
-        <h4 style="flex-basis: 100%; text-align: center;">Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
-        <h4 style="flex-basis: 100%; text-align: center;">Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
         <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
         <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
         <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
         <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#impressum" style="margin-left: 18px;">Impressum</a>
         <a href="privacy-policy.html" style="margin-left: 18px;">Ochrana osobních údajů</a>
       </div>
       <div class="footer-copy">
@@ -538,6 +427,14 @@
       </div>
       <img src="logo.png" alt="Footer Logo">
     </footer>
+  </div>
+
+  <!-- Nový univerzální modální systém pro zobrazování detailů masáží -->
+  <div class="masaz-modal-overlay" id="masazModal">
+    <div class="masaz-modal-container">
+      <button class="masaz-modal-close">&times;</button>
+      <div class="masaz-modal-content"></div>
+    </div>
   </div>
 
   <script src="main.js"></script>
