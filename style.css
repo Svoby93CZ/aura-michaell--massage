@@ -953,34 +953,53 @@ footer img {
     flex-direction: column;
     gap: 8px;
     position: relative;
-    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
+    cursor: pointer;
+    min-height: 100px; /* Definovaná minimální výška rámečku */
+    height: auto; /* Výška se přizpůsobí obsahu, ale bude minimálně 100px */
+    margin-bottom: 4px;
   }
+  
+  /* Pro rámečky s pozadím můžete nastavit konkrétnější výšku */
+  .cenik-mobile-item[class*="bg-"] {
+    height: 150px; /* Pevná výška pro položky s obrázkem na pozadí */
+    min-height: 150px;
+  }
+  
   .cenik-mobile-title {
     font-weight: 700;
     color: #7c4a27;
-    font-size: 1.08em;
+    font-size: 1.1em;
     margin-bottom: 4px;
   }
+  
   .cenik-mobile-price {
     color: #fff;
-    font-size: 1.08em;
+    font-size: 1.1em;
     font-weight: 700;
     align-self: flex-end;
-    background: #e9e0d6;
+    background: #3e2f2a;
     border-radius: 8px;
     padding: 4px 12px;
     margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(124,74,39,0.07);
   }
+  
   .cenik-mobile-info-btn {
     background: none;
     border: none;
     color: #7c4a27;
     font-size: 1.1em;
     cursor: pointer;
-    margin-left: 6px;
-    vertical-align: middle;
-    padding: 0;
+    margin-left: 0;
+    margin-top: 8px;
     align-self: flex-start;
+    padding: 0;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .cenik-mobile-info-btn:hover {
+    color: #ab754e;
+    text-decoration: underline;
   }
   .cenik-mobile-info {
     display: none;
