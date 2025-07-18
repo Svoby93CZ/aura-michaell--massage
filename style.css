@@ -3,7 +3,6 @@
   --gap: 10px;
   --accent: #7c4a27;
   --border: #5c3520;
-}
 /* ZÁKLADNÍ STYLY */
 body {
   margin: 0;
@@ -1039,6 +1038,8 @@ footer img {
   .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
@@ -1181,6 +1182,8 @@ footer img {
   .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
@@ -1323,6 +1326,8 @@ footer img {
   .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
@@ -1465,6 +1470,8 @@ footer img {
   .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
@@ -1607,6 +1614,8 @@ footer img {
   .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
@@ -1622,6 +1631,347 @@ footer img {
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
     color: #fff;
     text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+}
+@media (min-width: 701px) {
+  .cenik-mobile-list {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto 48px auto;
+    padding: 0 24px;
+  }
+  .cenik-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    max-width: 420px;
+  }
+  .cenik-column + .cenik-column {
+    border-left: 3px solid #e0d3c2;
+    padding-left: 48px;
+    margin-left: 0;
+  }
+  .cenik-section-title {
+    font-size: 1.4em;
+    margin: 0 0 12px 0;
+    text-align: center;
+    background: none;
+    border-bottom: 2px solid #e0d3c2;
+    padding-bottom: 8px;
+    color: #7c4a27;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .cenik-mobile-item {
+    background: #fff8f2;
+    border: 2px solid #e0d3c2;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+    padding: 22px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    min-height: 120px;
+    max-width: 100%;
+    height: 120px;
+    justify-content: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
+  }
+  .cenik-mobile-title {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.08em;
+    margin-bottom: 2px;
+    letter-spacing: 0.2px;
+  }
+  .cenik-mobile-price {
+    color: #fff;
+    font-size: 1.08em;
+    font-weight: 700;
+    align-self: flex-end;
+    background: #3e2f2a;
+    border-radius: 8px;
+    padding: 4px 14px;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(124,74,39,0.07);
+  }
+  .cenik-mobile-info-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-start;
+    padding: 0;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .cenik-mobile-info-btn:hover {
+    color: #ab754e;
+    text-decoration: underline;
+  }
+  .cenik-mobile-info {
+    display: none;
+    background: #fff8f2;
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static; /* bylo: relative */
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.active .cenik-mobile-info {
+    display: block;
+  }
+  
+  /* Přidané definice obrázků pozadí pro mobilní zobrazení */
+  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkz { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-hk { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmhk.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-zs { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzs.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-s { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/sms.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-zs-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzsdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-smdkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-smhkr { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smhkr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-bankovani { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/banky.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
+  
+  /* Společné styly pro položky s pozadím v mobilní verzi */
+  .cenik-mobile-item[class*="bg-"] {
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  
+  /* Zajištění čitelnosti textu na pozadí v mobilní verzi */
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+}
+@media (min-width: 701px) {
+  .cenik-mobile-list {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto 48px auto;
+    padding: 0 24px;
+  }
+  .cenik-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    max-width: 420px;
+  }
+  .cenik-column + .cenik-column {
+    border-left: 3px solid #e0d3c2;
+    padding-left: 48px;
+    margin-left: 0;
+  }
+  .cenik-section-title {
+    font-size: 1.4em;
+    margin: 0 0 12px 0;
+    text-align: center;
+    background: none;
+    border-bottom: 2px solid #e0d3c2;
+    padding-bottom: 8px;
+    color: #7c4a27;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  .cenik-mobile-item {
+    background: #fff8f2;
+    border: 2px solid #e0d3c2;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+    padding: 22px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+    min-height: 120px;
+    max-width: 100%;
+    height: 120px;
+    justify-content: flex-start;
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
+  }
+  .cenik-mobile-title {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.08em;
+    margin-bottom: 2px;
+    letter-spacing: 0.2px;
+  }
+  .cenik-mobile-price {
+    color: #fff;
+    font-size: 1.08em;
+    font-weight: 700;
+    align-self: flex-end;
+    background: #3e2f2a;
+    border-radius: 8px;
+    padding: 4px 14px;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(124,74,39,0.07);
+  }
+  .cenik-mobile-info-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-left: 0;
+    margin-top: 8px;
+    align-self: flex-start;
+    padding: 0;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .cenik-mobile-info-btn:hover {
+    color: #ab754e;
+    text-decoration: underline;
+  }
+  .cenik-mobile-info {
+    display: none;
+    background: #fff8f2;
+    color: #3e2f2a;
+    border: 1.5px solid #d2bfa7;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 1em;
+    margin-top: 8px;
+    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
+    position: static; /* bylo: relative */
+    z-index: 2;
+    animation: fadeInBubble .2s;
+    overflow-y: visible;
+    max-height: none;
+  }
+  .cenik-mobile-item.active .cenik-mobile-info {
+    display: block;
+  }
+  
+  /* Přidané definice obrázků pozadí pro mobilní zobrazení */
+  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkz { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-dkp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-hk { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmhk.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-zs { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzs.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-s { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/sms.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-sportovni-zs-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzsdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-smdkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smdkzp.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-smhkr { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smhkr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-bankovani { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/banky.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
+  
+  /* Společné styly pro položky s pozadím v mobilní verzi */
+  .cenik-mobile-item[class*="bg-"] {
+    color: #fff;
+    position: relative;
+    border: 2px solid #131313;
+    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
+  }
+  
+  /* Zajištění čitelnosti textu na pozadí v mobilní verzi */
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
+  .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
+  }
+}
+
+/* Styly pro sekci "Ostatní služby" */
+.cenik-other-wrapper {
+  margin: 48px 0;
+}
+
+.cenik-other-wrapper .cenik-section-title {
+  text-align: center;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+/* Mobilní zobrazení - jeden sloupec */
+@media (max-width: 700px) {
+  .cenik-other-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .cenik-other-column {
+    width: 100%;
+  }
+  
+  .cenik-other-wrapper .cenik-mobile-item {
+    margin-bottom: 16px;
+  }
+}
+
+/* Desktop zobrazení - dva sloupce */
+@media (min-width: 701px) {
+  .cenik-other-columns {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .cenik-other-column {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+    max-width: 420px;
+  }
+  
+  .cenik-other-wrapper .cenik-mobile-item {
+    margin-bottom: 0;
   }
 }
 
@@ -1712,105 +2062,12 @@ footer img {
   .hero-title {
     margin-top: 12px;
     margin-bottom: 12px;
-  }
+  }}
+
   
   /* Vylepšení čitelnosti a použitelnosti modálního okna */
   .masaz-modal-container {
     width: 94%;
     max-width: none;
-    padding: 20px 16px 16px;
-    margin: 10px;
-    font-size: 15px;
-    max-height: 85vh;
-  }
-  
-  .masaz-modal-close {
-    top: 6px;
-    right: 10px;
-    font-size: 28px; /* Větší zavírací tlačítko pro lepší dotykové ovládání */
-    padding: 5px; /* Zvětšení dotykové plochy */
-  }
-  
-  /* Optimalizace položek ceníku */
-  .cenik-mobile-item {
-    padding: 16px 12px 12px 12px;
-    margin-bottom: 4px;
-  }
-  
-  .cenik-mobile-title {
-    font-size: 1.05em;
-    line-height: 1.3;
-    margin-right: 60px; /* Prostor pro cenu */
-  }
-  
-  .cenik-mobile-price {
-    position: absolute;
-    top: 14px;
-    right: 12px;
-  }
-  
-  /* Optimalizace sekce s vysvětlením jak probíhá masáž */
-  #cenik > div[style*="max-width: 600px"] {
-    padding: 0 8px;
-  }
-  
-  /* Vylepšené čtení textů v modálním okně */
-  .masaz-modal-content ul {
-    padding-left: 20px;
-    margin: 6px 0 12px 0;
-  }
-  
-  .masaz-modal-content .info-btn {
-    display: block; /* Na celou šířku pro lepší dotyková oblast */
-    margin: 16px auto 4px auto;
-    padding: 10px 16px;
-    max-width: 200px;
-    text-align: center;
-  }
-  
-  /* Oprava překrývání textu a obrázků v patičce */
-  .footer-widgets {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0 10px;
-  }
-  
-  /* Vylepšení zarovnání a velikostí v sekci "Ostatní služby" */
-  .cenik-other-wrapper .cenik-mobile-item {
-    width: 100%;
-    margin: 0 0 16px 0;
-  }
-}
-
-/* Fixace dotykovosti pro iOS zařízení */
-@media (hover: none) {
-  .cenik-mobile-item:hover {
-    transform: none;
-  }
-  
-  .info-btn, .masaz-modal-close {
-    cursor: default; /* Odstranění kurzoru na dotykových zařízeních */
-  }
-}
-
-/* Globální definice barev pro indikace a kontraindikace */
-.indikace, strong.indikace {
-  color: #4CAF50 !important; /* Výraznější zelená barva */
-}
-
-.kontraindikace, strong.kontraindikace {
-  color: #f44336 !important; /* Výraznější červená barva */
-}
-
-/* Zajištění konzistence ve všech komponentách */
-.masaz-info-bubble strong.indikace,
-.cenik-mobile-info strong.indikace,
-.masaz-modal-content strong.indikace {
-  color: #4CAF50 !important; /* Zelená */
-}
-
-.masaz-info-bubble strong.kontraindikace,
-.cenik-mobile-info strong.kontraindikace,
-.masaz-modal-content strong.kontraindikace {
-  color: #f44336 !important; /* Červená */
-}
+    padding: 20px 16px;
+  }}
