@@ -157,24 +157,24 @@ function setupMasazeModals() {
   });
 }
 
-// Funkce pro tabulkový ceník (ponecháno pro zpětnou kompatibilitu)
-function toggleCenikSection(section) {
-  const table = document.getElementById('cenik-' + section);
-  if (!table) return;
+function closeMasazInfo(e) {
+  if (!e) return;
+  e.stopPropagation();
   
-  const btn = table.previousElementSibling;
-  if (!btn) return;
-  
-  const icon = btn.querySelector('span');
-  
-  if (table.style.display === 'none' || table.style.display === '') {
+  const bubble = e.target.closest('.masaz-info-bubble');
+  if (bubble) {
+    bubble.style.display = 'none';
+    const row = bubble.closest('.masaz-row');
+    if (row) row.classList.remove('active');
+  }
+}
     table.style.display = 'table';
     if (icon) icon.textContent = '▼';
-  } else {
+   else {
     table.style.display = 'none';
     if (icon) icon.textContent = '▶';
   }
-}
+
 
 function toggleMasazInfo(row) {
   if (!row) return;
