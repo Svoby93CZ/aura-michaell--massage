@@ -351,18 +351,19 @@ header {
   background: rgba(124,74,39,.2);
   padding: 12px 16px;
   border-radius: 16px;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   font-weight: 600;
   color: #3e2f2a;
   margin: 20px auto;
   max-width: 90%;
 }
-.cards {
+.cards > * {
+  flex: 1 1 0;
+  /* Zabrání různé výšce kvůli obsahu */
   display: flex;
-  justify-content: center;
-  gap: var(--gap);
-  margin-top: 12px;
+  flex-direction: column;
+  justify-content: stretch;
 }
 .cards img {
   width: calc((100% - var(--gap)) / 2);
@@ -621,7 +622,14 @@ footer img {
   border-bottom: 2px solid #e0d3c2;
   padding-bottom: 6px;
 }
-
+.cenik-section-titlemini {
+  color: #7c4a27;
+  font-size: 1.35em;
+  margin: 36px 0 18px 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding-bottom: 6px;
+}
 /* --- DESKTOP ÚPRAVY --- */
 @media (min-width: 601px) {
   body { padding: 20px 80px 80px; font-size: 18px; }
@@ -1309,298 +1317,186 @@ footer img {
     text-shadow: 0 2px 8px rgba(60,30,10,0.25);
   }
 }
-@media (min-width: 701px) {
-  .cenik-mobile-list {
-    display: flex !important;
+
+/* Desktop: max 4 karty v řadě */
+@media (min-width: 901px) {
+  .cards {
+    display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 48px;
-    max-width: 1200px;
-    margin: 0 auto 48px auto;
-    padding: 0 24px;
-  }
-  .cenik-column {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    min-width: 0;
-    max-width: 420px;
-  }
-  .cenik-column + .cenik-column {
-    border-left: 3px solid #e0d3c2;
-    padding-left: 48px;
-    margin-left: 0;
-  }
-  .cenik-section-title {
-    font-size: 1.4em;
-    margin: 0 0 12px 0;
-    text-align: center;
-    background: none;
-    border-bottom: 2px solid #e0d3c2;
-    padding-bottom: 8px;
-    color: #7c4a27;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-  .cenik-mobile-item {
-    background: #fff8f2;
-    border: 2px solid #e0d3c2;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(124,74,39,0.07);
-    padding: 22px 18px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 0;
-    min-height: 120px;
-    max-width: 100%;
-    height: 120px;
+    flex-wrap: wrap;
+    gap: 32px;
     justify-content: flex-start;
-    transition: box-shadow 0.2s, transform 0.2s;
-    cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
+    margin-top: 12px;
   }
-  .cenik-mobile-title {
-    font-weight: 800;
-    color: #ffffff;
-    font-size: 1.08em;
-    margin-bottom: 2px;
-    letter-spacing: 0.2px;
+  .cards .card-info {
+    flex: 0 1 24%;
+    max-width: 24%;
+    min-width: 220px;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
   }
-  .cenik-mobile-price {
-    color: #fff;
-    font-size: 1.08em;
-    font-weight: 700;
-    align-self: flex-end;
-    background: #3e2f2a;
-    border-radius: 8px;
-    padding: 4px 14px;
-    margin-top: 2px;
-    box-shadow: 0 2px 8px rgba(124,74,39,0.07);
+}
+
+/* Tablet/menší desktop: max 3 karty v řadě */
+@media (min-width: 601px) and (max-width: 900px) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: flex-start;
+    margin-top: 12px;
   }
-  .cenik-mobile-info-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1em;
-    cursor: pointer;
-    margin-left: 0;
-    margin-top: 8px;
-    align-self: flex-start;
-    padding: 0;
-    font-weight: 600;
-    transition: color 0.2s;
+  .cards .card-info {
+    flex: 0 1 32%;
+    max-width: 32%;
+    min-width: 180px;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
   }
-  .cenik-mobile-info-btn:hover {
-    color: #ab754e;
-    text-decoration: underline;
+}
+
+/* Mobil: max 2 karty v řadě */
+@media (max-width: 600px) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: stretch;
   }
-  .cenik-mobile-info {
-    display: none;
-    background: #fff8f2;
-    color: #3e2f2a;
-    border: 1.5px solid #d2bfa7;
+  .cards .card-info {
+    flex: 0 1 48%;
+    max-width: 48%;
+    min-width: 140px;
+    box-sizing: border-box;
+    margin: 0;
+  }
+  /* Pokud chcete na opravdu malých mobilech jen 1 kartu v řadě, můžete přidat další media query */
+  @media (max-width: 400px) {
+    .cards .card-info {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+/* Nové třídy pro název a popis služby/masáže */
+.card-title {
+  font-size: 1em;
+  font-weight: 700;
+  color: #7c4a27;
+  margin: 10px 0 8px 0;
+  text-align: left;
+  letter-spacing: 0.2px;
+}
+.card-desc {
+  font-size: 1em;
+  color: #3e2f2a;
+  font-weight: 400;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Desktop: obrázek vlevo, název pod obrázkem, informace vpravo */
+@media (min-width: 601px) {
+  .cards {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap);
+    margin-top: 12px;
+  }
+  .cards .card-info {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    background: rgba(124,74,39,.2);
+    padding: 12px 16px;
+    border-radius: 16px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  .cards .card-info .card-img-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 160px;
+    max-width: 160px;
+    flex-shrink: 0;
+  }
+  .cards .card-info img {
+    width: 160px;
+    max-width: 160px;
+    height: auto;
     border-radius: 12px;
-    padding: 12px 14px;
-    font-size: 1em;
-    margin-top: 8px;
-    box-shadow: 0 4px 18px rgba(60,30,10,0.10);
-    position: static; /* bylo: relative */
-    z-index: 2;
-    animation: fadeInBubble .2s;
-    overflow-y: visible;
-    max-height: none;
-  }
-  .cenik-mobile-item.active .cenik-mobile-info {
+    margin: 0;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
     display: block;
   }
-  
-  /* Přidané definice obrázků pozadí pro mobilní zobrazení */
-  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkzp.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-dkz { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkz.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-dkp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmdkp.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-hk { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmhk.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-sportovni-zs { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzs.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-sportovni-s { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/sms.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-sportovni-zs-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smzsdkzp.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-smdkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smdkzp.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-masaz-smhkr { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/smhkr.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-bankovani { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/banky.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-lavove-kameny { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/lk.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-antistresova-hlava { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/amh.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
-  .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
-  
-  /* Společné styly pro položky s pozadím v mobilní verzi */
-  .cenik-mobile-item[class*="bg-"] {
-    color: #fff;
-    position: relative;
-    border: 2px solid #131313;
-    box-shadow: 0 2px 12px rgba(124,74,39,0.13);
-  }
-  
-  /* Zajištění čitelnosti textu na pozadí v mobilní verzi */
-  .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
-  .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
-  .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(60,30,10,0.25);
-  }
-}
-
-/* Styly pro sekci "Ostatní služby" */
-.cenik-other-wrapper {
-  margin: 48px 0;
-}
-
-.cenik-other-wrapper .cenik-section-title {
-  text-align: center;
-  margin-bottom: 32px;
-  width: 100%;
-}
-
-/* Mobilní zobrazení - jeden sloupec */
-@media (max-width: 700px) {
-  .cenik-other-columns {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .cenik-other-column {
+  .cards .card-info .card-title {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    text-align: center;
     width: 100%;
   }
-  
-  .cenik-other-wrapper .cenik-mobile-item {
-    margin-bottom: 16px;
+  .cards .card-info .card-desc {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    align-self: flex-start;
+    text-align: left;
   }
 }
 
-/* Desktop zobrazení - dva slouce */
-@media (min-width: 701px) {
-  .cenik-other-columns {
-    display: flex;
-    gap: 48px;
-    justify-content: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+/* Mobil: obrázek nahoře, název pod ním, informace pod názvem */
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
   }
-  
-  .cenik-other-column {
-    flex: 1 1 0;
+  .cards .card-info {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    min-width: 0;
-    max-width: 420px;
+    align-items: center;
+    text-align: left;
+    gap: 8px;
+    padding: 8px 8px;
+    font-size: 15px;
+    background: rgba(124,74,39,.2);
+    border-radius: 16px;
+    margin: 12px 0;
+    max-width: 100%;
   }
-  
-  .cenik-other-wrapper .cenik-mobile-item {
-    margin-bottom: 0;
- 
+  .cards .card-info .card-img-col {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-}
-
-/* Nový společný modální systém pro všechny bubliny */
-.masaz-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(60,30,10,0.5);
-  z-index: 9998;
-  display: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.masaz-modal-container {
-  background: #fff8f2;
-  color: #3e2f2a;
-  border: 1.5px solid #d2bfa7;
-  border-radius: 12px;
-  padding: 30px 24px 24px;
-  font-size: 1em;
-  box-shadow: 0 8px 32px rgba(60,30,10,0.18);
-  position: relative;
-  z-index: 9999;
-  min-width: 320px;
-  max-width: 560px;
-  width: 80%;
-  max-height: 80vh;
-  overflow-y: auto;
-  animation: modalFadeIn .2s;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.masaz-modal-close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: #7c4a27;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-.masaz-modal-content {
-  width: 100%;
-}
-
-.masaz-modal-content .info-btn {
-  display: inline-block;
-  margin-top: 16px;
-  color: #fff;
-  background-color: #7c4a27;
-  padding: 8px 16px;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-}
-
-/* Vizuální úpravy pro rámečky masáží */
-.cenik-mobile-item {
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.15s;
-}
-
-.cenik-mobile-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(124,74,39,0.18) !important;
-  cursor: pointer;
-}
-
-.cenik-mobile-item:active {
-  transform: translateY(0);
-}
-
-@media (max-width: 700px) {
-  /* Zmenšení přebytečných mezer pro lepší využití místa */
-  .hero-title {
-    margin-top: 12px;
-    margin-bottom: 12px;
+  .cards .card-info img {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 8px;
+    border-radius: 12px;
   }
-}
-
-/* Vylepšení čitelnosti a použitelnosti modálního okna */
-.masaz-modal-container {
-  width: 94%;
-  max-width: none;
-  padding: 20px 16px;
+  .cards .card-info .card-title {
+    margin-top: 8px;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 100%;
+  }
+  .cards .card-info .card-desc {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+  }
 }
