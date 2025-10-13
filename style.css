@@ -1482,6 +1482,13 @@ footer img {
     flex-direction: column;
     align-items: center;
   }
+  .cards .card-info .card-img-col2 {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: left;
+    align-items: center;
+  }
   .cards .card-info img {
     width: 100%;
     max-width: 320px;
