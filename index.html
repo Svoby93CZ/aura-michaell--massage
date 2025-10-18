@@ -94,9 +94,34 @@
       .hero-nav .nav-btn { font-size: 0.9rem; padding: 0 10px; max-width: 180px; height: var(--nav-btn-height-sm); }
       }
 
+      /* Mobile: make buttons stretch full width of the hero-nav container */
       @media (max-width: 540px) {
-      .hero-nav { gap: 8px; padding: 6px 10px; }
-      .hero-nav .nav-btn { font-size: 0.85rem; padding: 0 8px; max-width: 140px; height: var(--nav-btn-height-xs); }
+      .hero-nav { 
+        gap: 8px; 
+        padding: 8px 10px; 
+        flex-direction: column;      /* stack buttons vertically */
+        align-items: stretch;        /* let children fill available width */
+        overflow-x: visible;         /* no horizontal scroll when stacked */
+      }
+      .hero-nav .nav-btn { 
+        font-size: 0.85rem; 
+        padding: 10px 12px; 
+        max-width: none; 
+        height: auto;                /* let height grow with padding */
+        width: 100%;                 /* full width of the container */
+        flex: none; 
+        border-radius: 12px;         /* smaller radius when full-width */
+        white-space: normal;         /* allow wrapping if needed */
+        justify-content: center;
+      }
+      /* Ensure any wrapper div (like around the primary button) also stretches */
+      .hero-nav > div {
+        width: 100%;
+        display: flex;
+      }
+      .hero-nav > div .nav-btn {
+        width: 100%;
+      }
       }
       </style>
       <nav class="hero-nav hero-nav--featured" role="navigation" aria-label="Hlavní navigace">
