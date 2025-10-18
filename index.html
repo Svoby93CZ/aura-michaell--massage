@@ -44,6 +44,10 @@
       overflow-x: auto; /* allow horizontal scrolling on small screens */
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none; /* hide Firefox scrollbar */
+      margin: 0 auto; /* center the whole nav block */
+      max-width: 980px; /* prevent it from shifting on very wide pages */
+      padding-inline: 12px; /* symmetric horizontal padding so it's visually centered */
+      box-sizing: border-box;
       }
 
       /* hide scrollbar for WebKit browsers */
@@ -94,33 +98,37 @@
       .hero-nav .nav-btn { font-size: 0.9rem; padding: 0 10px; max-width: 180px; height: var(--nav-btn-height-sm); }
       }
 
-      /* Mobile: make buttons stretch full width of the hero-nav container */
+      /* Mobile: make buttons stretch full width of the hero-nav container and center the panel */
       @media (max-width: 540px) {
       .hero-nav { 
         gap: 8px; 
         padding: 8px 10px; 
         flex-direction: column;      /* stack buttons vertically */
-        align-items: stretch;        /* let children fill available width */
+        align-items: center;         /* center the stacked column */
         overflow-x: visible;         /* no horizontal scroll when stacked */
+        width: 100%;
       }
       .hero-nav .nav-btn { 
         font-size: 0.85rem; 
         padding: 10px 12px; 
-        max-width: none; 
+        max-width: 520px;            /* limit maximum button width so it's centered on wide small screens */
         height: auto;                /* let height grow with padding */
-        width: 100%;                 /* full width of the container */
+        width: 100%;                 /* full width up to max-width */
         flex: none; 
         border-radius: 12px;         /* smaller radius when full-width */
         white-space: normal;         /* allow wrapping if needed */
         justify-content: center;
+        box-sizing: border-box;
       }
-      /* Ensure any wrapper div (like around the primary button) also stretches */
+      /* Ensure any wrapper div (like around the primary button) also centers and respects max-width */
       .hero-nav > div {
         width: 100%;
         display: flex;
+        justify-content: center;
       }
       .hero-nav > div .nav-btn {
         width: 100%;
+        max-width: 520px;
       }
       }
       </style>
@@ -129,7 +137,7 @@
         <a href="poukazy.html" class="nav-btn">Dárkové poukazy</a>
         <div style="background: rgba(124,74,39,.2); padding: 3px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25);">
           <a href="https://aura-michaell-massage.reservio.com" target="_blank" rel="noopener noreferrer" class="nav-btn nav-btn--primary">
-            Rezervace online
+        Rezervace online
           </a>
         </div>
         <a href="#about" class="nav-btn">Kdo jsem?</a>
@@ -295,5 +303,10 @@
   <script src="main.js"></script>
   <!-- Plovoucí tlačítko pro návrat nahoru -->
   <button id="scrollTopBtn" title="Zpět nahoru">↑</button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 </body>
 </html>
