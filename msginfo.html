@@ -37,7 +37,14 @@
       align-items: center;
       flex-wrap: nowrap; /* keep buttons in a single row */
       padding: 6px;
-      overflow-x: visible; /* don't show horizontal scrollbar */
+      overflow-x: auto; /* allow horizontal scrolling on small screens */
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* hide Firefox scrollbar */
+      }
+
+      /* hide scrollbar for WebKit browsers */
+      .hero-nav::-webkit-scrollbar { 
+      display: none;
       }
 
       .hero-nav .nav-btn {
@@ -45,8 +52,8 @@
       align-items: center;
       justify-content: center;
       padding: 0 12px;               /* horizontal padding only */
-      flex: 1 1 0;                   /* allow buttons to shrink/grow so all fit on one line */
-      min-width: 0;                  /* permit shrinking below intrinsic width */
+      flex: 0 0 auto;                /* keep buttons at intrinsic width so they can be scrolled on small screens */
+      min-width: 64px;               /* ensure tappable size */
       max-width: 220px;              /* avoid overly wide buttons on large screens */
       height: var(--nav-btn-height); /* fixed height so all buttons match */
       box-sizing: border-box;        /* include padding/border in height */
@@ -59,10 +66,11 @@
       letter-spacing: 0.2px;
       box-shadow: 0 6px 14px rgba(60,30,10,0.12);
       transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
-      white-space: normal;           /* allow label to wrap inside button if needed */
+      white-space: nowrap;           /* keep label on one line so nav scrolls horizontally */
       text-align: center;
       line-height: 1.1;              /* keep wrap spacing reasonable */
       overflow: hidden;              /* prevent accidental overflow if text is long */
+      text-overflow: ellipsis;       /* truncate if extremely long */
       }
 
       .hero-nav .nav-btn span {      /* optional: force text centering on multiple lines */
@@ -83,7 +91,7 @@
       }
 
       @media (max-width: 540px) {
-      .hero-nav { gap: 8px; }
+      .hero-nav { gap: 8px; padding: 6px 10px; }
       .hero-nav .nav-btn { font-size: 0.85rem; padding: 0 8px; max-width: 140px; height: var(--nav-btn-height-xs); }
       }
       </style>
