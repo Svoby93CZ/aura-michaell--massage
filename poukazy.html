@@ -41,18 +41,83 @@
     </div>
 
     <footer class="site-footer">
-      <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
-        <a href="index.html">Domů</a>
-        <a href="privacy-policy.html">Ochrana osobních údajů</a>
-        <a href="#impressum">Impressum</a>
-        <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
-        <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
-        <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <style>
+        .footer-widgets {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 12px;
+          justify-content: center;
+          text-align: center;
+        }
+        .footer-widgets h2,
+        .footer-widgets h4 {
+          flex-basis: 100%;
+          margin: 6px 0;
+        }
+        .footer-social {
+          display: flex;
+          align-items: center;
+          gap: 10px;        /* space between each social group */
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .footer-social .social {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;         /* smaller gap between icon and its link */
+          margin: 0 6px;    /* small horizontal spacing between items */
+        }
+        .footer-social img {
+          width: 18px;
+          height: 18px;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        .footer-copy {
+          margin-top: 12px;
+          text-align: center;
+          font-size: 0.95rem;
+        }
+        .site-footer > img {
+          display: block;
+          margin: 12px auto 0;
+          width: 60px;
+          height: auto;
+        }
+      </style>
+
+      <div class="footer-widgets">
+        <h2>Zásady ochrany osobních údajů</h2>
+        <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
+        <h4>Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+
+        <div class="footer-social" aria-label="Sociální sítě">
+          <div class="social">
+            <img src="instalogo.png" alt="Instagram">
+            <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+
+          <div class="social">
+            <img src="fb.png" alt="Facebook">
+            <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+
+          <div class="social">
+            <a href="#impressum">Impressum</a>
+          </div>
+
+          <div class="social">
+            <img src="GDPRlogo.png" alt="GDPR">
+            <a href="privacy-policy.html">Ochrana osobních údajů</a>
+          </div>
+        </div>
       </div>
+
       <div class="footer-copy">
         © 2025 Aura Michaell Massage. Všechna práva vyhrazena.
       </div>
+
       <img src="logo.png" alt="Footer Logo">
     </footer>
   </div>

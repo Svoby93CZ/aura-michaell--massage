@@ -14,7 +14,7 @@
 <body>
   <div class="container">
 
-    <!-- Hero Section -->
+    <!-- Hlavní nadpis -->
     <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
       <h1>Aura Michaell Massage</h1>
       <div class="logo-bubble">
@@ -23,37 +23,91 @@
     </div>
 
     <section id="hero">
-      <p class="intro">
+      <p class="intro" style="background: rgba(0, 0, 0, 0.2); padding: 3px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         Nechte starosti odejít. Vstupte do světa, kde dotek léčí a mysl nachází klid.
       </p>
       <!-- Navigační lišta pod úvodním textem -->
+      <style>
+      :root{
+      --nav-btn-height: 56px;
+      --nav-btn-height-sm: 48px;
+      --nav-btn-height-xs: 44px;
+      }
+
+      .hero-nav {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap; /* keep buttons in a single row */
+      padding: 6px;
+      overflow-x: visible; /* don't show horizontal scrollbar */
+      }
+
+      .hero-nav .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;               /* horizontal padding only */
+      flex: 1 1 0;                   /* allow buttons to shrink/grow so all fit on one line */
+      min-width: 0;                  /* permit shrinking below intrinsic width */
+      max-width: 220px;              /* avoid overly wide buttons on large screens */
+      height: var(--nav-btn-height); /* fixed height so all buttons match */
+      box-sizing: border-box;        /* include padding/border in height */
+      background: #ab914e;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      box-shadow: 0 6px 14px rgba(60,30,10,0.12);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
+      white-space: normal;           /* allow label to wrap inside button if needed */
+      text-align: center;
+      line-height: 1.1;              /* keep wrap spacing reasonable */
+      overflow: hidden;              /* prevent accidental overflow if text is long */
+      }
+
+      .hero-nav .nav-btn span {      /* optional: force text centering on multiple lines */
+      display: inline-block;
+      text-align: center;
+      }
+
+      .hero-nav .nav-btn:hover,
+      .hero-nav .nav-btn:focus {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(60,30,10,0.18);
+      background: #9b783f;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 920px) {
+      .hero-nav .nav-btn { font-size: 0.9rem; padding: 0 10px; max-width: 180px; height: var(--nav-btn-height-sm); }
+      }
+
+      @media (max-width: 540px) {
+      .hero-nav { gap: 8px; }
+      .hero-nav .nav-btn { font-size: 0.85rem; padding: 0 8px; max-width: 140px; height: var(--nav-btn-height-xs); }
+      }
+      </style>
       <nav class="hero-nav hero-nav--featured">
-        <!--<a href="msginfo.html" class="nav-btn">Info o službách a masažích</a> -->
+        <a href="msginfo.html" class="nav-btn">Nabídka služeb</a>
         <a href="poukazy.html" class="nav-btn">Dárkové poukazy</a>
-        <a href="#about" class="nav-btn">Kdo jsem?</a>
+        <div style="background: rgba(124,74,39,.2); padding: 3px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25);">
         <a href="https://aura-michaell-massage.reservio.com" target="_blank" rel="noopener noreferrer" class="nav-btn nav-btn--primary">
           Rezervace online
         </a>
-      </nav>
-      <!--<div class="contact-group" style="display: flex; flex-direction: column; align-items: center;">
-        <div class="order-box" style="margin-bottom: 18px;">Objednejte se přes:</div>
-        <div class="reservio-box">
-          <div class="reservio-center">
-            <div class="reservio-button-container"
-              data-text="Reservio"
-              data-size="large"
-              data-color="#795C34"
-              data-url="https://aura-michaell-massage.reservio.com">
-            </div>
-          </div>
         </div>
-        <script src="https://cdn.reservio.com/widget/button-bundle.js"></script>
-      </div> -->
+        <a href="#about" class="nav-btn">Kdo jsem?</a>
+        <a href="#recenze" class="nav-btn">Recenze</a>
+        
+      </nav>
     </section>
 
-    <!-- Offer & Pricing -->
-    <div class="offer-pricing-wrapper">
-      <section id="offer" class="offer-box">
+    <!-- Bonusová karta -->
+    <div class="offer-pricing-wrapper" >
+      <section id="offer" class="offer-box" style="background: rgba(124,74,39,.2); padding: 3px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="discount-bubble">
           <div class="discount-main">Každá desátá masáž</div>
           <div class="discount-sub">−200 Kč</div>
@@ -68,7 +122,7 @@
       </section>
     </div>
 
-    <!-- About -->
+    <!-- O mně -->
     <section id="about">
       <div class="about-row">
         <img src="info.png" alt="Masérka">
@@ -76,7 +130,7 @@
       </div>
     </section>
 
-    <!-- Location -->
+    <!-- Lokace -->
     <section id="location">
       <div class="prostor-map">
         <div class="prostor-img">
@@ -94,6 +148,11 @@
         </div>
       </div>
     </section>
+
+    <!-- Recenze Google -->
+    <section id="recenze" class="section reviews">
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-b275f04e-832a-452d-91ed-1fdc07117847" data-elfsight-app-lazy></div>
 
     <!-- IMPRESSUM / PRÁVNÍ ÚDAJE -->
     <section id="impressum" class="section imprint">
@@ -116,41 +175,93 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="footer-widgets" style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px; justify-content: center;">
-        <h2 style="flex-basis: 100%; text-align: center;">Zásady ochrany osobních údajů</h2>
-        <h4 style="flex-basis: 100%; text-align: center;">Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
-        <h4 style="flex-basis: 100%; text-align: center;">Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
-        <img src="instalogo.png" alt="Instagram" style="vertical-align: middle; width: 22px; height: 22px; margin-right: 6px;">
-        <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <img src="fb.png" alt="Facebook" style="vertical-align: middle; width: 22px; height: 22px; margin-left: 18px; margin-right: 6px;">
-        <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="#impressum" style="margin-left: 18px;">Impressum</a>
-        <a href="privacy-policy.html" style="margin-left: 18px;">Ochrana osobních údajů</a>
+      <style>
+        .footer-widgets {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 12px;
+          justify-content: center;
+          text-align: center;
+        }
+        .footer-widgets h2,
+        .footer-widgets h4 {
+          flex-basis: 100%;
+          margin: 6px 0;
+        }
+        .footer-social {
+          display: flex;
+          align-items: center;
+          gap: 10px;        /* space between each social group */
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .footer-social .social {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;         /* smaller gap between icon and its link */
+          margin: 0 6px;    /* small horizontal spacing between items */
+        }
+        .footer-social img {
+          width: 18px;
+          height: 18px;
+          vertical-align: middle;
+          display: inline-block;
+        }
+        .footer-copy {
+          margin-top: 12px;
+          text-align: center;
+          font-size: 0.95rem;
+        }
+        .site-footer > img {
+          display: block;
+          margin: 12px auto 0;
+          width: 60px;
+          height: auto;
+        }
+      </style>
+
+      <div class="footer-widgets">
+        <h2>Zásady ochrany osobních údajů</h2>
+        <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
+        <h4>Více informací naleznete v <a href="privacy-policy.html">plném znění zásad ochrany osobních údajů</a>.</h4>
+
+        <div class="footer-social" aria-label="Sociální sítě">
+          <div class="social">
+            <img src="instalogo.png" alt="Instagram">
+            <a href="https://instagram.com/aura_michaell_massage" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+
+          <div class="social">
+            <img src="fb.png" alt="Facebook">
+            <a href="https://www.facebook.com/share/14E6Ab1e1UW/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+
+          <div class="social">
+            <a href="#impressum">Impressum</a>
+          </div>
+
+          <div class="social">
+            <img src="GDPRlogo.png" alt="GDPR">
+            <a href="privacy-policy.html">Ochrana osobních údajů</a>
+          </div>
+        </div>
       </div>
+
       <div class="footer-copy">
         © 2025 Aura Michaell Massage. Všechna práva vyhrazena.
       </div>
+
       <img src="logo.png" alt="Footer Logo">
     </footer>
   </div>
 
-  <!-- Lightbox Modal -i->
-  <div id="lightbox" class="modal">
+  <div id="lightbox" class="modal" aria-hidden="true">
     <img src="" alt="Rozšířený náhled" id="lightbox-img">
   </div>
-  <!-i- Scroll Button -i->
-  <button id="scrollTopBtn" aria-label="Zpět nahoru">⬆</button>
-
-  <!-i- Opening Modal -i->
-  <div id="opening-modal" class="opening-modal">
-    <div class="opening-modal__content">
-      <img src="otevirame-brzy.jpg" alt="Otevíráme brzy" class="opening-modal__img">
-      <button class="opening-modal__close" aria-label="Zavřít">&times;</button>
-    </div>
-  </div>-->
 
   <script src="main.js"></script>
-</body>
-</html>
+  <!-- Plovoucí tlačítko pro návrat nahoru -->
+  <button id="scrollTopBtn" title="Zpět nahoru">↑</button>
 </body>
 </html>
