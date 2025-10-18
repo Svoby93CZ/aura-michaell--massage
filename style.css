@@ -610,7 +610,7 @@ footer img {
     justify-content: center;
     align-items: flex-start;
     gap: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 24px;
   }
   .offer-pricing-wrapper #offer { flex: 1 1 45%; max-width: 480px; }
   .offer-pricing-wrapper #pricing { flex: 1 1 45%; max-width: 420px; }

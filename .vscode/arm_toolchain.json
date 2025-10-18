@@ -1,5 +1,5 @@
 {
-  "build_select": "configuration_name",
+  "build_select": "aura_michaell_massage",
   "configurations": [
     {
       "name": "aura_michaell_massage",
