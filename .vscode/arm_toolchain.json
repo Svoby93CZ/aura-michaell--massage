@@ -2,8 +2,8 @@
   "build_select": "configuration_name",
   "configurations": [
     {
-      "name": "configuration_name",
-      "prj_name": "project_name",
+      "name": "aura_michaell_massage",
+      "prj_name": "Masaze",
       "loader_path": "",
       "c_include_paths": [
         ""
