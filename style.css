@@ -743,10 +743,79 @@ header {
   width: calc((100% - var(--gap)) / 2);
   border-radius: 12px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
-  cursor: pointer;
-  transition: transform .2s;
+  cursor: default;
+  transition: none;
 }
-.cards img:hover { transform: scale(1.03); }
+
+.service-price-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 18px;
+  margin: 16px auto 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(124,74,39,0.96), rgba(171,117,78,0.92));
+  color: #361000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 20px rgba(60,30,10,0.24);
+  text-align: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.service-price-tag span {
+  display: inline-block;
+}
+
+.service-price-tag .service-price {
+  font-size: 1.1em;
+  letter-spacing: 0.6px;
+}
+
+.service-price-tag .service-duration {
+  font-size: 0.95em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.service-price-tag .service-price-divider {
+  display: none;
+}
+
+.service-price-tag-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.service-price-tag-link .service-price-tag {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-price-tag-link:focus .service-price-tag,
+.service-price-tag-link:hover .service-price-tag {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(60,30,10,0.28);
+}
+
+@media (max-width: 640px) {
+  .service-price-tag {
+    font-size: 0.9rem;
+  }
+
+  .service-price-tag .service-duration {
+    font-size: 0.85em;
+    letter-spacing: 0.6px;
+  }
+}
 
 /* INFORMACE O SLUŽBÁCH */
 .page-services .classic-massage-info p {
