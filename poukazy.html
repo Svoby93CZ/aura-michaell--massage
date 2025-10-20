@@ -7,11 +7,8 @@
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Inknut+Antiqua:wght@700&family=Raleway:wght@400;600;700&family=Style+Script&family=Neonderthaw&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
 </head>
-<body>
+<body class="page-vouchers">
   <div class="container">
     <div class="hero-title" style="display: flex; align-items: center; gap: 24px;">
       <h1>Dárkové poukazy</h1>
@@ -22,10 +19,9 @@
 
     <section id="poukazy">
       <p class="intro">
-        Udělejte radost svým blízkým dárkovým poukazem na masáž.<br>
-        Poukazy lze zakoupit pouze osobně v salónu.
+        Udělejte radost svým blízkým dárkovým poukazem na masáž.
       </p>
-      <div class="voucher-gallery" style="margin-top: 20px;">
+      <div class="voucher-gallery" style="margin-top: 20px; margin-bottom: 60px;">
         <img src="Poukazy/Poukaz 200,-.jpg" alt="Poukaz 200 Kč" class="voucher-img">
         <img src="Poukazy/Poukaz 500,-.jpg" alt="Poukaz 500 Kč" class="voucher-img">
         <img src="Poukazy/Poukaz 800,-.jpg" alt="Poukaz 800 Kč" class="voucher-img">
@@ -33,7 +29,11 @@
         <img src="Poukazy/Poukaz 1500,-.jpg" alt="Poukaz 1500 Kč" class="voucher-img">
         <img src="Poukazy/Poukaz 2000,-.jpg" alt="Poukaz 2000 Kč" class="voucher-img">
       </div>
-    </section>
+      <div style="text-align: center; font-weight: bold; font-size: 1.2em; background-color: rgba(124,74,39,0.2); border: 2px solid rgba(60,30,10,0.25); border-radius: 8px; padding: 12px;">
+        <h3 style="color: #891915; text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;";">! Poukazy lze zakoupit pouze osobně v salónu !</h3>
+        <p>Možná domluva telefonicky nebo elektronicky.</p>
+      </div>
+</section>
 
     <!-- Lightbox pro zobrazení poukazu -->
     <div id="voucher-lightbox" class="modal" style="display:none;">
@@ -41,52 +41,6 @@
     </div>
 
     <footer class="site-footer">
-      <style>
-        .footer-widgets {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          gap: 12px;
-          justify-content: center;
-          text-align: center;
-        }
-        .footer-widgets h2,
-        .footer-widgets h4 {
-          flex-basis: 100%;
-          margin: 6px 0;
-        }
-        .footer-social {
-          display: flex;
-          align-items: center;
-          gap: 10px;        /* space between each social group */
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        .footer-social .social {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;         /* smaller gap between icon and its link */
-          margin: 0 6px;    /* small horizontal spacing between items */
-        }
-        .footer-social img {
-          width: 18px;
-          height: 18px;
-          vertical-align: middle;
-          display: inline-block;
-        }
-        .footer-copy {
-          margin-top: 12px;
-          text-align: center;
-          font-size: 0.95rem;
-        }
-        .site-footer > img {
-          display: block;
-          margin: 12px auto 0;
-          width: 60px;
-          height: auto;
-        }
-      </style>
-
       <div class="footer-widgets">
         <h2>Zásady ochrany osobních údajů</h2>
         <h4>Vaše osobní údaje zpracováváme v souladu s platnou legislativou (GDPR).</h4>
