@@ -288,6 +288,9 @@ header { /* 04. Navigation & Hero Components */
   font-weight: 700; /* Určuje tloušťku písma. */
   text-align: left; /* Zarovná text. */
   list-style: disc; /* Nastaví styl odrážek seznamu. */
+  text-shadow:
+    0 2px 8px rgba(60,30,10,0.25),
+    0 0 2px #000; /* Přidá stín textu. */
 }
 .page-home .welcome-list li {
   margin-bottom: 8px; /* Odsazení zespodu pro prvek. */
@@ -783,10 +786,10 @@ header { /* 04. Navigation & Hero Components */
   padding: 16px; /* Přidá vnitřní odsazení prvku. */
 }
 .discount-bubble {
-  background: rgba(138, 60, 4, 0.383); /* Definuje pozadí prvku. */
+  background: rgba(0, 0, 0, 0.574); /* Definuje pozadí prvku. */
   color: #fff; /* Nastaví barvu textu. */
   border-radius: 24px; /* Zaoblí rohy prvku. */
-  border: 2px solid #846844; /* Vykreslí rámeček kolem prvku. */
+  border: 2px solid #000000; /* Vykreslí rámeček kolem prvku. */
   text-align: center; /* Zarovná text. */
   font-family: 'Raleway', sans-serif; /* Určuje použité písmo. */
   margin: 0 auto; /* Odsadí prvek od okolního obsahu. */
@@ -799,6 +802,9 @@ header { /* 04. Navigation & Hero Components */
   font-size: 42px; /* Nastaví velikost písma. */
   font-weight: 700; /* Určuje tloušťku písma. */
   margin-top: 6px; /* Odsazení shora pro prvek. */
+  color: #891915; /* Nastaví barvu textu. */
+  text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.411); /* Přidá stín textu. */
+  -webkit-text-stroke: 1px #000000; /* Přidá obrys textu (pro WebKit prohlížeče). */
 }
 .card-info {
   padding: 12px 16px; /* Přidá vnitřní odsazení prvku. */
@@ -1007,9 +1013,50 @@ header { /* 04. Navigation & Hero Components */
   flex-direction: column; /* Určuje směr Flexboxu. */
   gap: 16px; /* Nastaví mezery mezi položkami. */
 }
+.prostor-img {
+  margin-bottom: 24px; /* Vytvoří mezeru pod obrázkem */
+}
 .prostor-img img {
   width: 100%; /* Definuje šířku prvku. */
   border-radius: 16px; /* Zaoblí rohy prvku. */
+  -webkit-mask-image: linear-gradient(90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%)
+    , linear-gradient(180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%)
+    , linear-gradient(180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%);
+  -webkit-mask-composite: multiply; /* Určuje způsob skládání masek ve WebKit prohlížečích. */
+  mask-composite: intersect; /* Nastaví, jak se kombinují masky ve standardních prohlížečích. */
 }
 .map-container {
   position: relative; /* Určuje způsob pozicování prvku. */
