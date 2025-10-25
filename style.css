@@ -1,68 +1,133 @@
+﻿/* ==========================================================================
+  Style Guide Overview
+  01. Theme Variables
+  02. Base Elements
+  03. Layout & Parallax Structure
+  04. Navigation & Hero Components
+  05. Cards, Pricing & Page Sections
+  06. Responsive Tweaks
+  ========================================================================== */
+
+/* --------------------------------------------------------------------------
+  01. Theme Variables
+  -------------------------------------------------------------------------- */
 :root {
+  /* Proměnná pro základní vnější odsazení. */
   --pad: 10px;
+  /* Proměnná pro mezery mezi prvky. */
   --gap: 10px;
+  /* Proměnná pro hlavní akcentní barvu. */
   --accent: #7c4a27;
+  /* Proměnná pro barvu okrajů. */
   --border: #5c3520;
   /* nové proměnné pro tlačítka */
   --accent-2: #ab754e;
+  /* Proměnná pro tmavou barvu. */
   --dark: #3e2f2a;
+  /* Proměnná pro světlou krémovou barvu. */
   --cream: #fff8f2;
+  /* Proměnná pro zlatý odstín. */
   --gold: #ffdcae;
+  /* Proměnná pro výšku navigačních tlačítek. */
   --nav-btn-height: 56px;
+  /* Proměnná pro menší výšku navigačních tlačítek. */
   --nav-btn-height-sm: 48px;
+  /* Proměnná pro nejnižší výšku navigačních tlačítek. */
   --nav-btn-height-xs: 44px;
 }
 
+/* --------------------------------------------------------------------------
+  02. Base Elements
+  -------------------------------------------------------------------------- */
 html {
+  /* Řídí chování při rolování. */
   scroll-behavior: smooth;
+  /* Řídí přetečení na ose X. */
   overflow-x: hidden;
 }
 
 /* ZÁKLADNÍ STYLY */
 body {
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0 var(--pad) 40px;
+  /* Určuje použité písmo. */
   font-family: 'Tenor Sans', serif;
+  /* Definuje pozadí prvku. */
   background: url('pozadi.jpg') center/cover fixed no-repeat;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Řídí přetečení na ose X. */
   overflow-x: hidden;
 }
 .container {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Omezí maximální šířku prvku. */
   max-width: 1180px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0 20px;
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
 }
 
-/* PARALLAX SECTIONS */
+/* --------------------------------------------------------------------------
+  03. Layout & Parallax Sections
+  -------------------------------------------------------------------------- */
 .parallax-section {
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví minimální výšku prvku. */
   min-height: 320px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 60px auto;
+  /* Nastaví barvu textu. */
   color: #ffffff;
+  /* Přidá stín textu. */
   text-shadow: #000000 1px 1px 10px;
+  /* Zarovná text. */
   text-align: center;
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
+  /* Vybere obrázek používaný pro parallax pozadí. */
   --parallax-image: none;
+  /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(26,12,6,0.32), rgba(26,12,6,0.55));
 }
 
 .parallax-section::before {
+  /* Vloží obsah pseudo prvku. */
   content: "";
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Souhrnně nastaví odsazení ze všech stran. */
   inset: 0;
+  /* Určuje pořadí překrytí prvku. */
   z-index: 0;
+  /* Určuje obrázek pozadí. */
   background-image: var(--parallax-overlay), var(--parallax-image);
+  /* Určuje pozici pozadí. */
   background-position: center;
+  /* Řídí opakování pozadí. */
   background-repeat: no-repeat;
+  /* Nastaví velikost pozadí. */
   background-size: cover;
+  /* Určuje, zda se pozadí posouvá se stránkou. */
   background-attachment: fixed, fixed;
+  /* Zaoblí rohy prvku. */
   border-radius: inherit;
+  /* Řídí reakci na události kurzoru. */
   pointer-events: none;
   -webkit-mask-image: linear-gradient(90deg,
       rgba(0,0,0,0) 0%,
@@ -100,91 +165,143 @@ body {
       rgba(0,0,0,0.75) 82%,
       rgba(0,0,0,0.35) 94%,
       rgba(0,0,0,0) 100%);
+  /* Určuje způsob skládání masek ve WebKit prohlížečích. */
   -webkit-mask-composite: multiply;
+  /* Nastaví, jak se kombinují masky ve standardních prohlížečích. */
   mask-composite: intersect;
 }
 
 .parallax-content {
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Určuje pořadí překrytí prvku. */
   z-index: 1;
+  /* Omezí maximální šířku prvku. */
   max-width: 720px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 32px 28px;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
 }
 
 .parallax-content h2 {
+  /* Určuje použité písmo. */
   font-family: 'Inknut Antiqua', serif;
+  /* Nastaví velikost písma. */
   font-size: clamp(1.9rem, 4vw, 2.6rem);
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 12px;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 1px;
 }
 
 .parallax-content p {
+  /* Nastaví velikost písma. */
   font-size: clamp(1rem, 2.2vw, 1.25rem);
+  /* Nastaví výšku řádku. */
   line-height: 1.7;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
 }
 
 .parallax-welcome {
+  /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(26,12,6,0.35), rgba(26,12,6,0.6));
+  /* Vybere obrázek používaný pro parallax pozadí. */
   --parallax-image: url('galerie/shop3.jpg');
 }
 
 /* Parallax variant for the welcome (intro) section */
 .parallax-welcome-intro {
+  /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(26,12,6,0.32), rgba(26,12,6,0.55));
+  /* Vybere obrázek používaný pro parallax pozadí. */
   --parallax-image: url('galerie/caj.jpg');
 }
 
 .parallax-bonus {
+  /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(26,12,6,0.0), rgba(26,12,6,0.0));
+  /* Vybere obrázek používaný pro parallax pozadí. */
   --parallax-image: url('galerie/karty.jpg');
 }
 
 .parallax-balance {
+  /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(18,10,4,0.25), rgba(18,10,4,0.55));
+  /* Vybere obrázek používaný pro parallax pozadí. */
   --parallax-image: url('galerie/shop5.jpg');
 }
 img, video, iframe {
+  /* Nastaví způsob zobrazení prvku. */
   display: block;
+  /* Omezí maximální šířku prvku. */
   max-width: 100%;
+  /* Definuje výšku prvku. */
   height: auto;
 }
 
-/* HEADER */
+/* --------------------------------------------------------------------------
+  04. Navigation & Hero Components
+  -------------------------------------------------------------------------- */
 header {
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Nastaví minimální výšku prvku. */
   min-height: 0;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
 }
 .header-banner {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
 }
 
-/* HERO SEKCE */
+/* Hero Title */
 .hero-title {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: row;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: flex-start;
+  /* Odsazení shora pro prvek. */
   margin-top: 40px;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 40px;
 }
 .hero-title h1 {
+  /* Nastaví velikost písma. */
   font-size: 60px;
+  /* Transformuje text (např. na velká písmena). */
   text-transform: uppercase;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 1px;
+  /* Definuje pozadí prvku. */
   background: linear-gradient(90deg, var(--accent), #3e2f2a, var(--accent));
+  /* Omezí vykreslení pozadí na text ve WebKit prohlížečích. */
   -webkit-background-clip: text;
+  /* Určuje oblast vykreslení pozadí. */
   background-clip: text;
+  /* Nastaví barvu textu. */
   color: transparent;
+  /* Přidá stín textu. */
   text-shadow: 2px 2px 6px rgba(60,30,10,0.25), 0 0 1px #2b1c12;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
+  /* Definuje animaci a její průběh. */
   animation: shine 4s infinite;
+  /* Zarovná text. */
   text-align: left;
+  /* Nastaví výšku řádku. */
   line-height: 1.1;
+  /* Omezí maximální šířku prvku. */
   max-width: 420px;
+  /* Odsazení zleva pro prvek. */
   margin-left: 0;
 }
 @keyframes shine {
@@ -192,363 +309,633 @@ header {
   to { background-position: 200% 0 }
 }
 .logo-bubble {
+  /* Odsazení zleva pro prvek. */
   margin-left: 80px;
+  /* Definuje šířku prvku. */
   width: 108px;
+  /* Definuje výšku prvku. */
   height: 108px;
+  /* Zaoblí rohy prvku. */
   border-radius: 50%;
+  /* Definuje pozadí prvku. */
   background: #DCC7B1;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  /* Určuje, jak moc se položka zmenší. */
   flex-shrink: 0;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #3e2f2a;
 }
 .logo-bubble img {
+  /* Definuje šířku prvku. */
   width: 120%;
 }
 #hero {
+  /* Zarovná text. */
   text-align: center;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 40px;
 }
 #hero .intro,
 #poukazy .intro {
+  /* Nastaví velikost písma. */
   font-size: 1.35em;
+  /* Nastaví barvu textu. */
   color: #000000;
+  /* Zarovná text. */
   text-align: center;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 40px;
   text-shadow:
     0 2px 8px rgba(60,30,10,0.25),
     0 0 2px #000;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.2px;
+  /* Nastaví výšku řádku. */
   line-height: 1.5;
 }
 
+/* Page Specific: Home */
 /* Přivítání */
 .page-home .welcome-section {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
 }
 
 .page-home .welcome-section.parallax-section {
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
 }
 
 .page-home .welcome-section .parallax-content {
+  /* Omezí maximální šířku prvku. */
   max-width: min(960px, 100%);
+  /* Přidá vnitřní odsazení prvku. */
   padding: 40px 36px;
+  /* Zaoblí rohy prvku. */
   border-radius: 18px;
+  /* Přidá stín prvku. */
   box-shadow: 0 8px 24px rgba(0,0,0,0.28);
 }
 .page-home .welcome-content {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: flex-start;
+  /* Nastaví mezery mezi položkami. */
   gap: 24px;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
 }
 .page-home .welcome-list {
+  /* Rychle nastaví chování flex položky. */
   flex: 1 1 260px;
+  /* Nastaví minimální šířku prvku. */
   min-width: 220px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
+  /* Vnitřní odsazení zleva. */
   padding-left: 1.2em;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Zarovná text. */
   text-align: left;
+  /* Nastaví styl odrážek seznamu. */
   list-style: disc;
 }
 .page-home .welcome-list li {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 8px;
 }
 .page-home .welcome-image {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Omezí maximální šířku prvku. */
   max-width: 320px;
+  /* Zaoblí rohy prvku. */
   border-radius: 8px;
+  /* Řídí přizpůsobení média do boxu. */
   object-fit: cover;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 20px;
 }
 .page-home .welcome-media {
+  /* Rychle nastaví chování flex položky. */
   flex: 0 1 360px;
+  /* Omezí maximální šířku prvku. */
   max-width: 360px;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 16px;
 }
 .page-home .welcome-gallery {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 12px;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: nowrap;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Omezí maximální šířku prvku. */
   max-width: 320px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 4px auto 0;
 }
 .page-home .welcome-gallery img {
+  /* Rychle nastaví chování flex položky. */
   flex: 1 1 calc(50% - 6px);
+  /* Omezí maximální šířku prvku. */
   max-width: calc(50% - 6px);
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Zaoblí rohy prvku. */
   border-radius: 8px;
+  /* Řídí přizpůsobení média do boxu. */
   object-fit: cover;
+  /* Přidá stín prvku. */
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.2s ease;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
 }
 .page-home .welcome-gallery img:hover,
 .page-home .welcome-gallery img:focus {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scale(1.04);
 }
 
 /* Bonusová karta */
 .page-home .bonus-card-section {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
 }
 
 .page-home .bonus-card-section .parallax-content {
+  /* Omezí maximální šířku prvku. */
   max-width: min(920px, 100%);
+  /* Přidá vnitřní odsazení prvku. */
   padding: 42px 36px;
+  /* Zaoblí rohy prvku. */
   border-radius: 20px;
+  /* Přidá stín prvku. */
   box-shadow: none;
 }
 
 .page-home .bonus-card-box {
+  /* Definuje pozadí prvku. */
   background: none;
+  /* Zaoblí rohy prvku. */
   border-radius: 20px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
+  /* Omezí maximální šířku prvku. */
   max-width: 700px;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Přidá stín prvku. */
   box-shadow: none;
+  /* Aplikuje filtr na pozadí za prvkem. */
   backdrop-filter: none;
 }
 
 .page-home .bonus-card-box .discount-bubble {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 18px;
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 14px 36px;
+  /* Definuje šířku prvku. */
   width: fit-content;
+  /* Nastaví minimální šířku prvku. */
   min-width: 0;
+  /* Odsazení zleva pro prvek. */
   margin-left: auto;
+  /* Odsazení zprava pro prvek. */
   margin-right: auto;
 }
 
 .page-home .bonus-card-box .card-info {
+  /* Zarovná text. */
   text-align: center;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto 20px;
+  /* Omezí maximální šířku prvku. */
   max-width: 520px;
+  /* Definuje pozadí prvku. */
   background: none;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 14px 0;
+  /* Zaoblí rohy prvku. */
   border-radius: 14px;
+  /* Přidá stín prvku. */
   box-shadow: none;
 }
 
 .page-home .bonus-card-box .cards {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 18px;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
+  /* Definuje šířku prvku. */
   width: 100%;
 }
 
 .page-home .bonus-card-box .cards img {
+  /* Definuje šířku prvku. */
   width: clamp(160px, 45%, 260px);
 }
 
 @media (max-width: 640px) {
   .page-home .bonus-card-section .parallax-content {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 32px 22px;
   }
 
   .page-home .bonus-card-box {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 24px 20px;
   }
 
   .page-home .bonus-card-box .cards {
+    /* Nastaví mezery mezi položkami. */
     gap: 12px;
   }
 
   .page-home .bonus-card-box .cards img {
+    /* Definuje šířku prvku. */
     width: clamp(140px, 48%, 220px);
   }
 }
 
 /* Obchod */
 .page-home #shop {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
+  /* Zarovná text. */
   text-align: center;
 }
 .page-home #shop h2 {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 12px;
 }
 .page-home #shop p {
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto 20px;
+  /* Omezí maximální šířku prvku. */
   max-width: 620px;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Nastaví velikost písma. */
   font-size: 1.05rem;
 }
 .page-home .shop-gallery {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 14px;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: nowrap;
+  /* Definuje šířku prvku. */
   width: min(100%, 980px);
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto 24px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0 2vw;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
 }
 .page-home .shop-gallery img {
+  /* Rychle nastaví chování flex položky. */
   flex: 0 1 clamp(120px, calc((100% - 56px) / 5), 180px);
+  /* Definuje šířku prvku. */
   width: clamp(120px, calc((100% - 56px) / 5), 180px);
+  /* Udržuje zadaný poměr stran prvku. */
   aspect-ratio: 1 / 1;
+  /* Zaoblí rohy prvku. */
   border-radius: 10px;
+  /* Řídí přizpůsobení média do boxu. */
   object-fit: cover;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
 }
 .page-home .shop-gallery img:hover,
 .page-home .shop-gallery img:focus {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-4px);
+  /* Přidá stín prvku. */
   box-shadow: 0 10px 22px rgba(0,0,0,0.24);
 }
 
 @media (max-width: 720px) {
   .page-home .shop-gallery {
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: flex-start;
+    /* Nastaví mezery mezi položkami. */
     gap: 16px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 18px 12px;
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 auto 24px;
+    /* Řídí přetečení na ose X. */
     overflow-x: auto;
+    /* Řídí přetečení na ose Y. */
     overflow-y: hidden;
+    /* Aktivuje plynulé rolování ve WebKit prohlížečích. */
     -webkit-overflow-scrolling: touch;
+    /* Aktivuje skokové rolování. */
     scroll-snap-type: x mandatory;
   }
   .page-home .shop-gallery img {
+    /* Rychle nastaví chování flex položky. */
     flex: 0 0 180px;
+    /* Definuje šířku prvku. */
     width: 180px;
+    /* Určí zarovnání prvku při skoku. */
     scroll-snap-align: center;
   }
   .page-home .shop-gallery::-webkit-scrollbar {
+    /* Definuje výšku prvku. */
     height: 6px;
   }
   .page-home .shop-gallery::-webkit-scrollbar-thumb {
+    /* Definuje pozadí prvku. */
     background: rgba(124,74,39,0.45);
+    /* Zaoblí rohy prvku. */
     border-radius: 999px;
   }
   .page-home .shop-gallery::-webkit-scrollbar-track {
+    /* Definuje pozadí prvku. */
     background: rgba(124,74,39,0.15);
   }
 }
 
 
 .hero-nav {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Nastaví mezery mezi položkami. */
   gap: 14px;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: nowrap;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 6px 12px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
+  /* Omezí maximální šířku prvku. */
   max-width: 980px;
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
+  /* Řídí přetečení na ose X. */
   overflow-x: auto;
+  /* Aktivuje plynulé rolování ve WebKit prohlížečích. */
   -webkit-overflow-scrolling: touch;
+  /* Nastaví tloušťku posuvníku v podporovaných prohlížečích. */
   scrollbar-width: none;
 }
 
 .hero-nav::-webkit-scrollbar {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
 }
 
 .hero-nav .nav-btn {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0 12px;
+  /* Rychle nastaví chování flex položky. */
   flex: 0 0 auto;
+  /* Nastaví minimální šířku prvku. */
   min-width: 64px;
+  /* Omezí maximální šířku prvku. */
   max-width: 220px;
+  /* Definuje výšku prvku. */
   height: var(--nav-btn-height);
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
+  /* Definuje pozadí prvku. */
   background: #ab914e;
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Zaoblí rohy prvku. */
   border-radius: 999px;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.2px;
+  /* Nastaví velikost písma. */
   font-size: 0.95rem;
+  /* Řídí zalamování textu. */
   white-space: nowrap;
+  /* Zarovná text. */
   text-align: center;
+  /* Nastaví výšku řádku. */
   line-height: 1.1;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
+  /* Určuje, jak se zobrazí přetékající text. */
   text-overflow: ellipsis;
+  /* Přidá stín prvku. */
   box-shadow: 0 6px 14px rgba(60,30,10,0.12);
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s;
 }
 
 .hero-nav .nav-btn span {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
+  /* Zarovná text. */
   text-align: center;
 }
 
 .hero-nav .nav-btn:hover,
 .hero-nav .nav-btn:focus {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-4px);
+  /* Přidá stín prvku. */
   box-shadow: 0 10px 20px rgba(60,30,10,0.18);
+  /* Definuje pozadí prvku. */
   background: #9b783f;
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: none;
+}
+
+/* Page Specific: Services */
+.page-services .services-nav {
+  /* Vytváří prostor nad i pod navigací, aby měla vlastní blok */
+  margin: 32px auto 48px;
+  /* Omezí šířku navigace na hodnotu příjemnou pro desktop */
+  max-width: min(1100px, 100%);
+}
+
+.page-services .services-nav .nav-btn {
+  /* Umožní tlačítkům roztáhnout se na výšku podle obsahu */
+  height: auto;
+  /* Zachová minimální výšku přebíranou z globálních proměnných */
+  min-height: var(--nav-btn-height);
+  /* Přidá pohodlnější vnitřní odsazení pro víceřádkové popisky */
+  padding: 12px 20px;
+  /* Povolení zalomení textu na více řádků */
+  white-space: normal;
+  /* Zvětší řádkování, aby vícerádkové texty nebyly stísněné */
+  line-height: 1.25;
+  /* Zruší clamping šířky, aby text mohl dýchat */
+  overflow: visible;
+  /* Odstraní automatické zkracování textu při delších názvech */
+  text-overflow: clip;
+}
+
+@media (min-width: 900px) {
+  .page-services .services-nav {
+    /* Na větších obrazovkách se tlačítka srovnají do řádku */
+    display: flex;
+    /* Nastaví jednotné mezery mezi tlačítky */
+    gap: 18px;
+    /* Přidá větší vnitřní odsazení celé navigaci pro lepší rámec */
+    padding: 18px 24px;
+    /* Vypne horizontální rolování, protože tlačítka už tvoří řádek */
+    overflow: visible;
+  }
+
+  .page-services .services-nav .nav-btn {
+    /* Dovolí tlačítkům pružně vyplnit dostupný prostor */
+    flex: 1 1 0;
+    /* Zruší maximální šířku, aby se přizpůsobila dostupnému místu */
+    max-width: none;
+    /* Povolení zmenšení tlačítek, pokud je položek více */
+    min-width: 0;
+  }
 }
 
 /* Zvýrazněná „karta“ navigace v hero sekci */
 .hero-nav--featured {
+  /* Definuje pozadí prvku. */
   background: rgba(138, 60, 4, 0.21);
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #846844;
+  /* Zaoblí rohy prvku. */
   border-radius: 24px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 14px 16px;
+  /* Nastaví mezery mezi položkami. */
   gap: 16px;
+  /* Přidá stín prvku. */
   box-shadow: 0 12px 40px rgba(60,30,10,0.18);
+  /* Aplikuje filtr na pozadí za prvkem. */
   backdrop-filter: blur(4px);
 }
 
 /* Primární CTA tlačítko – přebarveno na červenou */
 .hero-nav .nav-btn.nav-btn--primary {
+  /* Definuje pozadí prvku. */
   background: linear-gradient(100deg, #590000 60%, #560000 100%);
+  /* Určuje barvu rámečku. */
   border-color: #7f1212;
 }
 .hero-nav .nav-btn.nav-btn--primary:hover,
 .hero-nav .nav-btn.nav-btn--primary:focus {
+  /* Definuje pozadí prvku. */
   background: linear-gradient(100deg, #8b1111 60%, #c62828 100%);
+  /* Nastaví barvu textu. */
   color: #ffe5e5;
 }
 
 /* Pokud je „Rezervace online“ používá .reservio-nav-btn, přebarvíme také */
 .reservio-nav-btn {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
+  /* Definuje pozadí prvku. */
   background: linear-gradient(90deg, #b71c1c 60%, #d32f2f 100%);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Nastaví velikost písma. */
   font-size: 1.18em;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 13px 34px;
+  /* Zaoblí rohy prvku. */
   border-radius: 28px;
+  /* Odsazení zleva pro prvek. */
   margin-left: 24px;
   box-shadow:
     0 6px 28px 0 rgba(60,30,10,0.38),
     0 2px 0 #3e2f2a inset;
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.7px;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #3e2f2a;
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: none;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Určuje způsob pozicování prvku. */
   position: relative;
   transition:
     background 0.2s,
@@ -559,17 +946,25 @@ header {
 }
 .reservio-nav-btn:hover,
 .reservio-nav-btn:focus {
+  /* Definuje pozadí prvku. */
   background: linear-gradient(90deg, #8b1111 70%, #c62828 100%);
+  /* Nastaví barvu textu. */
   color: #ffe5e5;
+  /* Určuje barvu rámečku. */
   border-color: #d32f2f;
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-3px) scale(1.07);
 }
 
 @media (max-width: 920px) {
   .hero-nav .nav-btn {
+    /* Nastaví velikost písma. */
     font-size: 0.9rem;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 10px;
+    /* Omezí maximální šířku prvku. */
     max-width: 180px;
+    /* Definuje výšku prvku. */
     height: var(--nav-btn-height-sm);
   }
 }
@@ -577,268 +972,443 @@ header {
 @media (max-width: 540px) {
 
   .parallax-section {
+    /* Určuje, zda se pozadí posouvá se stránkou. */
     background-attachment: scroll;
   }
   .hero-nav {
+    /* Nastaví mezery mezi položkami. */
     gap: 8px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 8px 10px;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
+    /* Řídí přetečení na ose X. */
     overflow-x: visible;
+    /* Definuje šířku prvku. */
     width: 100%;
   }
 
   .hero-nav .nav-btn {
-    font-size: 0.85rem;
-    padding: 10px 12px;
+    /* Nastaví velikost písma s ohledem na šířku displeje. */
+    font-size: clamp(1rem, 5vw, 1.3rem);
+    /* Přidá vnitřní odsazení prvku. */
+    padding: 10px 14px;
+    /* Omezí maximální šířku prvku. */
     max-width: 520px;
+    /* Definuje výšku prvku. */
     height: auto;
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Rychle nastaví chování flex položky. */
     flex: none;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
-    white-space: normal;
+    /* Zabrání zalomení názvů kategorií. */
+    white-space: nowrap;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: center;
+    /* Určuje započítání hran a výplní do rozměrů. */
     box-sizing: border-box;
   }
 
+  .page-services .services-nav .nav-btn {
+    /* Přizpůsobí velikost textu a udrží jej na jednom řádku. */
+    font-size: clamp(1rem, 4.8vw, 1.25rem);
+    /* Zabrání zalomení textu kategorie. */
+    white-space: nowrap;
+  }
+
+  .page-services .cenik-section-title,
+  .page-services .cenik-section-titlemini {
+    /* Přizpůsobí titulky šířce displeje a ponechá je v jednom řádku. */
+    font-size: clamp(1.3rem, 6vw, 2.4rem) !important;
+    white-space: nowrap;
+  }
+
   .hero-nav > div {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: center;
   }
 
   .hero-nav > div .nav-btn {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 520px;
   }
 
   .hero-nav--featured {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 12px;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
   }
 
   .hero-nav--featured .nav-btn {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Zarovná text. */
     text-align: center;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 13px 16px;
   }
 }
 
 /* KONTAKTNÍ SEKCE */
 .contact-group {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: row;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 16px;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
 }
 .order-box, .contact-box {
+  /* Definuje šířku prvku. */
   width: 240px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 8px 16px;
+  /* Zaoblí rohy prvku. */
   border-radius: 30px;
+  /* Zarovná text. */
   text-align: center;
 }
 .order-box {
+  /* Definuje pozadí prvku. */
   background: var(--accent);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Nastaví velikost písma. */
   font-size: 23px;
 }
 .contact-box {
+  /* Definuje pozadí prvku. */
   background: #fff;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid var(--accent);
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: flex-start;
+  /* Nastaví mezery mezi položkami. */
   gap: 8px;
 }
 .contact-item {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví velikost písma. */
   font-size: 16px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 4px 0;
 }
 .contact-icon img {
+  /* Definuje šířku prvku. */
   width: 24px;
+  /* Definuje výšku prvku. */
   height: 24px;
+  /* Řídí přizpůsobení média do boxu. */
   object-fit: contain;
 }
 .contact-box a {
+  /* Nastaví barvu textu. */
   color: inherit;
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Vnitřní odsazení zespodu. */
   padding-bottom: 2px;
 }
 .contact-box a::after {
+  /* Vloží obsah pseudo prvku. */
   content: "";
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Umístí prvek směrem zleva. */
   left: 0;
+  /* Umístí prvek směrem zdola. */
   bottom: 0;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Definuje výšku prvku. */
   height: 2px;
+  /* Definuje pozadí prvku. */
   background: var(--accent);
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scaleX(0);
+  /* Nastaví referenční bod transformace. */
   transform-origin: left;
+  /* Nastaví animaci změn vlastností. */
   transition: transform .3s;
 }
 .contact-box a:hover::after {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scaleX(1);
 }
 .contact-ideal {
+  /* Odsadí prvek od okolního obsahu. */
   margin: 16px 0 0 0;
+  /* Nastaví velikost písma. */
   font-size: 1rem;
+  /* Určuje tloušťku písma. */
   font-weight: 600;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Zarovná konkrétní dětský prvek. */
   align-self: center;
 }
 .reservio-center {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Definuje šířku prvku. */
   width: 100%;
 }
 
-/* NABÍDKA A CENÍK */
+/* --------------------------------------------------------------------------
+   05. Cards, Pricing & Content Blocks
+   -------------------------------------------------------------------------- */
 .offer-box {
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 16px;
 }
 .discount-bubble {
+  /* Definuje pozadí prvku. */
   background: rgba(138, 60, 4, 0.383);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Zaoblí rohy prvku. */
   border-radius: 24px;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #846844;
+  /* Zarovná text. */
   text-align: center;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
 }
 .discount-main {
+  /* Nastaví velikost písma. */
   font-size: 23px;
+  /* Určuje tloušťku písma. */
   font-weight: 600;
 }
 .discount-sub {
+  /* Nastaví velikost písma. */
   font-size: 42px;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Odsazení shora pro prvek. */
   margin-top: 6px;
 }
 .card-info {
+  /* Přidá vnitřní odsazení prvku. */
   padding: 12px 16px;
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
+  /* Zarovná text. */
   text-align: center;
+  /* Přidá stín textu. */
   text-shadow:#ffffff 1px 1px 6px;
+  /* Nastaví velikost písma. */
   font-size: 18px;
+  /* Určuje tloušťku písma. */
   font-weight: 600;
+  /* Nastaví barvu textu. */
   color: #000000;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 20px auto;
+  /* Omezí maximální šířku prvku. */
   max-width: 90%;
 }
 .cards > * {
+  /* Rychle nastaví chování flex položky. */
   flex: 1 1 0;
   /* Zabrání různé výšce kvůli obsahu */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: stretch;
 }
 .cards img {
+  /* Definuje šířku prvku. */
   width: calc((100% - var(--gap)) / 2);
+  /* Zaoblí rohy prvku. */
   border-radius: 12px;
+  /* Aplikuje grafický filtr na prvek. */
   filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
+  /* Nastaví tvar kurzoru. */
   cursor: default;
+  /* Nastaví animaci změn vlastností. */
   transition: none;
 }
 
 .service-price-tag {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 12px;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 12px 18px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 16px auto 24px;
+  /* Zaoblí rohy prvku. */
   border-radius: 18px;
+  /* Definuje pozadí prvku. */
   background: linear-gradient(135deg, rgba(124,74,39,0.96), rgba(171,117,78,0.92));
+  /* Nastaví barvu textu. */
   color: #361000;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Nastaví velikost písma. */
   font-size: 0.95rem;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.4px;
+  /* Přidá stín prvku. */
   box-shadow: 0 8px 20px rgba(60,30,10,0.24);
+  /* Zarovná text. */
   text-align: center;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
 }
 
 .service-price-tag span {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
 }
 
 .service-price-tag .service-price {
+  /* Nastaví velikost písma. */
   font-size: 1.1em;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.6px;
 }
 
 .service-price-tag .service-duration {
+  /* Nastaví velikost písma. */
   font-size: 0.95em;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Transformuje text (např. na velká písmena). */
   text-transform: uppercase;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 1px;
 }
 
 .service-price-tag .service-price-divider {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
 }
 
 .service-price-tag-link {
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
 }
 
 .service-price-tag-link .service-price-tag {
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-price-tag-link:focus .service-price-tag,
 .service-price-tag-link:hover .service-price-tag {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-2px);
+  /* Přidá stín prvku. */
   box-shadow: 0 12px 28px rgba(60,30,10,0.28);
 }
 
+/* --------------------------------------------------------------------------
+   06. Responsive Tweaks
+   -------------------------------------------------------------------------- */
 @media (max-width: 640px) {
   .service-price-tag {
+    /* Nastaví velikost písma. */
     font-size: 0.9rem;
   }
 
   .service-price-tag .service-duration {
+    /* Nastaví velikost písma. */
     font-size: 0.85em;
+    /* Nastaví rozestupy mezi písmeny. */
     letter-spacing: 0.6px;
   }
 }
 
 /* INFORMACE O SLUŽBÁCH */
 .page-services .classic-massage-info p {
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 6px;
+  /* Odsazení shora pro prvek. */
   margin-top: 6px;
 }
 
 .page-services .indikace,
 .page-services .kontraindikace {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 24px;
+  /* Nastaví velikost písma. */
   font-size: 1.3em;
+  /* Určuje tloušťku písma. */
   font-weight: bold;
+  /* Přidá stín textu. */
   text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;
 }
 
 .page-services .indikace {
+  /* Nastaví barvu textu. */
   color: #92ab4e;
 }
 
 .page-services .kontraindikace {
+  /* Nastaví barvu textu. */
   color: #e33333;
 }
 
@@ -847,235 +1417,364 @@ header {
   .page-services .offer-pricing-wrapper,
   .page-services .about-row,
   .page-services .cards {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
+    /* Nastaví mezery mezi položkami. */
     gap: 24px;
+  }
   .parallax-section {
+    /* Odsadí prvek od okolního obsahu. */
     margin: 36px 0;
+    /* Nastaví minimální výšku prvku. */
     min-height: 220px;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
+    /* Určuje, zda se pozadí posouvá se stránkou. */
     background-attachment: scroll;
   }
   .parallax-content {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 24px 18px;
-  }
   }
 
   .page-services .card-info,
   .page-services .card-img-col img,
   .page-services iframe,
   .page-services img {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
+    /* Definuje výšku prvku. */
     height: auto;
   }
 
   .page-services {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 16px;
+    /* Nastaví velikost písma. */
     font-size: 0.95rem;
   }
 
   .page-services h1,
   .page-services h2 {
+    /* Zarovná text. */
     text-align: center;
   }
 }
 #pricing .video-frame {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
+  /* Přidá stín prvku. */
   box-shadow: 0 6px 16px rgba(0,0,0,.2);
 }
 
 /* O MNĚ */
 #about { margin-bottom: 60px; }
 .about-row {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Nastaví mezery mezi položkami. */
   gap: 12px;
 }
 .about-row img {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
 }
 
 /* PROSTOR A MAPA */
 #location { margin-bottom: 60px; }
 .prostor-map {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Určuje směr Flexboxu. */
   flex-direction: column;
+  /* Nastaví mezery mezi položkami. */
   gap: 16px;
 }
 .prostor-img img {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Zaoblí rohy prvku. */
   border-radius: 16px;
 }
 .map-container {
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Vnitřní odsazení shora. */
   padding-top: 56.25%;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid var(--border);
+  /* Zaoblí rohy prvku. */
   border-radius: 10px;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
+  /* Definuje pozadí prvku. */
   background: #fff;
 }
 .map-container iframe {
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Umístí prvek směrem shora. */
   top: 0;
+  /* Umístí prvek směrem zleva. */
   left: 0;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Definuje výšku prvku. */
   height: 100%;
+  /* Vykreslí rámeček kolem prvku. */
   border: 0;
 }
 .address-box {
+  /* Odsazení shora pro prvek. */
   margin-top: 8px;
+  /* Definuje pozadí prvku. */
   background: rgba(255,255,255,.6);
+  /* Přidá vnitřní odsazení prvku. */
   padding: 8px;
+  /* Zaoblí rohy prvku. */
   border-radius: 10px;
+  /* Nastaví velikost písma. */
   font-size: 23px;
+  /* Zarovná text. */
   text-align: center;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
 }
 
 /* FOOTER */
 footer {
+  /* Zarovná text. */
   text-align: center;
+  /* Odsazení shora pro prvek. */
   margin-top: 20px;
 }
 footer img {
+  /* Definuje šířku prvku. */
   width: 80px;
+  /* Nastaví průhlednost prvku. */
   opacity: .8;
 }
 .site-footer {
+  /* Definuje barvu pozadí. */
   background-color: #ffffff;
+  /* Zarovná text. */
   text-align: center;
   padding: 0.8rem 0.5rem; /* původně 2rem 1rem */
+  /* Nastaví velikost písma. */
   font-size: 0.9rem;
+  /* Nastaví barvu textu. */
   color: #5a3e2b;
 }
 .footer-widgets {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 12px;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Zarovná text. */
   text-align: center;
 }
 .footer-widgets h2,
 .footer-widgets h4 {
+  /* Určí základní velikost flex položky. */
   flex-basis: 100%;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 6px 0;
 }
 .footer-widgets a {
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 0.5rem;
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
 }
 .footer-widgets a:hover {
+  /* Řídí dekoraci textu. */
   text-decoration: underline;
 }
 .footer-social {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 10px;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
 }
 .footer-social .social {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Nastaví mezery mezi položkami. */
   gap: 6px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 6px;
 }
 .footer-social img {
+  /* Definuje šířku prvku. */
   width: 18px;
+  /* Definuje výšku prvku. */
   height: 18px;
+  /* Zarovná prvek vůči okolnímu textu na svislé ose. */
   vertical-align: middle;
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
 }
 .footer-copy {
+  /* Odsazení shora pro prvek. */
   margin-top: 12px;
+  /* Zarovná text. */
   text-align: center;
+  /* Nastaví velikost písma. */
   font-size: 0.95rem;
 }
 .site-footer > img {
+  /* Nastaví způsob zobrazení prvku. */
   display: block;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 12px auto 0;
+  /* Definuje šířku prvku. */
   width: 60px;
+  /* Definuje výšku prvku. */
   height: auto;
 }
 
 /* MODAL */
 .modal {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
+  /* Určuje způsob pozicování prvku. */
   position: fixed;
+  /* Určuje pořadí překrytí prvku. */
   z-index: 2000;
+  /* Umístí prvek směrem zleva. */
   left: 0; top: 0; right: 0; bottom: 0;
+  /* Definuje pozadí prvku. */
   background: rgba(0,0,0,0.85);
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
 }
 .modal.show, .modal[style*="display: flex"] {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex !important;
 }
 .modal img {
+  /* Omezí maximální šířku prvku. */
   max-width: 90%;
+  /* Omezí maximální výšku prvku. */
   max-height: 90%;
+  /* Zaoblí rohy prvku. */
   border-radius: 12px;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 12px rgba(0,0,0,.5);
 }
 .lightbox-trigger {
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
 }
 .lightbox-trigger:focus {
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: 2px solid rgba(124,74,39,0.5);
+  /* Posune obrys od prvku pro lepší čitelnost. */
   outline-offset: 4px;
 }
 .modal-close,
 .modal-nav {
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Definuje pozadí prvku. */
   background: rgba(0,0,0,0.6);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Definuje šířku prvku. */
   width: 44px;
+  /* Definuje výšku prvku. */
   height: 44px;
+  /* Zaoblí rohy prvku. */
   border-radius: 50%;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
   align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Nastaví velikost písma. */
   font-size: 24px;
+  /* Nastaví výšku řádku. */
   line-height: 1;
+  /* Nastaví animaci změn vlastností. */
   transition: background 0.2s ease, transform 0.2s ease;
 }
 .modal-close:hover,
 .modal-close:focus,
 .modal-nav:hover,
 .modal-nav:focus {
+  /* Definuje pozadí prvku. */
   background: rgba(0,0,0,0.82);
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scale(1.05);
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: none;
 }
 .modal-close {
+  /* Umístí prvek směrem shora. */
   top: 16px;
+  /* Umístí prvek směrem zprava. */
   right: 16px;
 }
 .modal-nav--prev,
 .modal-nav--next {
+  /* Umístí prvek směrem shora. */
   top: 50%;
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-50%);
 }
 .modal-nav--prev { left: 28px; }
 .modal-nav--next { right: 28px; }
 .modal-nav.is-hidden {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
 }
 @media (max-width: 600px) {
   .modal-close,
   .modal-nav {
+    /* Definuje šířku prvku. */
     width: 36px;
+    /* Definuje výšku prvku. */
     height: 36px;
+    /* Nastaví velikost písma. */
     font-size: 20px;
   }
   .modal-nav--prev { left: 12px; }
@@ -1083,120 +1782,201 @@ footer img {
 }
 /* SCROLL BUTTON */
 #scrollTopBtn {
+  /* Určuje způsob pozicování prvku. */
   position: fixed;
+  /* Umístí prvek směrem zdola. */
   bottom: 20px;
+  /* Umístí prvek směrem zprava. */
   right: 20px;
+  /* Definuje šířku prvku. */
   width: 44px;
+  /* Definuje výšku prvku. */
   height: 44px;
+  /* Definuje pozadí prvku. */
   background: rgba(124,74,39,.85);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Zaoblí rohy prvku. */
   border-radius: 50%;
+  /* Nastaví velikost písma. */
   font-size: 24px;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Nastaví průhlednost prvku. */
   opacity: 0;
+  /* Rozhodne, zda je prvek viditelný, aniž by zabral místo. */
   visibility: hidden;
+  /* Nastaví animaci změn vlastností. */
   transition: opacity .3s, visibility .3s;
+  /* Určuje pořadí překrytí prvku. */
   z-index: 1000;
 }
 #scrollTopBtn.show {
+  /* Nastaví průhlednost prvku. */
   opacity: 1;
+  /* Rozhodne, zda je prvek viditelný, aniž by zabral místo. */
   visibility: visible;
 }
 
 /* VOUCHERY */
 .voucher-btn {
+  /* Definuje pozadí prvku. */
   background: linear-gradient(180deg, var(--accent), #5c3520);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #3e2f2a;
+  /* Zaoblí rohy prvku. */
   border-radius: 24px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 14px 60px;
+  /* Nastaví velikost písma. */
   font-size: 40px;
+  /* Určuje použité písmo. */
   font-family: 'Style Script', cursive;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  /* Nastaví animaci změn vlastností. */
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 2px;
+  /* Přidá stín textu. */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 .voucher-btn:hover {
+  /* Definuje pozadí prvku. */
   background: #3e2f2a;
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scale(1.05);
+  /* Přidá stín prvku. */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 .voucher-gallery {
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Povolí zalomení Flexbox položek. */
   flex-wrap: wrap;
+  /* Nastaví mezery mezi položkami. */
   gap: 18px;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
+  /* Odsazení shora pro prvek. */
   margin-top: 20px;
 }
 .voucher-img {
+  /* Definuje šířku prvku. */
   width: 180px;
+  /* Zaoblí rohy prvku. */
   border-radius: 12px;
+  /* Přidá stín prvku. */
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.2s;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
 }
 .voucher-img:hover {
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: scale(1.05);
 }
 .voucher-wrapper {
+  /* Odsazení shora pro prvek. */
   margin-top: 20px;
+  /* Zarovná text. */
   text-align: center;
 }
 .voucher-note {
+  /* Určuje použité písmo. */
   font-family: 'Tenor Sans', serif;
+  /* Nastaví velikost písma. */
   font-size: 15px;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Odsazení shora pro prvek. */
   margin-top: 6px;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 10px;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.5px;
 }
 
 /* IMPRESSUM & PRIVACY */
 .section {
+  /* Přidá vnitřní odsazení prvku. */
   padding: 3rem 1rem;
+  /* Omezí maximální šířku prvku. */
   max-width: 800px;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto;
+  /* Nastaví barvu textu. */
   color: #4b3a2e;
 }
 .section h2 {
+  /* Nastaví velikost písma. */
   font-size: 1.75rem;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 1rem;
 }
 .section ul {
+  /* Nastaví styl odrážek seznamu. */
   list-style: none;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
 }
 .section ul li strong {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
+  /* Definuje šířku prvku. */
   width: 230px;
 }
 .section.imprint {
+  /* Definuje pozadí prvku. */
   background: #f9f6f2;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #e0d2c0;
+  /* Zaoblí rohy prvku. */
   border-radius: 18px;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 24px rgba(124,74,39,0.07);
+  /* Přidá vnitřní odsazení prvku. */
   padding: 2.5rem 1.5rem;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 2.5rem auto;
+  /* Omezí maximální šířku prvku. */
   max-width: 800px;
 }
 .cenik-section-title {
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Nastaví velikost písma. */
   font-size: 1.35em;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 36px 0 18px 0;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.5px;
+  /* Vykreslí spodní rámeček. */
   border-bottom: 2px solid #e0d3c2;
+  /* Vnitřní odsazení zespodu. */
   padding-bottom: 6px;
 }
 .cenik-section-titlemini {
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Nastaví velikost písma. */
   font-size: 1.35em;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 36px 0 18px 0;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.5px;
+  /* Vnitřní odsazení zespodu. */
   padding-bottom: 6px;
 }
 /* --- DESKTOP ÚPRAVY --- */
@@ -1209,11 +1989,17 @@ footer img {
   .prostor-map { flex-direction: row; gap: 30px; }
   .prostor-img, .map-address { flex: 1; }
   .offer-pricing-wrapper {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: center;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: flex-start;
+    /* Nastaví mezery mezi položkami. */
     gap: 40px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 24px;
   }
   .offer-pricing-wrapper #offer { flex: 1 1 45%; max-width: 480px; }
@@ -1224,203 +2010,311 @@ footer img {
 /* --- MOBILNÍ REŽIM --- */
 @media (max-width: 600px) {
   body {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 0 40px 0;
+    /* Nastaví velikost písma. */
     font-size: 16px;
   }
   .container {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 16px;
   }
   .hero-title {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: flex-start;
+    /* Nastaví mezery mezi položkami. */
     gap: 16px;
+    /* Odsazení shora pro prvek. */
     margin-top: 18px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 18px;
   }
   .hero-title h1 {
+    /* Nastaví velikost písma. */
     font-size: 32px;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
+    /* Zarovná text. */
     text-align: left;
   }
   .logo-bubble {
+    /* Definuje šířku prvku. */
     width: 160px !important;
+    /* Definuje výšku prvku. */
     height: 160px !important;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 0 0 0;
   }
   .logo-bubble img {
+    /* Definuje šířku prvku. */
     width: 110%;
   }
   .contact-group {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: stretch;
   }
   .order-box, .contact-box {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Nastaví velikost písma. */
     font-size: 18px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 8px 8px;
   }
   .cards {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
   }
   .cards img {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
   }
   .voucher-gallery {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
   }
   .voucher-img {
+    /* Definuje šířku prvku. */
     width: 90vw;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
   }
   .about-row {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
   }
   .about-row img {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
   }
   .prostor-map {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
   }
   .prostor-img img {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
   }
   .map-container {
+    /* Vnitřní odsazení shora. */
     padding-top: 60vw;
+    /* Nastaví minimální výšku prvku. */
     min-height: 180px;
   }
   .address-box {
+    /* Nastaví velikost písma. */
     font-size: 14px;
   }
   .discount-bubble {
+    /* Nastaví velikost písma. */
     font-size: 16px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 8px 10px;
   }
   .discount-sub {
+    /* Nastaví velikost písma. */
     font-size: 28px;
   }
   .card-info {
+    /* Nastaví velikost písma. */
     font-size: 15px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 8px 8px;
   }
   .voucher-btn {
+    /* Nastaví velikost písma. */
     font-size: 20px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 10px 18px;
   }
   footer img {
+    /* Definuje šířku prvku. */
     width: 60px;
   }
   /* IMPRESSUM mobilně */
   .section {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 1.5rem 0.5rem;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
+    /* Nastaví velikost písma. */
     font-size: 0.98rem;
   }
   .section h2 {
+    /* Nastaví velikost písma. */
     font-size: 1.2rem;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 0.7rem;
   }
   .section ul li strong {
+    /* Definuje šířku prvku. */
     width: 110px;
+    /* Nastaví velikost písma. */
     font-size: 0.98rem;
   }
   .site-footer {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 1.2rem 0.5rem;
+    /* Nastaví velikost písma. */
     font-size: 0.85rem;
   }
   .footer-widgets a {
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 0.3rem;
+    /* Nastaví velikost písma. */
     font-size: 1rem;
   }
   .footer-copy {
+    /* Odsazení shora pro prvek. */
     margin-top: 0.7rem;
+    /* Nastaví velikost písma. */
     font-size: 0.95em;
   }
   #impressum ul li {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: flex-start;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 1rem;
   }
   #impressum ul li strong {
+    /* Nastaví způsob zobrazení prvku. */
     display: block;
+    /* Definuje šířku prvku. */
     width: auto;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 0.25rem;
+    /* Určuje tloušťku písma. */
     font-weight: 600;
   }
   #impressum ul {
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 1rem;
   }
 }
 @media (min-width: 800px) {
   .privacy-hero img {
+    /* Definuje šířku prvku. */
     width: 23%;
+    /* Definuje výšku prvku. */
     height: auto;
+    /* Nastaví způsob zobrazení prvku. */
     display: block;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 auto;
   }
 }
 .reservio-box {
+  /* Definuje pozadí prvku. */
   background: #fff;
   /* Odstraněna tmavá linka */
   border: none;
+  /* Zaoblí rohy prvku. */
   border-radius: 28px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 22px 0;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 24px;
+  /* Definuje šířku prvku. */
   width: 340px;
+  /* Omezí maximální šířku prvku. */
   max-width: 90vw;
+  /* Odsazení zleva pro prvek. */
   margin-left: auto;
+  /* Odsazení zprava pro prvek. */
   margin-right: auto;
+  /* Nastaví způsob zobrazení prvku. */
   display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
   justify-content: center;
   /* Silnější fade efekt na okrajích */
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.01),
     0 0 64px 32px rgba(255,255,255,0.95) inset,
     0 2px 28px 0 rgba(60,30,10,0.12);
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
 }
 
 /* Silnější efekt stínu na tlačítku Reservio */
 .reservio-button-container button,
 .reservio-button-container .rv-btn {
+  /* Přidá stín prvku. */
   box-shadow: 0 8px 32px rgba(60,30,10,0.28);
+  /* Nastaví animaci změn vlastností. */
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .reservio-button-container button:hover,
 .reservio-button-container .rv-btn:hover {
+  /* Přidá stín prvku. */
   box-shadow: 0 16px 48px rgba(60,30,10,0.38);
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-3px) scale(1.06);
 }
 .reservio-nav-btn {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
+  /* Definuje pozadí prvku. */
   background: linear-gradient(90deg, #b71c1c 60%, #d32f2f 100%);
+  /* Nastaví barvu textu. */
   color: #fff;
+  /* Určuje použité písmo. */
   font-family: 'Raleway', sans-serif;
+  /* Nastaví velikost písma. */
   font-size: 1.18em;
+  /* Určuje tloušťku písma. */
   font-weight: 800;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 13px 34px;
+  /* Zaoblí rohy prvku. */
   border-radius: 28px;
+  /* Odsazení zleva pro prvek. */
   margin-left: 24px;
   box-shadow:
     0 6px 28px 0 rgba(60,30,10,0.38),
     0 2px 0 #3e2f2a inset;
+  /* Řídí dekoraci textu. */
   text-decoration: none;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.7px;
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #3e2f2a;
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: none;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Určuje způsob pozicování prvku. */
   position: relative;
   transition: 
     background 0.2s, 
@@ -1431,277 +2325,464 @@ footer img {
 }
 .reservio-nav-btn:hover,
 .reservio-nav-btn:focus {
+  /* Definuje pozadí prvku. */
   background: linear-gradient(90deg, #8b1111 70%, #c62828 100%);
+  /* Nastaví barvu textu. */
   color: #ffe5e5;
+  /* Určuje barvu rámečku. */
   border-color: #d32f2f;
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-3px) scale(1.07);
 }
 /* --- Ceník masáží --- */
 .cenik-table {
+  /* Omezí maximální šířku prvku. */
   max-width: 750px;
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0 auto 40px auto;
+  /* Zaoblí rohy prvku. */
   border-radius: 22px;
+  /* Přidá stín prvku. */
   box-shadow: 0 8px 32px rgba(124,74,39,0.13);
+  /* Přidá vnitřní odsazení prvku. */
   padding: 28px 0 32px 0;
+  /* Definuje pozadí prvku. */
   background: linear-gradient(135deg, #ffead7 70%, #f7e3c6 100%);
+  /* Vykreslí rámeček kolem prvku. */
   border: 2px solid #e0d3c2;
+  /* Nastaví animaci změn vlastností. */
   transition: box-shadow 0.2s, background 0.2s, min-height 0.3s;
+  /* Řídí přetečení obsahu. */
   overflow: visible;
 }
 .cenik-inner td {
+  /* Řídí zalamování textu. */
   white-space: nowrap;
 }
 .cenik-inner tr td:first-child {
+  /* Definuje šířku prvku. */
   width: 70%;
+  /* Nastaví minimální šířku prvku. */
   min-width: 320px;
+  /* Řídí zalamování textu. */
   white-space: nowrap;
+  /* Řídí přetečení obsahu. */
   overflow: hidden;
+  /* Určuje, jak se zobrazí přetékající text. */
   text-overflow: ellipsis;
 }
 .cenik-inner tr td:last-child {
+  /* Definuje šířku prvku. */
   width: 1%;
+  /* Řídí zalamování textu. */
   white-space: nowrap;
+  /* Zarovná text. */
   text-align: right;
+  /* Definuje pozadí prvku. */
   background: #e9e0d6;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Zaoblí rohy prvku. */
   border-radius: 8px;
+  /* Vykreslí levý rámeček. */
   border-left: 2px solid #d2bfa7;
 }
 .masaz-row {
+  /* Určuje způsob pozicování prvku. */
   position: relative;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Nastaví animaci změn vlastností. */
   transition: background 0.15s;
 }
 .masaz-row:hover, .masaz-row.active {
+  /* Definuje pozadí prvku. */
   background: #f7e3c6;
+  /* Přidá stín prvku. */
   box-shadow: 0 2px 12px rgba(124,74,39,0.07);
 }
 .masaz-info-bubble {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Umístí prvek směrem zleva. */
   left: 50%;
+  /* Umístí prvek směrem shora. */
   top: 50%;
+  /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translate(-50%, -60%);
+  /* Určuje pořadí překrytí prvku. */
   z-index: 20;
+  /* Definuje pozadí prvku. */
   background: #fff8f2;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Vykreslí rámeček kolem prvku. */
   border: 1.5px solid #d2bfa7;
+  /* Zaoblí rohy prvku. */
   border-radius: 18px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 22px 32px 22px 22px;
+  /* Nastaví velikost písma. */
   font-size: 1.05em;
+  /* Nastaví minimální šířku prvku. */
   min-width: 260px;
+  /* Omezí maximální šířku prvku. */
   max-width: 380px;
+  /* Přidá stín prvku. */
   box-shadow: 0 8px 32px rgba(124,74,39,0.18);
+  /* Určuje započítání hran a výplní do rozměrů. */
   box-sizing: border-box;
+  /* Definuje animaci a její průběh. */
   animation: fadeInBubble .2s;
 }
 @media (max-width: 700px) {
   .masaz-info-bubble {
+    /* Umístí prvek směrem zleva. */
     left: 50%;
+    /* Umístí prvek směrem shora. */
     top: 100%;
+    /* Transformuje prvek (posun, natočení, měřítko). */
     transform: translate(-50%, 10px);
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Omezí maximální šířku prvku. */
     max-width: 95vw;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 14px 12px 14px 14px;
+    /* Nastaví velikost písma. */
     font-size: 1em;
   }
 }
 .masaz-info-close {
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Umístí prvek směrem shora. */
   top: 8px;
+  /* Umístí prvek směrem zprava. */
   right: 12px;
+  /* Definuje pozadí prvku. */
   background: none;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Nastaví velikost písma. */
   font-size: 1.3em;
+  /* Určuje tloušťku písma. */
   font-weight: bold;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
+  /* Nastaví výšku řádku. */
   line-height: 1;
 }
 .masaz-info-bubble ul {
+  /* Odsadí prvek od okolního obsahu. */
   margin: 6px 0 10px 18px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
+  /* Nastaví velikost písma. */
   font-size: 0.98em;
 }
 @media (max-width: 700px) {
   .masaz-info-bubble {
+    /* Umístí prvek směrem zleva. */
     left: 50%;
+    /* Umístí prvek směrem shora. */
     top: 100%;
+    /* Transformuje prvek (posun, natočení, měřítko). */
     transform: translate(-50%, 10px);
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Omezí maximální šířku prvku. */
     max-width: 95vw;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 14px 18px 14px 14px;
   }
 }
 .info-btn {
+  /* Definuje pozadí prvku. */
   background: none;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Nastaví velikost písma. */
   font-size: 1.1em;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Odsazení zleva pro prvek. */
   margin-left: 6px;
+  /* Zarovná prvek vůči okolnímu textu na svislé ose. */
   vertical-align: middle;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 0;
 }
 .masaz-info {
+  /* Nastaví způsob zobrazení prvku. */
   display: none;
+  /* Určuje způsob pozicování prvku. */
   position: absolute;
+  /* Umístí prvek směrem zleva. */
   left: 0;
+  /* Umístí prvek směrem shora. */
   top: 110%;
+  /* Určuje pořadí překrytí prvku. */
   z-index: 10;
+  /* Definuje pozadí prvku. */
   background: #fff8f2;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Vykreslí rámeček kolem prvku. */
   border: 1px solid #d2bfa7;
+  /* Zaoblí rohy prvku. */
   border-radius: 8px;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 12px 18px;
+  /* Nastaví velikost písma. */
   font-size: 0.98em;
+  /* Nastaví minimální šířku prvku. */
   min-width: 260px;
+  /* Omezí maximální šířku prvku. */
   max-width: 340px;
+  /* Přidá stín prvku. */
   box-shadow: 0 4px 18px rgba(60,30,10,0.12);
 }
 @media (max-width: 700px) {
   .masaz-info {
+    /* Určuje způsob pozicování prvku. */
     position: static;
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
   }
 }
 .cenik-toggle {
+  /* Definuje šířku prvku. */
   width: 100%;
+  /* Definuje pozadí prvku. */
   background: #f7f2ed;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Nastaví velikost písma. */
   font-size: 1.08em;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Vykreslí rámeček kolem prvku. */
   border: none;
+  /* Vykreslí obrys prvku bez vlivu na rozměry. */
   outline: none;
+  /* Přidá vnitřní odsazení prvku. */
   padding: 14px 0 14px 12px;
+  /* Zarovná text. */
   text-align: left;
+  /* Nastaví tvar kurzoru. */
   cursor: pointer;
+  /* Nastaví animaci změn vlastností. */
   transition: background 0.18s;
+  /* Vykreslí spodní rámeček. */
   border-bottom: 1px solid #e0d3c2;
 }
 .cenik-toggle:hover,
 .cenik-toggle:focus {
+  /* Definuje pozadí prvku. */
   background: #e9e0d6;
 }
 .cenik-toggle span {
+  /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
+  /* Definuje šířku prvku. */
   width: 1.2em;
+  /* Nastaví velikost písma. */
   font-size: 1.1em;
+  /* Nastaví animaci změn vlastností. */
   transition: transform 0.2s;
 }
 .cenik-inner {
   background: #ffe8d2; /* tmavší odstín než #ab754e */
+  /* Zaoblí rohy prvku. */
   border-radius: 0 0 12px 12px;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 8px;
+  /* Přidá stín prvku. */
   box-shadow: 0 2px 12px rgba(124,74,39,0.04);
 }
 
 /* Oddělení sekcí v ceníku tmavou linkou */
 .cenik-inner.sportovni-oddeleni {
+  /* Vykreslí spodní rámeček. */
   border-bottom: 3px solid #7c4a27;
+  /* Odsazení zespodu pro prvek. */
   margin-bottom: 32px;
 }
 .masaz-info-bubble strong.indikace {
+  /* Nastaví barvu textu. */
   color: #92ab4e;
 }
 .masaz-info-bubble strong.kontraindikace {
+  /* Nastaví barvu textu. */
   color: #af4238;
 }
 
 /* --- MOBILNÍ REŽIM PRO CENÍK MASÁŽÍ --- */
 @media (max-width: 700px) {
   .cenik-table {
+    /* Nastaví způsob zobrazení prvku. */
     display: none !important;
   }
   .cenik-mobile-list {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex !important;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 14px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 24px;
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 100vw;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0;
   }
   .cenik-mobile-item {
+    /* Definuje pozadí prvku. */
     background: #fff8f2;
+    /* Vykreslí rámeček kolem prvku. */
     border: 2px solid #e0d3c2;
+    /* Zaoblí rohy prvku. */
     border-radius: 14px;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 8px rgba(124,74,39,0.07);
+    /* Přidá vnitřní odsazení prvku. */
     padding: 16px 14px 12px 14px;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 8px;
+    /* Určuje způsob pozicování prvku. */
     position: relative;
+    /* Nastaví tvar kurzoru. */
     cursor: pointer;
     min-height: 100px; /* Definovaná minimální výška rámečku */
     height: auto; /* Výška se přizpůsobí obsahu, ale bude minimálně 100px */
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 4px;
   }
   
   /* Pro rámečky s pozadím můžete nastavit konkrétnější výšku */
   .cenik-mobile-item[class*="bg-"] {
     height: 150px; /* Pevná výška pro položky s obrázkem na pozadí */
+    /* Nastaví minimální výšku prvku. */
     min-height: 150px;
   }
   
   .cenik-mobile-title {
+    /* Určuje tloušťku písma. */
     font-weight: 700;
+    /* Nastaví barvu textu. */
     color: #7c4a27;
+    /* Nastaví velikost písma. */
     font-size: 1.1em;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 4px;
   }
   
   .cenik-mobile-price {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Nastaví velikost písma. */
     font-size: 1.1em;
+    /* Určuje tloušťku písma. */
     font-weight: 700;
+    /* Zarovná konkrétní dětský prvek. */
     align-self: flex-end;
+    /* Definuje pozadí prvku. */
     background: #3e2f2a;
+    /* Zaoblí rohy prvku. */
     border-radius: 8px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 4px 12px;
+    /* Odsazení shora pro prvek. */
     margin-top: 2px;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 8px rgba(124,74,39,0.07);
   }
   
   .cenik-mobile-info-btn {
+    /* Definuje pozadí prvku. */
     background: none;
+    /* Vykreslí rámeček kolem prvku. */
     border: none;
+    /* Nastaví barvu textu. */
     color: #7c4a27;
+    /* Nastaví velikost písma. */
     font-size: 1.1em;
+    /* Nastaví tvar kurzoru. */
     cursor: pointer;
+    /* Odsazení zleva pro prvek. */
     margin-left: 0;
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Zarovná konkrétní dětský prvek. */
     align-self: flex-start;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0;
+    /* Určuje tloušťku písma. */
     font-weight: 600;
+    /* Nastaví animaci změn vlastností. */
     transition: color 0.2s;
   }
   .cenik-mobile-info-btn:hover {
+    /* Nastaví barvu textu. */
     color: #ab754e;
+    /* Řídí dekoraci textu. */
     text-decoration: underline;
   }
   .cenik-mobile-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: none;
+    /* Definuje pozadí prvku. */
     background: #fff8f2;
+    /* Nastaví barvu textu. */
     color: #3e2f2a;
+    /* Vykreslí rámeček kolem prvku. */
     border: 1.5px solid #d2bfa7;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 12px 14px;
+    /* Nastaví velikost písma. */
     font-size: 1em;
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Přidá stín prvku. */
     box-shadow: 0 4px 18px rgba(60,30,10,0.10);
     position: static; /* bylo: relative */
+    /* Určuje pořadí překrytí prvku. */
     z-index: 2;
+    /* Definuje animaci a její průběh. */
     animation: fadeInBubble .2s;
+    /* Řídí přetečení na ose Y. */
     overflow-y: visible;
+    /* Omezí maximální výšku prvku. */
     max-height: none;
   }
   .cenik-mobile-item.active .cenik-mobile-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: block;
   }
   
@@ -1728,9 +2809,13 @@ footer img {
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Určuje způsob pozicování prvku. */
     position: relative;
+    /* Vykreslí rámeček kolem prvku. */
     border: 2px solid #131313;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 12px rgba(124,74,39,0.13);
   }
   
@@ -1738,114 +2823,197 @@ footer img {
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Přidá stín textu. */
     text-shadow: 0 2px 8px rgba(60,30,10,0.25);
   }
 }
 @media (min-width: 701px) {
   .cenik-mobile-list {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex !important;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: center;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: flex-start;
+    /* Nastaví mezery mezi položkami. */
     gap: 48px;
+    /* Omezí maximální šířku prvku. */
     max-width: 1200px;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 auto 48px auto;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0 24px;
   }
   .cenik-column {
+    /* Rychle nastaví chování flex položky. */
     flex: 1 1 0;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 18px;
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Omezí maximální šířku prvku. */
     max-width: 420px;
   }
   .cenik-column + .cenik-column {
+    /* Vykreslí levý rámeček. */
     border-left: 3px solid #e0d3c2;
+    /* Vnitřní odsazení zleva. */
     padding-left: 48px;
+    /* Odsazení zleva pro prvek. */
     margin-left: 0;
   }
   .cenik-section-title {
+    /* Nastaví velikost písma. */
     font-size: 1.4em;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0 0 12px 0;
+    /* Zarovná text. */
     text-align: center;
+    /* Definuje pozadí prvku. */
     background: none;
+    /* Vykreslí spodní rámeček. */
     border-bottom: 2px solid #e0d3c2;
+    /* Vnitřní odsazení zespodu. */
     padding-bottom: 8px;
+    /* Nastaví barvu textu. */
     color: #7c4a27;
+    /* Určuje tloušťku písma. */
     font-weight: 800;
+    /* Nastaví rozestupy mezi písmeny. */
     letter-spacing: 0.5px;
   }
   .cenik-mobile-item {
+    /* Definuje pozadí prvku. */
     background: #fff8f2;
+    /* Vykreslí rámeček kolem prvku. */
     border: 2px solid #e0d3c2;
+    /* Zaoblí rohy prvku. */
     border-radius: 16px;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 12px rgba(124,74,39,0.07);
+    /* Přidá vnitřní odsazení prvku. */
     padding: 22px 18px 18px 18px;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Nastaví minimální výšku prvku. */
     min-height: 120px;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
+    /* Definuje výšku prvku. */
     height: 120px;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: flex-start;
+    /* Nastaví animaci změn vlastností. */
     transition: box-shadow 0.2s, transform 0.2s;
     cursor: pointer; /* Přidáno - ukazuje, že prvek je klikatelný */
   }
   .cenik-mobile-title {
+    /* Určuje tloušťku písma. */
     font-weight: 800;
+    /* Nastaví barvu textu. */
     color: #ffffff;
+    /* Nastaví velikost písma. */
     font-size: 1.08em;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 2px;
+    /* Nastaví rozestupy mezi písmeny. */
     letter-spacing: 0.2px;
   }
   .cenik-mobile-price {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Nastaví velikost písma. */
     font-size: 1.08em;
+    /* Určuje tloušťku písma. */
     font-weight: 700;
+    /* Zarovná konkrétní dětský prvek. */
     align-self: flex-end;
+    /* Definuje pozadí prvku. */
     background: #3e2f2a;
+    /* Zaoblí rohy prvku. */
     border-radius: 8px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 4px 14px;
+    /* Odsazení shora pro prvek. */
     margin-top: 2px;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 8px rgba(124,74,39,0.07);
   }
   .cenik-mobile-info-btn {
+    /* Definuje pozadí prvku. */
     background: none;
+    /* Vykreslí rámeček kolem prvku. */
     border: none;
+    /* Nastaví barvu textu. */
     color: #ffffff;
+    /* Nastaví velikost písma. */
     font-size: 1em;
+    /* Nastaví tvar kurzoru. */
     cursor: pointer;
+    /* Odsazení zleva pro prvek. */
     margin-left: 0;
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Zarovná konkrétní dětský prvek. */
     align-self: flex-start;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 0;
+    /* Určuje tloušťku písma. */
     font-weight: 600;
+    /* Nastaví animaci změn vlastností. */
     transition: color 0.2s;
   }
   .cenik-mobile-info-btn:hover {
+    /* Nastaví barvu textu. */
     color: #ab754e;
+    /* Řídí dekoraci textu. */
     text-decoration: underline;
   }
   .cenik-mobile-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: none;
+    /* Definuje pozadí prvku. */
     background: #fff8f2;
+    /* Nastaví barvu textu. */
     color: #3e2f2a;
+    /* Vykreslí rámeček kolem prvku. */
     border: 1.5px solid #d2bfa7;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 12px 14px;
+    /* Nastaví velikost písma. */
     font-size: 1em;
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Přidá stín prvku. */
     box-shadow: 0 4px 18px rgba(60,30,10,0.10);
     position: static; /* bylo: relative */
+    /* Určuje pořadí překrytí prvku. */
     z-index: 2;
+    /* Definuje animaci a její průběh. */
     animation: fadeInBubble .2s;
+    /* Řídí přetečení na ose Y. */
     overflow-y: visible;
+    /* Omezí maximální výšku prvku. */
     max-height: none;
   }
   .cenik-mobile-item.active .cenik-mobile-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: block;
   }
   
@@ -1872,9 +3040,13 @@ footer img {
   
   /* Společné styly pro položky s pozadím v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Určuje způsob pozicování prvku. */
     position: relative;
+    /* Vykreslí rámeček kolem prvku. */
     border: 2px solid #131313;
+    /* Přidá stín prvku. */
     box-shadow: 0 2px 12px rgba(124,74,39,0.13);
   }
   
@@ -1882,7 +3054,9 @@ footer img {
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-info-btn {
+    /* Nastaví barvu textu. */
     color: #fff;
+    /* Přidá stín textu. */
     text-shadow: 0 2px 8px rgba(60,30,10,0.25);
   }
 }
@@ -1890,20 +3064,33 @@ footer img {
 /* Desktop: max 4 karty v řadě */
 @media (min-width: 901px) {
   .cards {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Povolí zalomení Flexbox položek. */
     flex-wrap: wrap;
+    /* Nastaví mezery mezi položkami. */
     gap: 32px;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: flex-start;
+    /* Odsazení shora pro prvek. */
     margin-top: 12px;
   }
   .cards .card-info {
+    /* Rychle nastaví chování flex položky. */
     flex: 0 1 24%;
+    /* Omezí maximální šířku prvku. */
     max-width: 24%;
+    /* Nastaví minimální šířku prvku. */
     min-width: 220px;
+    /* Určuje započítání hran a výplní do rozměrů. */
     box-sizing: border-box;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
   }
 }
@@ -1911,20 +3098,33 @@ footer img {
 /* Tablet/menší desktop: max 3 karty v řadě */
 @media (min-width: 601px) and (max-width: 900px) {
   .cards {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Povolí zalomení Flexbox položek. */
     flex-wrap: wrap;
+    /* Nastaví mezery mezi položkami. */
     gap: 24px;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: flex-start;
+    /* Odsazení shora pro prvek. */
     margin-top: 12px;
   }
   .cards .card-info {
+    /* Rychle nastaví chování flex položky. */
     flex: 0 1 32%;
+    /* Omezí maximální šířku prvku. */
     max-width: 32%;
+    /* Nastaví minimální šířku prvku. */
     min-width: 180px;
+    /* Určuje započítání hran a výplní do rozměrů. */
     box-sizing: border-box;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
   }
 }
@@ -1932,24 +3132,37 @@ footer img {
 /* Mobil: max 2 karty v řadě */
 @media (max-width: 600px) {
   .cards {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Povolí zalomení Flexbox položek. */
     flex-wrap: wrap;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Zarovná děti v hlavní ose Flexboxu. */
     justify-content: center;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: stretch;
   }
   .cards .card-info {
+    /* Rychle nastaví chování flex položky. */
     flex: 0 1 48%;
+    /* Omezí maximální šířku prvku. */
     max-width: 48%;
+    /* Nastaví minimální šířku prvku. */
     min-width: 140px;
+    /* Určuje započítání hran a výplní do rozměrů. */
     box-sizing: border-box;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
   }
   /* Pokud chcete na opravdu malých mobilech jen 1 kartu v řadě, můžete přidat další media query */
   @media (max-width: 400px) {
     .cards .card-info {
+      /* Rychle nastaví chování flex položky. */
       flex: 0 1 100%;
+      /* Omezí maximální šířku prvku. */
       max-width: 100%;
     }
   }
@@ -1957,69 +3170,116 @@ footer img {
 
 /* Nové třídy pro název a popis služby/masáže */
 .card-title {
+  /* Nastaví velikost písma. */
   font-size: 1em;
+  /* Určuje tloušťku písma. */
   font-weight: 700;
+  /* Nastaví barvu textu. */
   color: #7c4a27;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 10px 0 8px 0;
+  /* Zarovná text. */
   text-align: left;
+  /* Nastaví rozestupy mezi písmeny. */
   letter-spacing: 0.2px;
 }
 .card-desc {
+  /* Nastaví velikost písma. */
   font-size: 1em;
+  /* Nastaví barvu textu. */
   color: #3e2f2a;
+  /* Určuje tloušťku písma. */
   font-weight: 400;
+  /* Odsadí prvek od okolního obsahu. */
   margin: 0;
+  /* Zarovná text. */
   text-align: left;
+  /* Nastaví výšku řádku. */
   line-height: 1.5;
 }
 
 /* Desktop: obrázek vlevo, název pod obrázkem, informace vpravo */
 @media (min-width: 601px) {
   .cards {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Nastaví mezery mezi položkami. */
     gap: var(--gap);
+    /* Odsazení shora pro prvek. */
     margin-top: 12px;
   }
   .cards .card-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: row;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: flex-start;
+    /* Nastaví mezery mezi položkami. */
     gap: 32px;
+    /* Definuje pozadí prvku. */
     background: rgba(124,74,39,.2);
+    /* Přidá vnitřní odsazení prvku. */
     padding: 12px 16px;
+    /* Zaoblí rohy prvku. */
     border-radius: 16px;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 20px auto;
+    /* Omezí maximální šířku prvku. */
     max-width: 90%;
   }
   .cards .card-info .card-img-col {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
+    /* Nastaví minimální šířku prvku. */
     min-width: 160px;
+    /* Omezí maximální šířku prvku. */
     max-width: 160px;
+    /* Určuje, jak moc se položka zmenší. */
     flex-shrink: 0;
   }
   .cards .card-info img {
+    /* Definuje šířku prvku. */
     width: 160px;
+    /* Omezí maximální šířku prvku. */
     max-width: 160px;
+    /* Definuje výšku prvku. */
     height: auto;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
+    /* Aplikuje grafický filtr na prvek. */
     filter: drop-shadow(0 4px 8px rgba(0,0,0,.5));
+    /* Nastaví způsob zobrazení prvku. */
     display: block;
   }
   .cards .card-info .card-title {
+    /* Odsazení shora pro prvek. */
     margin-top: 10px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 8px;
+    /* Zarovná text. */
     text-align: center;
+    /* Definuje šířku prvku. */
     width: 100%;
   }
   .cards .card-info .card-desc {
+    /* Rychle nastaví chování flex položky. */
     flex: 1 1 0;
+    /* Nastaví minimální šířku prvku. */
     min-width: 0;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
+    /* Zarovná konkrétní dětský prvek. */
     align-self: flex-start;
+    /* Zarovná text. */
     text-align: left;
   }
 }
@@ -2027,52 +3287,87 @@ footer img {
 /* Mobil: obrázek nahoře, název pod ním, informace pod názvem */
 @media (max-width: 600px) {
   .cards {
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Nastaví mezery mezi položkami. */
     gap: 10px;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
   }
   .cards .card-info {
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
+    /* Zarovná text. */
     text-align: left;
+    /* Nastaví mezery mezi položkami. */
     gap: 8px;
+    /* Přidá vnitřní odsazení prvku. */
     padding: 8px 8px;
+    /* Nastaví velikost písma. */
     font-size: 15px;
+    /* Definuje pozadí prvku. */
     background: rgba(124,74,39,.2);
+    /* Zaoblí rohy prvku. */
     border-radius: 16px;
+    /* Odsadí prvek od okolního obsahu. */
     margin: 12px 0;
+    /* Omezí maximální šířku prvku. */
     max-width: 100%;
   }
   .cards .card-info .card-img-col {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: column;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
   }
   .cards .card-info .card-img-col2 {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
+    /* Nastaví způsob zobrazení prvku. */
     display: flex;
+    /* Určuje směr Flexboxu. */
     flex-direction: left;
+    /* Zarovná děti v pomocné ose Flexboxu. */
     align-items: center;
   }
   .cards .card-info img {
+    /* Definuje šířku prvku. */
     width: 100%;
+    /* Omezí maximální šířku prvku. */
     max-width: 320px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 8px;
+    /* Zaoblí rohy prvku. */
     border-radius: 12px;
   }
   .cards .card-info .card-title {
+    /* Odsazení shora pro prvek. */
     margin-top: 8px;
+    /* Odsazení zespodu pro prvek. */
     margin-bottom: 6px;
+    /* Zarovná text. */
     text-align: center;
+    /* Definuje šířku prvku. */
     width: 100%;
   }
   .cards .card-info .card-desc {
+    /* Odsadí prvek od okolního obsahu. */
     margin: 0;
+    /* Zarovná text. */
     text-align: left;
+    /* Definuje šířku prvku. */
     width: 100%;
   }
 }
