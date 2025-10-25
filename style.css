@@ -196,6 +196,21 @@ header { /* 04. Navigation & Hero Components */
   from { background-position: -200% 0 }
   to { background-position: 200% 0 }
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0,0,0,.6);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0,0,0,.5);
+  }
+}
+
 .logo-bubble {
   margin-left: 80px; /* Odsazení zleva pro prvek. */
   width: 108px; /* Definuje šířku prvku. */
@@ -208,6 +223,7 @@ header { /* 04. Navigation & Hero Components */
   box-shadow: 0 4px 15px rgba(0,0,0,.5); /* Přidá stín prvku. */
   flex-shrink: 0; /* Určuje, jak moc se položka zmenší. */
   border: 2px solid #3e2f2a; /* Vykreslí rámeček kolem prvku. */
+  animation: pulse 3s infinite ease-in-out; /* Přidá pulzující animaci */
 }
 .logo-bubble img {
   width: 120%; /* Definuje šířku prvku. */
