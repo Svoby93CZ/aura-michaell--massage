@@ -1,27 +1,20 @@
 ﻿/* ==========================================================================
-  Style Guide Overview
-  01. Theme Variables
-  02. Base Elements
-  03. Layout & Parallax Structure
-  04. Navigation & Hero Components
-  05. Cards, Pricing & Page Sections
-  06. Responsive Tweaks
+  Přehled stylového průvodce
+  01. Proměnné tématu
+  02. Základní prvky
+  03. Rozvržení a parallax sekce
+  04. Navigace a hlavní komponenty
+  05. Karty, ceník a sekce stránek
+  06. Responzivní úpravy
   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-  01. Theme Variables
-  -------------------------------------------------------------------------- */
-:root {
-  /* Proměnná pro základní vnější odsazení. */
-  --pad: 10px;
-  /* Proměnná pro mezery mezi prvky. */
-  --gap: 10px;
-  /* Proměnná pro hlavní akcentní barvu. */
-  --accent: #7c4a27;
-  /* Proměnná pro barvu okrajů. */
-  --border: #5c3520;
-  /* nové proměnné pro tlačítka */
-  --accent-2: #ab754e;
+:root { /* 01. Proměnné tématu */
+  
+  --pad: 10px; /* Proměnná pro základní vnější odsazení. */
+  --gap: 10px; /* Proměnná pro mezery mezi prvky. */
+  --accent: #7c4a27; /* Proměnná pro hlavní akcentní barvu. */
+  --border: #5c3520; /* Proměnná pro barvu okrajů. */
+  --accent-2: #ab754e; /* nové proměnné pro tlačítka */
   /* Proměnná pro tmavou barvu. */
   --dark: #3e2f2a;
   /* Proměnná pro světlou krémovou barvu. */
@@ -36,18 +29,14 @@
   --nav-btn-height-xs: 44px;
 }
 
-/* --------------------------------------------------------------------------
-  02. Base Elements
-  -------------------------------------------------------------------------- */
-html {
+html { /* 02. Base Elements */
   /* Řídí chování při rolování. */
   scroll-behavior: smooth;
   /* Řídí přetečení na ose X. */
   overflow-x: hidden;
 }
 
-/* ZÁKLADNÍ STYLY */
-body {
+body { /* ZÁKLADNÍ STYLY */
   /* Odsadí prvek od okolního obsahu. */
   margin: 0;
   /* Přidá vnitřní odsazení prvku. */
@@ -74,10 +63,7 @@ body {
   box-sizing: border-box;
 }
 
-/* --------------------------------------------------------------------------
-  03. Layout & Parallax Sections
-  -------------------------------------------------------------------------- */
-.parallax-section {
+.parallax-section { /* 03. Layout & Parallax Sections */
   /* Určuje způsob pozicování prvku. */
   position: relative;
   /* Nastaví způsob zobrazení prvku. */
@@ -211,8 +197,7 @@ body {
   --parallax-image: url('galerie/shop3.jpg');
 }
 
-/* Parallax variant for the welcome (intro) section */
-.parallax-welcome-intro {
+.parallax-welcome-intro { /* Parallax variant for the welcome (intro) section */
   /* Určuje překryvný gradient parallax sekce. */
   --parallax-overlay: linear-gradient(180deg, rgba(26,12,6,0.32), rgba(26,12,6,0.55));
   /* Vybere obrázek používaný pro parallax pozadí. */
@@ -241,10 +226,7 @@ img, video, iframe {
   height: auto;
 }
 
-/* --------------------------------------------------------------------------
-  04. Navigation & Hero Components
-  -------------------------------------------------------------------------- */
-header {
+header { /* 04. Navigation & Hero Components */
   /* Určuje způsob pozicování prvku. */
   position: relative;
   /* Nastaví minimální výšku prvku. */
@@ -259,8 +241,7 @@ header {
   display: none;
 }
 
-/* Hero Title */
-.hero-title {
+.hero-title { /* Hero Title */
   /* Nastaví způsob zobrazení prvku. */
   display: flex;
   /* Určuje směr Flexboxu. */
@@ -336,6 +317,58 @@ header {
   /* Definuje šířku prvku. */
   width: 120%;
 }
+
+.page-services .back-home-banner {
+  /* Nastaví způsob zobrazení prvku. */
+  display: flex;
+  /* Zarovná děti v hlavní ose Flexboxu. */
+  justify-content: center;
+  /* Odsadí prvek od okolního obsahu. */
+  margin: 0 auto 24px;
+  /* Omezí maximální šířku prvku. */
+  max-width: 980px;
+}
+
+.page-services .back-home-btn {
+  /* Nastaví způsob zobrazení prvku. */
+  display: inline-flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
+  align-items: center;
+  /* Nastaví mezery mezi položkami. */
+  gap: 8px;
+  /* Definuje pozadí prvku. */
+  background: linear-gradient(100deg, rgba(124,74,39,0.95), rgba(171,117,78,0.9));
+  /* Nastaví barvu textu. */
+  color: #fff;
+  /* Přidá vnitřní odsazení prvku. */
+  padding: 10px 26px;
+  /* Zaoblí rohy prvku. */
+  border-radius: 999px;
+  /* Řídí dekoraci textu. */
+  text-decoration: none;
+  /* Určuje použité písmo. */
+  font-family: 'Raleway', sans-serif;
+  /* Určuje tloušťku písma. */
+  font-weight: 700;
+  /* Nastaví rozestupy mezi písmeny. */
+  letter-spacing: 0.4px;
+  /* Nastaví velikost písma. */
+  font-size: 1rem;
+  /* Přidá stín prvku. */
+  box-shadow: 0 10px 24px rgba(60,30,10,0.18);
+  /* Nastaví animaci změn vlastností. */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.page-services .back-home-btn:hover,
+.page-services .back-home-btn:focus {
+  /* Transformuje prvek (posun, natočení, měřítko). */
+  transform: translateY(-3px);
+  /* Přidá stín prvku. */
+  box-shadow: 0 14px 32px rgba(60,30,10,0.25);
+  /* Definuje pozadí prvku. */
+  background: linear-gradient(100deg, rgba(138,60,4,1), rgba(124,74,39,0.95));
+}
 #hero {
   /* Zarovná text. */
   text-align: center;
@@ -361,9 +394,7 @@ header {
   line-height: 1.5;
 }
 
-/* Page Specific: Home */
-/* Přivítání */
-.page-home .welcome-section {
+.page-home .welcome-section { /* Page Specific: Home | Přivítání */
   /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
 }
@@ -483,8 +514,7 @@ header {
   transform: scale(1.04);
 }
 
-/* Bonusová karta */
-.page-home .bonus-card-section {
+.page-home .bonus-card-section { /* Bonusová karta */
   /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
 }
@@ -605,8 +635,7 @@ header {
   }
 }
 
-/* Obchod */
-.page-home #shop {
+.page-home #shop { /* Obchod */
   /* Odsazení zespodu pro prvek. */
   margin-bottom: 60px;
   /* Zarovná text. */
@@ -822,8 +851,7 @@ header {
   outline: none;
 }
 
-/* Page Specific: Services */
-.page-services .services-nav {
+.page-services .services-nav { /* Page Specific: Services */
   /* Vytváří prostor nad i pod navigací, aby měla vlastní blok */
   margin: 32px auto 48px;
   /* Omezí šířku navigace na hodnotu příjemnou pro desktop */
@@ -869,8 +897,7 @@ header {
   }
 }
 
-/* Zvýrazněná „karta“ navigace v hero sekci */
-.hero-nav--featured {
+.hero-nav--featured { /* Zvýrazněná „karta“ navigace v hero sekci */
   /* Definuje pozadí prvku. */
   background: rgba(138, 60, 4, 0.21);
   /* Vykreslí rámeček kolem prvku. */
@@ -887,8 +914,7 @@ header {
   backdrop-filter: blur(4px);
 }
 
-/* Primární CTA tlačítko – přebarveno na červenou */
-.hero-nav .nav-btn.nav-btn--primary {
+.hero-nav .nav-btn.nav-btn--primary { /* Primární CTA tlačítko – přebarveno na červenou */
   /* Definuje pozadí prvku. */
   background: linear-gradient(100deg, #590000 60%, #560000 100%);
   /* Určuje barvu rámečku. */
@@ -902,8 +928,7 @@ header {
   color: #ffe5e5;
 }
 
-/* Pokud je „Rezervace online“ používá .reservio-nav-btn, přebarvíme také */
-.reservio-nav-btn {
+.reservio-nav-btn { /* Pokud je „Rezervace online“ používá .reservio-nav-btn, přebarvíme také */
   /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
   /* Definuje pozadí prvku. */
@@ -1013,6 +1038,20 @@ header {
     box-sizing: border-box;
   }
 
+  .page-services .back-home-banner {
+    /* Přidá vnitřní odsazení prvku. */
+    padding: 0 14px;
+  }
+
+  .page-services .back-home-btn {
+    /* Definuje šířku prvku. */
+    width: 100%;
+    /* Zarovná děti v hlavní ose Flexboxu. */
+    justify-content: center;
+    /* Nastaví velikost písma s ohledem na šířku displeje. */
+    font-size: clamp(1rem, 5.4vw, 1.35rem);
+  }
+
   .page-services .services-nav .nav-btn {
     /* Přizpůsobí velikost textu a udrží jej na jednom řádku. */
     font-size: clamp(1rem, 4.8vw, 1.25rem);
@@ -1062,8 +1101,7 @@ header {
   }
 }
 
-/* KONTAKTNÍ SEKCE */
-.contact-group {
+.contact-group { /* KONTAKTNÍ SEKCE */
   /* Nastaví způsob zobrazení prvku. */
   display: flex;
   /* Určuje směr Flexboxu. */
@@ -1184,10 +1222,7 @@ header {
   width: 100%;
 }
 
-/* --------------------------------------------------------------------------
-   05. Cards, Pricing & Content Blocks
-   -------------------------------------------------------------------------- */
-.offer-box {
+.offer-box { /* 05. Cards, Pricing & Content Blocks */
   /* Zaoblí rohy prvku. */
   border-radius: 16px;
   /* Přidá vnitřní odsazení prvku. */
@@ -1305,6 +1340,35 @@ header {
   box-sizing: border-box;
 }
 
+.service-price-tag::before {
+  /* Vloží oficiální ikonu Reservio načtenou z jejich webu. */
+  content: "";
+  /* Nastaví způsob zobrazení prvku. */
+  display: inline-flex;
+  /* Zarovná děti v pomocné ose Flexboxu. */
+  align-items: center;
+  /* Zarovná děti v hlavní ose Flexboxu. */
+  justify-content: center;
+  /* Definuje šířku prvku. */
+  width: 28px;
+  /* Definuje výšku prvku. */
+  height: 28px;
+  /* Zaoblí rohy prvku. */
+  border-radius: 50%;
+  /* Načte oficiální faviconu Reservio z jejich CDN. */
+  background-color: transparent;
+  background-image: url('https://1874966808.rsc.cdn77.org/_next/static/media/favicon.e934896c.ico');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* Odsadí prvek od okolního obsahu. */
+  margin-right: 10px;
+  /* Přidá stín prvku. */
+  box-shadow: 0 4px 10px rgba(60,30,10,0.14);
+  /* Řídí dekoraci textu. */
+  text-decoration: none;
+}
+
 .service-price-tag span {
   /* Nastaví způsob zobrazení prvku. */
   display: inline-block;
@@ -1359,10 +1423,7 @@ header {
   box-shadow: 0 12px 28px rgba(60,30,10,0.28);
 }
 
-/* --------------------------------------------------------------------------
-   06. Responsive Tweaks
-   -------------------------------------------------------------------------- */
-@media (max-width: 640px) {
+@media (max-width: 640px) { /* 06. Responsive Tweaks */
   .service-price-tag {
     /* Nastaví velikost písma. */
     font-size: 0.9rem;
@@ -1374,10 +1435,19 @@ header {
     /* Nastaví rozestupy mezi písmeny. */
     letter-spacing: 0.6px;
   }
+
+  .service-price-tag::before {
+    /* Přizpůsobí ikonu menšímu displeji. */
+    width: 24px;
+    height: 24px;
+    /* Zmenší vloženou ikonu. */
+    background-size: 100% 100%;
+    /* Odsadí prvek od okolního obsahu. */
+    margin-right: 8px;
+  }
 }
 
-/* INFORMACE O SLUŽBÁCH */
-.page-services .classic-massage-info p {
+.page-services .classic-massage-info p { /* INFORMACE O SLUŽBÁCH */
   /* Odsazení zespodu pro prvek. */
   margin-bottom: 6px;
   /* Odsazení shora pro prvek. */
@@ -1477,8 +1547,7 @@ header {
   box-shadow: 0 6px 16px rgba(0,0,0,.2);
 }
 
-/* O MNĚ */
-#about { margin-bottom: 60px; }
+#about { margin-bottom: 60px; } /* O MNĚ */
 .about-row {
   /* Nastaví způsob zobrazení prvku. */
   display: flex;
@@ -1494,8 +1563,7 @@ header {
   border-radius: 16px;
 }
 
-/* PROSTOR A MAPA */
-#location { margin-bottom: 60px; }
+#location { margin-bottom: 60px; } /* PROSTOR A MAPA */
 .prostor-map {
   /* Nastaví způsob zobrazení prvku. */
   display: flex;
@@ -1557,8 +1625,7 @@ header {
   color: #3e2f2a;
 }
 
-/* FOOTER */
-footer {
+footer { /* FOOTER */
   /* Zarovná text. */
   text-align: center;
   /* Odsazení shora pro prvek. */
@@ -1665,8 +1732,7 @@ footer img {
   height: auto;
 }
 
-/* MODAL */
-.modal {
+.modal { /* MODAL */
   /* Nastaví způsob zobrazení prvku. */
   display: none;
   /* Určuje způsob pozicování prvku. */
@@ -1780,8 +1846,7 @@ footer img {
   .modal-nav--prev { left: 12px; }
   .modal-nav--next { right: 12px; }
 }
-/* SCROLL BUTTON */
-#scrollTopBtn {
+#scrollTopBtn { /* SCROLL BUTTON */
   /* Určuje způsob pozicování prvku. */
   position: fixed;
   /* Umístí prvek směrem zdola. */
@@ -1820,8 +1885,7 @@ footer img {
   visibility: visible;
 }
 
-/* VOUCHERY */
-.voucher-btn {
+.voucher-btn { /* VOUCHERY */
   /* Definuje pozadí prvku. */
   background: linear-gradient(180deg, var(--accent), #5c3520);
   /* Nastaví barvu textu. */
@@ -1904,8 +1968,7 @@ footer img {
   letter-spacing: 0.5px;
 }
 
-/* IMPRESSUM & PRIVACY */
-.section {
+.section { /* IMPRESSUM & PRIVACY */
   /* Přidá vnitřní odsazení prvku. */
   padding: 3rem 1rem;
   /* Omezí maximální šířku prvku. */
@@ -1979,8 +2042,7 @@ footer img {
   /* Vnitřní odsazení zespodu. */
   padding-bottom: 6px;
 }
-/* --- DESKTOP ÚPRAVY --- */
-@media (min-width: 601px) {
+@media (min-width: 601px) { /* --- DESKTOP ÚPRAVY --- */
   body { padding: 20px 80px 80px; font-size: 18px; }
   .hero-title h1 { font-size: 80px; }
   .logo-bubble { width: 250px; height: 250px; }
@@ -2007,8 +2069,7 @@ footer img {
   .offer-pricing-wrapper #pricing .video-frame { width: 100%; }
 }
 
-/* --- MOBILNÍ REŽIM --- */
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* --- MOBILNÍ REŽIM --- */
   body {
     /* Přidá vnitřní odsazení prvku. */
     padding: 0 0 40px 0;
@@ -2157,8 +2218,7 @@ footer img {
     /* Definuje šířku prvku. */
     width: 60px;
   }
-  /* IMPRESSUM mobilně */
-  .section {
+  .section { /* IMPRESSUM mobilně */
     /* Přidá vnitřní odsazení prvku. */
     padding: 1.5rem 0.5rem;
     /* Omezí maximální šířku prvku. */
@@ -2334,8 +2394,7 @@ footer img {
   /* Transformuje prvek (posun, natočení, měřítko). */
   transform: translateY(-3px) scale(1.07);
 }
-/* --- Ceník masáží --- */
-.cenik-table {
+.cenik-table { /* --- Ceník masáží --- */
   /* Omezí maximální šířku prvku. */
   max-width: 750px;
   /* Definuje šířku prvku. */
@@ -2618,8 +2677,7 @@ footer img {
   box-shadow: 0 2px 12px rgba(124,74,39,0.04);
 }
 
-/* Oddělení sekcí v ceníku tmavou linkou */
-.cenik-inner.sportovni-oddeleni {
+.cenik-inner.sportovni-oddeleni { /* Oddělení sekcí v ceníku tmavou linkou */
   /* Vykreslí spodní rámeček. */
   border-bottom: 3px solid #7c4a27;
   /* Odsazení zespodu pro prvek. */
@@ -2634,8 +2692,7 @@ footer img {
   color: #af4238;
 }
 
-/* --- MOBILNÍ REŽIM PRO CENÍK MASÁŽÍ --- */
-@media (max-width: 700px) {
+@media (max-width: 700px) { /* --- MOBILNÍ REŽIM PRO CENÍK MASÁŽÍ --- */
   .cenik-table {
     /* Nastaví způsob zobrazení prvku. */
     display: none !important;
@@ -2683,8 +2740,7 @@ footer img {
     margin-bottom: 4px;
   }
   
-  /* Pro rámečky s pozadím můžete nastavit konkrétnější výšku */
-  .cenik-mobile-item[class*="bg-"] {
+  .cenik-mobile-item[class*="bg-"] { /* Pro rámečky s pozadím můžete nastavit konkrétnější výšku */
     height: 150px; /* Pevná výška pro položky s obrázkem na pozadí */
     /* Nastaví minimální výšku prvku. */
     min-height: 150px;
@@ -2786,8 +2842,7 @@ footer img {
     display: block;
   }
   
-  /* Přidané definice obrázků pozadí pro mobilní zobrazení */
-  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; } /* Přidané definice obrázků pozadí pro mobilní zobrazení */
   .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
@@ -2807,8 +2862,7 @@ footer img {
   .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
-  /* Společné styly pro položky s pozadím v mobilní verzi */
-  .cenik-mobile-item[class*="bg-"] {
+  .cenik-mobile-item[class*="bg-"] { /* Společné styly pro položky s pozadím v mobilní verzi */
     /* Nastaví barvu textu. */
     color: #fff;
     /* Určuje způsob pozicování prvku. */
@@ -3017,8 +3071,7 @@ footer img {
     display: block;
   }
   
-  /* Přidané definice obrázků pozadí pro mobilní zobrazení */
-  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; }
+  .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; } /* Přidané definice obrázků pozadí pro mobilní zobrazení */
   .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkzp { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkp.png') center/cover no-repeat; }
@@ -3038,8 +3091,7 @@ footer img {
   .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
   
-  /* Společné styly pro položky s pozadím v mobilní verzi */
-  .cenik-mobile-item[class*="bg-"] {
+  .cenik-mobile-item[class*="bg-"] { /* Společné styly pro položky s pozadím v mobilní verzi */
     /* Nastaví barvu textu. */
     color: #fff;
     /* Určuje způsob pozicování prvku. */
@@ -3061,8 +3113,7 @@ footer img {
   }
 }
 
-/* Desktop: max 4 karty v řadě */
-@media (min-width: 901px) {
+@media (min-width: 901px) { /* Desktop: max 4 karty v řadě */
   .cards {
     /* Nastaví způsob zobrazení prvku. */
     display: flex;
@@ -3095,8 +3146,7 @@ footer img {
   }
 }
 
-/* Tablet/menší desktop: max 3 karty v řadě */
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 601px) and (max-width: 900px) { /* Tablet/menší desktop: max 3 karty v řadě */
   .cards {
     /* Nastaví způsob zobrazení prvku. */
     display: flex;
@@ -3129,8 +3179,7 @@ footer img {
   }
 }
 
-/* Mobil: max 2 karty v řadě */
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Mobil: max 2 karty v řadě */
   .cards {
     /* Nastaví způsob zobrazení prvku. */
     display: flex;
@@ -3157,8 +3206,7 @@ footer img {
     /* Odsadí prvek od okolního obsahu. */
     margin: 0;
   }
-  /* Pokud chcete na opravdu malých mobilech jen 1 kartu v řadě, můžete přidat další media query */
-  @media (max-width: 400px) {
+  @media (max-width: 400px) { /* Pokud chcete na opravdu malých mobilech jen 1 kartu v řadě, můžete přidat další media query */
     .cards .card-info {
       /* Rychle nastaví chování flex položky. */
       flex: 0 1 100%;
@@ -3168,8 +3216,7 @@ footer img {
   }
 }
 
-/* Nové třídy pro název a popis služby/masáže */
-.card-title {
+.card-title { /* Nové třídy pro název a popis služby/masáže */
   /* Nastaví velikost písma. */
   font-size: 1em;
   /* Určuje tloušťku písma. */
@@ -3198,8 +3245,7 @@ footer img {
   line-height: 1.5;
 }
 
-/* Desktop: obrázek vlevo, název pod obrázkem, informace vpravo */
-@media (min-width: 601px) {
+@media (min-width: 601px) { /* Desktop: obrázek vlevo, název pod obrázkem, informace vpravo */
   .cards {
     /* Nastaví způsob zobrazení prvku. */
     display: flex;
@@ -3284,8 +3330,7 @@ footer img {
   }
 }
 
-/* Mobil: obrázek nahoře, název pod ním, informace pod názvem */
-@media (max-width: 600px) {
+@media (max-width: 600px) { /* Mobil: obrázek nahoře, název pod ním, informace pod názvem */
   .cards {
     /* Určuje směr Flexboxu. */
     flex-direction: column;
