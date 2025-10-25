@@ -35,22 +35,35 @@ def should_skip(blocks: list[list[str]]) -> bool:
 
 def merge_section_comments(text: str) -> str:
     lines = text.splitlines()
-    print("first lines:", [repr(line) for line in lines[:10]])
     out: list[str] = []
     i = 0
-    debug_limit = 10
     while i < len(lines):
         line = lines[i]
         stripped = line.strip()
+
+        # Handle single-line property comments that are on their own line
+        if stripped.startswith("/*") and "*/" in stripped and i + 1 < len(lines):
+            next_line = lines[i+1]
+            next_stripped = next_line.strip()
+            if ":" in next_stripped and not next_stripped.startswith("/*"):
+                comment_text = stripped.strip("/*").strip("*/").strip()
+                merged = next_line.rstrip() + f" /* {comment_text} */"
+                out.append(merged)
+                i += 2 # Skip current comment line and next property line
+                continue
+
         if stripped.startswith("/*"):
             comment_blocks: list[list[str]] = []
-            trailing_blanks: list[str] = []
-            while i < len(lines) and lines[i].strip().startswith("/*"):
+            
+            start_comment_block_index = i
+            while i < len(lines):
+                current_line_stripped = lines[i].strip()
+                if not current_line_stripped.startswith("/*"):
+                    break
+                
                 block: list[str] = []
                 block.append(lines[i])
-                if "*/" in lines[i]:
-                    i += 1
-                else:
+                if "*/" not in lines[i]:
                     i += 1
                     while i < len(lines):
                         block.append(lines[i])
@@ -58,48 +71,37 @@ def merge_section_comments(text: str) -> str:
                             i += 1
                             break
                         i += 1
-                comment_blocks.append(block)
-                saw_blank = False
-                while i < len(lines) and lines[i].strip() == "":
-                    trailing_blanks.append(lines[i])
-                    i += 1
-                    saw_blank = True
-                if saw_blank:
-                    break
-            target_line = lines[i] if i < len(lines) else ""
-            if debug_limit > 0:
-                print(
-                    f"candidate target: {target_line!r} | block len: {sum(len(block) for block in comment_blocks)}"
-                )
-            skip_group = should_skip(comment_blocks)
-            if target_line and "{" in target_line:
-                if target_line.strip().startswith("html") and debug_limit > 0:
-                    print("block lines for html:", comment_blocks)
-                if skip_group:
-                    if debug_limit > 0:
-                        print(
-                            "skip (size)",
-                            sum(len(block) for block in comment_blocks),
-                            "->",
-                            target_line,
-                        )
-                        debug_limit -= 1
                 else:
-                    comment_text = combine_comment_blocks(comment_blocks)
-                    if comment_text:
-                        if debug_limit > 0:
-                            print(
-                                f"merge -> {comment_text!r} | target: {target_line.strip()!r}"
-                            )
-                            debug_limit -= 1
-                        merged = target_line.rstrip() + f" /* {comment_text} */"
-                        out.append(merged)
-                        i += 1
-                        continue
-            for block in comment_blocks:
-                out.extend(block)
-            out.extend(trailing_blanks)
+                    i += 1
+                
+                comment_blocks.append(block)
+
+                if i < len(lines) and lines[i].strip() == "":
+                    i+=1
+                    break
+
+            target_line_index = i
+            target_line = ""
+            if target_line_index < len(lines):
+                target_line = lines[target_line_index]
+
+            skip_group = should_skip(comment_blocks)
+            
+            if target_line and "{" in target_line and not skip_group:
+                comment_text = combine_comment_blocks(comment_blocks)
+                if comment_text:
+                    merged = target_line.rstrip() + f" /* {comment_text} */"
+                    out.append(merged)
+                    i += 1
+                    continue
+            
+            i = start_comment_block_index
+            while i < target_line_index:
+                out.append(lines[i])
+                i += 1
+            
             continue
+
         out.append(line)
         i += 1
     return "\n".join(out) + "\n"
