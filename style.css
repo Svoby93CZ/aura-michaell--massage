@@ -183,7 +183,7 @@ header { /* 04. Navigation & Hero Components */
   background: linear-gradient(90deg, var(--accent), #3e2f2a, var(--accent)); /* Definuje pozadí prvku. */
   -webkit-background-clip: text; /* Omezí vykreslení pozadí na text ve WebKit prohlížečích. */
   background-clip: text; /* Určuje oblast vykreslení pozadí. */
-  color: transparent; /* Nastaví barvu textu. */
+  color:#2b1c12; /* Nastaví barvu textu. */
   text-shadow: 2px 2px 6px rgba(60,30,10,0.25), 0 0 1px #2b1c12; /* Přidá stín textu. */
   margin: 0; /* Odsadí prvek od okolního obsahu. */
   animation: shine 4s infinite; /* Definuje animaci a její průběh. */
@@ -290,6 +290,10 @@ header { /* 04. Navigation & Hero Components */
   border-radius: 18px; /* Zaoblí rohy prvku. */
   box-shadow: 0 8px 24px rgba(0,0,0,0.28); /* Přidá stín prvku. */
 }
+.page-home .welcome-section .parallax-content h2 {
+  font-size: clamp(2.1rem, 9vw, 2.8rem); /* Zvětšení písma pro lepší čitelnost na mobilu */
+}
+
 .page-home .welcome-content {
   display: flex; /* Nastaví způsob zobrazení prvku. */
   align-items: flex-start; /* Zarovná děti v pomocné ose Flexboxu. */
