@@ -32,8 +32,8 @@ Disallow: /.*
 # ============================================
 # SITEMAP (řekne Googlu kde najít seznam stránek)
 # ============================================
-# Až vytvoříte sitemap.xml, odkomentujte:
-# Sitemap: https://aura-michaell-massage.cz/sitemap.xml
+# AKTIVNÍ - sitemap.xml vytvořena 28. října 2025
+Sitemap: https://aura-michaell-massage.cz/sitemap.xml
 
 # ============================================
 # PRAVIDLA PRO KONKRÉTNÍ ROBOTY

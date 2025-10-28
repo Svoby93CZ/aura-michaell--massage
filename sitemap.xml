@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!--
+    Sitemap pro Aura Michaell Massage
+    Aktualizováno: 28. října 2025
+
+    Priority (0.0 - 1.0):
+    1.0 = Nejvyšší priorita (hlavní stránka)
+    0.8 = Vysoká priorita (důležité sekce)
+    0.5 = Střední priorita (podstránky)
+
+    Changefreq:
+    always  = Mění se při každé návštěvě
+    hourly  = Každou hodinu
+    daily   = Denně
+    weekly  = Týdně
+    monthly = Měsíčně
+    yearly  = Ročně
+    never   = Nikdy (archiv)
+  -->
+
+  <!-- HLAVNÍ STRÁNKA -->
+  <url>
+    <loc>https://auramichaell.cz/</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://auramichaell.cz/index.html</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- SLUŽBY A CENÍKY -->
+  <url>
+    <loc>https://auramichaell.cz/msginfo.html</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- OCHRANA OSOBNÍCH ÚDAJŮ -->
+  <url>
+    <loc>https://auramichaell.cz/privacy-policy.html</loc>
+    <lastmod>2025-10-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!--
+    POZNÁMKY:
+
+    1. DŮLEŽITÉ - Změňte "aura-michaell-massage.cz" na vaší skutečnou doménu!
+
+    2. Po každé změně obsahu aktualizujte <lastmod> datum
+
+    3. Po nahrání na server přidejte do robots.txt:
+       Sitemap: https://vase-domena.cz/sitemap.xml
+
+    4. Odešlete do Google Search Console:
+       https://search.google.com/search-console
+       > Indexování > Sitemapy > Přidat novou sitemapu
+
+    5. Můžete přidat i do Bing Webmaster Tools:
+       https://www.bing.com/webmasters
+
+    6. Validace sitemap:
+       https://www.xml-sitemaps.com/validate-xml-sitemap.html
+  -->
+
+</urlset>
