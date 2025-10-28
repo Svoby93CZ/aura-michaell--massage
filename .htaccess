@@ -12,8 +12,8 @@ Header always set X-XSS-Protection "1; mode=block"
 Header always set X-Content-Type-Options "nosniff"
 
 # Strict Transport Security (HSTS) - vyžaduje HTTPS
-# Odkomentujte, až budete mít SSL certifikát
-# Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+# SSL certifikát AKTIVOVÁN - 28. října 2025
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 
 # Content Security Policy - pokročilá ochrana
 Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://counter.websiteout.com https://widgets.sociablekit.com https://static.elfsight.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com https://aura-michaell-massage.reservio.com;"
@@ -27,11 +27,11 @@ Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), 
 # ============================================
 # HTTPS REDIRECT - Přesměrování na HTTPS
 # ============================================
-# Odkomentujte, až budete mít SSL certifikát
+# SSL certifikát AKTIVOVÁN - 28. října 2025
 
-# RewriteEngine On
-# RewriteCond %{HTTPS} off
-# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # ============================================
 # OCHRANA CITLIVÝCH SOUBORŮ
