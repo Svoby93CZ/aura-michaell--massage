@@ -1,0 +1,81 @@
+# robots.txt pro Aura Michaell Massage
+# Tento soubor říká vyhledávačům, které stránky mohou indexovat
+
+# ============================================
+# PRAVIDLA PRO VŠECHNY ROBOTY
+# ============================================
+
+User-agent: *
+
+# Povolené stránky (indexovat ANO)
+Allow: /
+Allow: /index.html
+Allow: /msginfo.html
+Allow: /privacy-policy.html
+Allow: /galerie/
+Allow: /masaze/
+Allow: /Poukazy/
+
+# Zakázané stránky (indexovat NE)
+Disallow: /tools/
+Disallow: /*.bak$
+Disallow: /*.backup$
+Disallow: /*.old$
+Disallow: /*.log$
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /temp/
+
+# Zakázat indexování skrytých souborů
+Disallow: /.*
+
+# ============================================
+# SITEMAP (řekne Googlu kde najít seznam stránek)
+# ============================================
+# Až vytvoříte sitemap.xml, odkomentujte:
+# Sitemap: https://aura-michaell-massage.cz/sitemap.xml
+
+# ============================================
+# PRAVIDLA PRO KONKRÉTNÍ ROBOTY
+# ============================================
+
+# Google Image Bot - povolte indexování obrázků
+User-agent: Googlebot-Image
+Allow: /galerie/
+Allow: /masaze/
+Allow: /Poukazy/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.webp
+
+# Seznam.cz robot
+User-agent: SeznamBot
+Allow: /
+
+# ============================================
+# RYCHLOST PROCHÁZENÍ (crawl-delay)
+# ============================================
+# Některé roboty respektují tento parametr
+# Číslo = sekundy mezi požadavky
+
+User-agent: *
+# Crawl-delay: 1
+
+# ============================================
+# POZNÁMKY
+# ============================================
+#
+# Tento soubor:
+# - NENAHRAZUJE zabezpečení (.htaccess)
+# - Je pouze DOPORUČENÍ pro slušné roboty
+# - Škodlivé roboty ho ignorují
+# - Musí být v KOŘENOVÉ složce webu
+#
+# Testování:
+# Google: https://www.google.com/webmasters/tools/robots-testing-tool
+# Online: https://technicalseo.com/tools/robots-txt/
+#
+# Vytvořeno: 28. října 2025
+# Web: https://aura-michaell-massage.cz
