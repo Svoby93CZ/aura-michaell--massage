@@ -9,7 +9,7 @@
   ========================================================================== */
 
 :root { /* 01. Proměnné tématu */
-  
+
   --pad: 10px; /* Proměnná pro základní vnější odsazení. */
   --gap: 10px; /* Proměnná pro mezery mezi prvky. */
   --accent: #7c4a27; /* Proměnná pro hlavní akcentní barvu. */
@@ -21,6 +21,12 @@
   --nav-btn-height: 56px; /* Proměnná pro výšku navigačních tlačítek. */
   --nav-btn-height-sm: 48px; /* Proměnná pro menší výšku navigačních tlačítek. */
   --nav-btn-height-xs: 44px; /* Proměnná pro nejnižší výšku navigačních tlačítek. */
+
+  /* Přidané proměnné pro lepší správu */
+  --transition-speed: 0.2s;
+  --box-shadow-light: 0 2px 8px rgba(60,30,10,0.12);
+  --box-shadow-medium: 0 4px 16px rgba(60,30,10,0.18);
+  --box-shadow-heavy: 0 8px 24px rgba(60,30,10,0.24);
 }
 
 html { /* 02. Base Elements */
@@ -1579,10 +1585,10 @@ footer img {
   outline: none; /* Vykreslí obrys prvku bez vlivu na rozměry. */
   cursor: pointer; /* Nastaví tvar kurzoru. */
   position: relative; /* Určuje způsob pozicování prvku. */
-  transition: 
-    background 0.2s, 
-    color 0.2s, 
-    box-shadow 0.2s, 
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
     transform 0.2s,
     border-color 0.2s;
 }
@@ -1796,19 +1802,19 @@ footer img {
     height: auto; /* Výška se přizpůsobí obsahu, ale bude minimálně 100px */
     margin-bottom: 4px; /* Odsazení zespodu pro prvek. */
   }
-  
+
   .cenik-mobile-item[class*="bg-"] { /* Pro rámečky s pozadím můžete nastavit konkrétnější výšku */
     height: 150px; /* Pevná výška pro položky s obrázkem na pozadí */
     min-height: 150px; /* Nastaví minimální výšku prvku. */
   }
-  
+
   .cenik-mobile-title {
     font-weight: 700; /* Určuje tloušťku písma. */
     color: #7c4a27; /* Nastaví barvu textu. */
     font-size: 1.1em; /* Nastaví velikost písma. */
     margin-bottom: 4px; /* Odsazení zespodu pro prvek. */
   }
-  
+
   .cenik-mobile-price {
     color: #fff; /* Nastaví barvu textu. */
     font-size: 1.1em; /* Nastaví velikost písma. */
@@ -1820,7 +1826,7 @@ footer img {
     margin-top: 2px; /* Odsazení shora pro prvek. */
     box-shadow: 0 2px 8px rgba(124,74,39,0.07); /* Přidá stín prvku. */
   }
-  
+
   .cenik-mobile-info-btn {
     background: none; /* Definuje pozadí prvku. */
     border: none; /* Vykreslí rámeček kolem prvku. */
@@ -1857,7 +1863,7 @@ footer img {
   .cenik-mobile-item.active .cenik-mobile-info {
     display: block; /* Nastaví způsob zobrazení prvku. */
   }
-  
+
   .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; } /* Přidané definice obrázků pozadí pro mobilní zobrazení */
   .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
@@ -1877,14 +1883,14 @@ footer img {
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
-  
+
   .cenik-mobile-item[class*="bg-"] { /* Společné styly pro položky s pozadím v mobilní verzi */
     color: #fff; /* Nastaví barvu textu. */
     position: relative; /* Určuje způsob pozicování prvku. */
     border: 2px solid #131313; /* Vykreslí rámeček kolem prvku. */
     box-shadow: 0 2px 12px rgba(124,74,39,0.13); /* Přidá stín prvku. */
   }
-  
+
   /* Zajištění čitelnosti textu na pozadí v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,
@@ -1999,7 +2005,7 @@ footer img {
   .cenik-mobile-item.active .cenik-mobile-info {
     display: block; /* Nastaví způsob zobrazení prvku. */
   }
-  
+
   .cenik-mobile-item.bg-masaz-zada      { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmz.png') center/cover no-repeat; } /* Přidané definice obrázků pozadí pro mobilní zobrazení */
   .cenik-mobile-item.bg-masaz-zada-sije { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzs.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-masaz-zada-sije-dkz  { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/kmzsdkz.png') center/cover no-repeat; }
@@ -2019,14 +2025,14 @@ footer img {
   .cenik-mobile-item.bg-relaxacni-oblicej { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/rmod.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-rukou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzr.png') center/cover no-repeat; }
   .cenik-mobile-item.bg-parafinovy-zabal-nohou { background: linear-gradient(rgba(60,30,10,0.38),rgba(60,30,10,0.38)),url('masaze/pzn.png') center/cover no-repeat; }
-  
+
   .cenik-mobile-item[class*="bg-"] { /* Společné styly pro položky s pozadím v mobilní verzi */
     color: #fff; /* Nastaví barvu textu. */
     position: relative; /* Určuje způsob pozicování prvku. */
     border: 2px solid #131313; /* Vykreslí rámeček kolem prvku. */
     box-shadow: 0 2px 12px rgba(124,74,39,0.13); /* Přidá stín prvku. */
   }
-  
+
   /* Zajištění čitelnosti textu na pozadí v mobilní verzi */
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-title,
   .cenik-mobile-item[class*="bg-"] .cenik-mobile-price,

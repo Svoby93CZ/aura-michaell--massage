@@ -2,8 +2,19 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
-  <title>Přehled masáží a služeb</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Kompletní nabídka masáží a služeb - klasické, sportovní masáže, zábaly, slow touch. Ceník a rezervace online." />
+  <title>Přehled masáží a služeb - Aura Michaell Massage</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-732NT4QJEX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-732NT4QJEX');
+  </script>
+
   <!-- Fonty a styl hlavní stránky -->
   <link href="https://fonts.googleapis.com/css?family=Tenor+Sans:400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet">
@@ -20,7 +31,7 @@
       </div>
     </div>
   </header>
-  
+
   <nav class="hero-nav hero-nav--featured services-nav" role="navigation" aria-label="Navigace služeb">
     <a href="#klasicke" class="nav-btn"><span>Klasické masáže</span></a>
     <a href="#sportovni" class="nav-btn"><span>Sportovní masáže</span></a>
@@ -34,8 +45,7 @@
   </div>
     <!-- Klasické masáže -->
     <section id="klasicke" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <p style="border-bottom: 3px solid #e0d3c2;"></p>
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Klasické masáže ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Klasické masáže ~</h2>
       <!--Info o Klasických masážích-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 0.8em;font-weight: bold;">
@@ -48,29 +58,25 @@
         </div>
         <!--Indikace-->
         <div style="background: rgba(69, 135, 38, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #92ab4e; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="indikace">
-              <ul>Indikace: <span style="color:#000000;">Pro koho je vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em;font-weight: bold;">
+          <h3 class="indikace">Indikace: <span style="color:#000000;">Pro koho je vhodná</span></h3>
+          <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
             <li>pro každého, kdo hledá odpočinek a regeneraci</li>
             <li>při bolestech zad, šíje či celkovém svalovém napětí</li>
             <li>pro lidi se sedavým zaměstnáním nebo jednostrannou zátěží</li>
             <li>jako prevence proti stresu a únavě.</li>
-          </div>
+          </ul>
         </div>
         <!--Kontraindikace-->
         <div style="background: rgba(154, 51, 51, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #e33333; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="kontraindikace">
-              <ul>Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em;font-weight: bold;">
+          <h3 class="kontraindikace">Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></h3>
+          <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
             <li>Horečka a akutní infekce</li>
             <li>Kožní onemocnění nebo poranění kůže</li>
             <li>Křečové žíly (v místě výskytu)</li>
             <li>Nádorová onemocnění</li>
             <li>Krvácivé stavy nebo riziko trombózy</li>
             <li>Těhotenství (v určitých fázích a s opatrností)</li>
-          </div>
+          </ul>
         </div>
         <div style="margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.2); padding: 4px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); margin-bottom: 4px; max-width: 800px;">
           <p style="text-align:center;font-weight: bold;"><span style="border-bottom: 2px solid #403e3e;">! Po kliknutí na cenovku se dostanete na stránku pro rezervaci masáže. !</span></p>
@@ -79,7 +85,7 @@
         <!-- Masáž zad a šíje -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmz.png" alt="Masáž zad a šíje">
+            <img src="masaze/kmz.png" alt="Masáž zad a šíje" loading="lazy">
             <div class="card-title">Záda a šíje</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/8cc1ae74-f248-41f5-b532-87a75d527a49" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -93,7 +99,7 @@
         <!-- Záda/šíje/dolních končetin ze zadu/ze předu -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmzsdkp.png" alt="Záda/šíje/dolních končetin ze zadu/ze předu">
+            <img src="masaze/kmzsdkp.png" alt="Záda/šíje/dolních končetin ze zadu/ze předu" loading="lazy">
             <div class="card-title">Záda/šíje/dolních končetin ze zadu/ze předu</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/cfbda387-3f4c-4ddb-bf89-9f553735ee35" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -107,7 +113,7 @@
         <!-- Dolních končetin ze zadu/ze předu -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmdkzp.png" alt="Dolních končetin ze zadu/ze předu">
+            <img src="masaze/kmdkzp.png" alt="Dolních končetin ze zadu/ze předu" loading="lazy">
             <div class="card-title">Dolních končetin ze zadu/ze předu</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/5fc39bb3-7e02-4078-8a4f-857194b828a4" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -121,7 +127,7 @@
         <!-- Dolních končetin ze zadu -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmdkz.png" alt="Dolních končetin ze zadu">
+            <img src="masaze/kmdkz.png" alt="Dolních končetin ze zadu" loading="lazy">
             <div class="card-title">Dolních končetin ze zadu</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/cdd9d157-6b1c-46a9-b2a6-9f854ff60cb9" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -135,7 +141,7 @@
         <!-- Dolních končetin ze předu -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmdkp.png" alt="Dolních končetin ze předu">
+            <img src="masaze/kmdkp.png" alt="Dolních končetin ze předu" loading="lazy">
             <div class="card-title">Dolních končetin ze předu</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/e114d069-2856-4e8b-8448-455734d0edae" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -149,7 +155,7 @@
         <!-- Horních končetin -->
         <div class="card-info">
           <div class="card-img-col">
-            <img src="masaze/kmhk.png" alt="Horních končetin">
+            <img src="masaze/kmhk.png" alt="Horních končetin" loading="lazy">
             <div class="card-title">Horních končetin</div>
             <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/cfc019ba-80cc-4efd-a9f1-0183bde08544" target="_blank" rel="noopener noreferrer">
               <div class="service-price-tag">
@@ -164,7 +170,7 @@
     </section>
     <!-- Sportovní masáže -->
     <section id="sportovni" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Sportovní masáže ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Sportovní masáže ~</h2>
       <!--Info o Sportovních masážích-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 0.8em;font-weight: bold;">
@@ -172,44 +178,39 @@
           <p>Ačkoliv vznikla především pro sportovce, je vhodná pro každého, kdo chce svému tělu dopřát účinnou péči – ať už jde o fyzicky aktivní lidi, nebo o ty, kteří mají sedavé zaměstnání, jednostrannou zátěží, či pociťují napětí v zádech a šíji.</p>
         </div>
         <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <p style="font-size: 1em;text-shadow: 0 2px 4px rgba(60,30,10,0.25), 0 0 2px #000; font-weight: bold;"><ul>Může být prováděna:</ul></p>
-          <div style="font-size: 0.9em;font-weight: bold;">
+          <h3 style="font-size: 1em; font-weight: bold; text-shadow: 0 2px 4px rgba(60,30,10,0.25), 0 0 2px #000;">Může být prováděna:</h3>
+          <ul style="font-size: 0.9em; font-weight: bold; margin-left: 1.2em;">
             <li>aktivačně</li>
             <li>před fyzickou aktivitou pro zvýšení prokrvení a připravení svalů na zátěž</li>
             <li>pro prokrvení a nastartování svalů</li>
             <li>regeneračně</li>
             <li>pro rychlejší zotavení po zátěži nebo náročném dni</li>
             <li>nebo jako součást pravidelné péče o pohybový aparát i celkovou pohodu.</li>
-          </div>
+          </ul>
         </div>
-      </ul>
       <div class="classic-massage-info" style="font-size: 0.8em; font-weight: bold;">
         <p>Výsledkem je pocit lehkosti, uvolnění a nově nabité energie – masáž tedy ocení opravdu každý, nejen sportovci.</p>
       </div>
       <!--Indikace-->
       <div style="background: rgba(69, 135, 38, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #92ab4e; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-        <h3 class="indikace">
-            <ul>Indikace: <span style="color:#000000;">Pro koho je vhodná</span></ul>
-        </h3>
-        <div style="font-size: 1em;font-weight: bold;">
+        <h3 class="indikace">Indikace: <span style="color:#000000;">Pro koho je vhodná</span></h3>
+        <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
           <li>Ztuhlé nebo přetížené svaly</li>
           <li>Příprava na sportovní výkon</li>
           <li>Regenerace po fyzické námaze</li>
           <li>Prevence svalových poranění</li>
           <li>Zlepšení pohyblivosti a výkonnosti</li>
-        </div>
-      </div> 
+        </ul>
+      </div>
       <!--Kontraindikace-->
       <div style="background: rgba(154, 51, 51, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #e33333; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-        <h3 class="kontraindikace">
-            <ul>Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></ul>
-        </h3>
-        <div style="font-size: 1em;font-weight: bold;">
+        <h3 class="kontraindikace">Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></h3>
+        <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
           <li>Akutní úrazy (např. výrony, natržení svalů)</li>
           <li>Záněty svalů nebo kloubů (Horečka, infekce)</li>
           <li>Kožní onemocnění v místě masáže</li>
           <li>Srdeční onemocnění nebo vysoký krevní tlak (bez lékařského souhlasu)</li>
-        </div>
+        </ul>
       </div>
       <div style="margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.2); padding: 4px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); margin-bottom: 4px; max-width: 800px;">
   <p style="text-align:center;font-weight: bold;"><span style="border-bottom: 2px solid #403e3e;">! Po kliknutí na cenovku se dostanete na stránku pro rezervaci masáže. !</span></p>
@@ -218,7 +219,7 @@
       <!-- Sportovní masáž zad a šíje -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smzs.png" alt="Sportovní masáž zad a šíje">
+          <img src="masaze/smzs.png" alt="Sportovní masáž zad a šíje" loading="lazy">
           <div class="card-title">Záda a šíje</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/cc7f914d-b398-4a1f-bb89-9c20d39eafd0" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -232,7 +233,7 @@
       <!-- Sportovní masáž - šíje -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/sms.png" alt="Sportovní masáž - šíje">
+          <img src="masaze/sms.png" alt="Sportovní masáž - šíje" loading="lazy">
           <div class="card-title">Šíje</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/c9febe66-1ee5-497a-bc5c-e087dd1d9e07" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -246,7 +247,7 @@
       <!-- Sportovní masáž - zad/šíje/dolních kočetin ze zadu/ze předu -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smzsdkzp.png" alt="Sportovní masáž - zad/šíje/dolních kočetin ze zadu/ze předu">
+          <img src="masaze/smzsdkzp.png" alt="Sportovní masáž - zad/šíje/dolních kočetin ze zadu/ze předu" loading="lazy">
           <div class="card-title">Záda/šíje/dolních končetin ze zadu/ze předu</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/fb4065e8-74fe-47c6-b6fe-10246772fca6" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -260,7 +261,7 @@
       <!-- Sportovní masáž - dolních končetin ze zadu/ze předu/hýždě -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smdkzp.png" alt="Sportovní masáž - dolních končetin ze zadu/ze předu/hýždě">
+          <img src="masaze/smdkzp.png" alt="Sportovní masáž - dolních končetin ze zadu/ze předu/hýždě" loading="lazy">
           <div class="card-title">Dolních končetin ze zadu/ze předu/hýždě</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/11af849a-d558-4a49-84da-691967541069" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -274,7 +275,7 @@
       <!-- Sportovní masáž - horních končetin + rameno -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smhkr.png" alt="Sportovní masáž - horních končetin + rameno">
+          <img src="masaze/smhkr.png" alt="Sportovní masáž - horních končetin + rameno" loading="lazy">
           <div class="card-title">Horních končetin + rameno</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/1b6bdcdd-3390-4be2-94fc-10db7507a18f" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -283,12 +284,12 @@
               <span class="service-duration">40 min</span>
             </div>
           </a>
-        </div>    
+        </div>
       </div>
       <!-- Sportovní masáž - dolních končetin ze předu -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smdkp.png" alt="Sportovní masáž - Dolních končetin ze předu">
+          <img src="masaze/smdkp.png" alt="Sportovní masáž - Dolních končetin ze předu" loading="lazy">
           <div class="card-title">Dolních končetin ze předu</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/eaed703f-134d-46e5-a8a2-802c074081e3" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -302,7 +303,7 @@
       <!-- Sportovní masáž - dolních končetin ze zadu -->
       <div class="card-info">
         <div class="card-img-col">
-          <img src="masaze/smdkz.png" alt="Sportovní masáž - Dolních končetin ze zadu">
+          <img src="masaze/smdkz.png" alt="Sportovní masáž - Dolních končetin ze zadu" loading="lazy">
           <div class="card-title">Dolních končetin ze zadu</div>
           <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/91870220-0ec5-43c4-8c45-15478ce014ee" target="_blank" rel="noopener noreferrer">
             <div class="service-price-tag">
@@ -316,7 +317,7 @@
     </section>
     <!-- Zábaly -->
     <section id="zabaly" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Zábaly ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Zábaly ~</h2>
       <!--Info o Zábalích-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 0.8em;font-weight: bold;">
@@ -331,24 +332,20 @@
         <p style="text-shadow: 0 2px 4px rgba(60,30,10,0.25), 0 0 2px #000; font-size: 1em;font-weight: bold;">Možná kombinace s jinou procedurou se <span style="color: #e33333;">slevou.</span></p>
         <!--Indikace-->
         <div style="background: rgba(69, 135, 38, 0.2); padding: 12px; border-radius: 8px;border-style: solid; border-color: #92ab4e; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="indikace">
-              <ul>Indikace: <span style="color:#000000;">Pro koho je vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em;font-weight: bold;">
+          <h3 class="indikace">Indikace: <span style="color:#000000;">Pro koho je vhodná</span></h3>
+          <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
             <li>Suchou, popraskanou či unavenou pokožku</li>
             <li>Osoby s artrózou, revmatismem nebo bolestí kloubů</li>
             <li>Každého, kdo si chce dopřát relaxaci a péči o ruce</li>
-          </div>
+          </ul>
         </div>
         <!--Kontraindikace-->
         <div style="background: rgba(154, 51, 51, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #e33333; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="kontraindikace">
-              <ul>Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em;font-weight: bold;">
+          <h3 class="kontraindikace">Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></h3>
+          <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em;">
             <li>Otevřené rány, ekzémy, infekce, akutní záněty, cukrovka, cévní onemocnění, horečka.</li>
             <li>Alergie na parafín.</li>
-          </div>
+          </ul>
         </div>
         <div style="margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.2); padding: 4px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); margin-bottom: 4px; max-width: 800px;">
           <p style="text-align:center;font-weight: bold;"><span style="border-bottom: 2px solid #403e3e;">! Po kliknutí na cenovku se dostanete na stránku pro rezervaci služby. !</span></p>
@@ -358,7 +355,7 @@
         <div style="max-width: 320px;">
           <div class="card-info">
             <div class="card-img-col">
-            <img src="masaze/pzr.png" alt="Parafínový zábal rukou">
+            <img src="masaze/pzr.png" alt="Parafínový zábal rukou" loading="lazy">
               <div class="card-title">Parafínový zábal rukou</div>
               <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/851b4828-53b3-40b0-a4f9-f0aaf3cbe38e" target="_blank" rel="noopener noreferrer">
                 <div class="service-price-tag">
@@ -374,7 +371,7 @@
         <div style="max-width: 320px;">
           <div class="card-info">
             <div class="card-img-col">
-            <img src="masaze/pzn.png" alt="Parafínový zábal nohou">
+            <img src="masaze/pzn.png" alt="Parafínový zábal nohou" loading="lazy">
               <div class="card-title">Parafínový zábal nohou</div>
               <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/c23df20e-7152-4dc0-aa84-16d9b973eb1a" target="_blank" rel="noopener noreferrer">
                 <div class="service-price-tag">
@@ -390,7 +387,7 @@
     </section>
     <!-- Slow touch - tichý dotek -->
     <section id="slowtouch" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Slow touch – tichý dotek ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Slow touch – tichý dotek ~</h2>
       <!--Info o Slow touch masážích-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 0.8em; font-weight: bold;">
@@ -404,26 +401,22 @@
         </div>
         <!--Indikace-->
         <div style="background: rgba(69, 135, 38, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #92ab4e; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="indikace">
-              <ul>Indikace: <span style="color:#000000;">Pro koho je vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em; font-weight: bold;">
+          <h3 class="indikace">Indikace: <span style="color:#000000;">Pro koho je vhodná</span></h3>
+          <ul style="font-size: 1em; font-weight: bold; margin-left: 1.2em;">
             <li>Zvýšené napětí v oblasti krku, ramen a zad</li>
             <li>Stres, úzkost, nespavost</li>
             <li>Potřeba relaxace a načerpání energie</li>
             <li>Citlivost na dotek a potřeba jemné péče</li>
-          </div>
+          </ul>
         </div>
         <!--Kontraindikace-->
         <div style="background: rgba(154, 51, 51, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #e33333; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 class="kontraindikace">
-              <ul>Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></ul>
-          </h3>
-          <div style="font-size: 1em; font-weight: bold;">
+          <h3 class="kontraindikace">Kontraindikace: <span style="color:#000000;">Pro koho není vhodná</span></h3>
+          <ul style="font-size: 1em; font-weight: bold; margin-left: 1.2em;">
             <li>Akutní záněty, horečka nebo infekce</li>
             <li>Kožní poranění nebo podráždění v oblasti masáže</li>
             <li>Trombóza nebo jiné vážné cévní problémy</li>
-          </div>
+          </ul>
         </div>
         <div style="margin: 0 auto; text-align: center; background: rgba(0, 0, 0, 0.2); padding: 4px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); margin-bottom: 4px; max-width: 800px;">
           <p style="text-align:center;font-weight: bold;"><span style="border-bottom: 2px solid #403e3e;">! Po kliknutí na cenovku se dostanete na stránku pro rezervaci masáže. !</span></p>
@@ -433,7 +426,7 @@
           <div style="max-width: 320px;">
             <div class="card-info">
               <div class="card-img-col">
-              <img src="masaze/vd.png" alt="Slow touch masáž hlavy">
+              <img src="masaze/vd.png" alt="Slow touch masáž hlavy" loading="lazy">
                 <div class="card-title">Slow touch masáž hlavy</div>
                 <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/947a02c2-394e-4ec5-b067-8b36631e624f" target="_blank" rel="noopener noreferrer">
                   <div class="service-price-tag">
@@ -449,7 +442,7 @@
     </section>
     <!-- Vědomý dotek - něco více -->
     <section id="vedomy" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Vědomý dotek – něco více ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Vědomý dotek – něco více ~</h2>
       <!--Info o Vědomý dotek masážích-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 0.8em; font-weight: bold;">
@@ -458,26 +451,22 @@
           <p>Nejde jen o masáž – je to setkání, ve kterém je každý dotek veden s plnou pozorností, respektem a jemností.</p>
         </div>
         <div style="background: rgba(69, 135, 38, 0.2); padding: 12px; border-radius: 8px; border-style: solid; border-color: #92ab4e; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
-          <h3 style="font-weight: bold;font-size: 1.3em;text-align: center;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">
-              <ul>Co vám Vědomý dotek přinese:</ul>
-          </h3>
-          <div style="font-size: 1em;font-weight: bold;">
-          <li>hluboké uvolnění těla a mysli</li>
-          <li>podporu při zvládání napětí a stresu</li>
-          <li>probuzení smyslů a vnímání vlastního těla</li>
-          <li>pocit bezpečí, důvěry a propojení se sebou</li>
-          <li>jedinečný zážitek</li>
-          </div>
+          <h3 style="font-weight: bold;font-size: 1.3em;text-align: center;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">Co vám Vědomý dotek přinese:</h3>
+          <ul style="font-size: 1em;font-weight: bold; margin-left: 1.2em; display: inline-block; text-align: left;">
+            <li>hluboké uvolnění těla a mysli</li>
+            <li>podporu při zvládání napětí a stresu</li>
+            <li>probuzení smyslů a vnímání vlastního těla</li>
+            <li>pocit bezpečí, důvěry a propojení se sebou</li>
+            <li>jedinečný zážitek</li>
+          </ul>
         </div>
-        <h3 style="font-weight: bold;font-size: 1em;text-align: center;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #11ff00;">
-            <ul>Tento prostor je určený pro každého, kdo touží zpomalit, nadechnout se a dopřát si chvíli, která je celá jen pro něj.</ul>
-        </h3>
+        <h3 style="font-weight: bold;font-size: 1em;text-align: center;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #11ff00;">Tento prostor je určený pro každého, kdo touží zpomalit, nadechnout se a dopřát si chvíli, která je celá jen pro něj.</h3>
   <div class="cards" style="justify-content: center; width: 100%; margin-bottom: 24px;">
           <div style="max-width: 320px;">
           <!-- Vědomý dotek masáže -->
             <div class="card-info">
               <div class="card-img-col">
-              <img src="masaze/vd2.png" alt="Antistresová masáž hlavy">
+              <img src="masaze/vd2.png" alt="Antistresová masáž hlavy" loading="lazy">
               <div class="card-title">Vědomý dotek – rituál</div>
               <a class="service-price-tag-link" href="https://aura-michaell-massage.reservio.com/services/5d8755a6-e69d-4497-8286-1898380ff92e" target="_blank" rel="noopener noreferrer">
                 <div class="service-price-tag">
@@ -493,7 +482,7 @@
     </section>
     <!-- Ostatní služby -->
     <section id="ostatni" style="border-bottom: 3px solid #e0d3c2; padding-bottom: 120px;">
-      <h1 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Ostatní služby ~</h1>
+      <h2 class="cenik-section-title" style="font-size: 2.3em;text-shadow: 0 2px 8px rgba(60,30,10,0.25), 0 0 2px #000;">~ Ostatní služby ~</h2>
       <!--Baňkování-->
       <div style="background: rgba(124,74,39,.2); padding: 12px; border-radius: 8px; box-shadow: 0 2px 8px rgba(60,30,10,0.25); margin-bottom: 24px;">
         <div class="classic-massage-info" style="font-size: 1.3em;">
@@ -515,7 +504,7 @@
           <h4 style="font-size: large;text-align: center;"><span style="border-bottom: 2px solid #000000;">! Ošetření může zanechat dočasné kruhové otlaky na kůži. !</span></h4>
           <div style="padding-bottom: 16px;"></div>
         <div class="cards" style="display: flex; align-items: center;margin-right: 18px;">
-          <img src="masaze/banky.png" alt="Baňkování" style="display: block;">
+          <img src="masaze/banky.png" alt="Baňkování" style="display: block;" loading="lazy">
         </div>
       </div>
       <div style="padding-bottom: 30px;"></div>
@@ -540,7 +529,7 @@
           <div style="padding-bottom: 16px;"></div>
           </div>
           <div class="cards" style="display: flex; align-items: center;margin-right: 18px;">
-            <img src="masaze/lk.png" alt="Lávové kameny" style="display: block;">
+            <img src="masaze/lk.png" alt="Lávové kameny" style="display: block;" loading="lazy">
           </div>
         </div>
         <div style="padding-bottom: 30px;"></div>
@@ -564,7 +553,7 @@
           <div style="padding-bottom: 16px;"></div>
         </div>
         <div class="cards" style="display: flex; align-items: center;margin-right: 18px;">
-          <img src="masaze/amh.png" alt="Relaxační masáž obličeje a dekoltu" style="display: block;">
+          <img src="masaze/amh.png" alt="Relaxační masáž obličeje a dekoltu" style="display: block;" loading="lazy">
         </div>
       </div>
       <div style="padding-bottom: 30px;"></div>
@@ -596,13 +585,12 @@
         </div>
         <div style="padding-bottom: 16px;"></div>
         <div class="cards" style="display: flex; align-items: center;margin-right: 18px;">
-          <img src="masaze/rsm.png" alt="Rituál šťastná maminka" style="display: block;">
+          <img src="masaze/rsm.png" alt="Rituál šťastná maminka" style="display: block;" loading="lazy">
         </div>
       </div>
       <div style="padding-bottom: 30px;"></div>
       </div>
   </section>
-  </main>
   <footer class="site-footer">
       <div class="footer-widgets">
         <h2>Zásady ochrany osobních údajů</h2>
