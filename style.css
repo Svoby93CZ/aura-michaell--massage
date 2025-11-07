@@ -976,6 +976,305 @@ header { /* 04. Navigation & Hero Components */
   color: #e33333; /* Nastaví barvu textu. */
 }
 
+/* Parallax efekt pro aromaterapii - s fade efektem jako na hlavní stránce */
+#aromaterapie-featured {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  margin: 60px auto;
+  border-radius: 16px;
+}
+
+/* Parallax pozadí s fade efektem */
+#aromaterapie-featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: linear-gradient(180deg, rgba(255,248,240,0.3), rgba(255,248,240,0.5)), url('galerie/oleje.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed, fixed;
+  border-radius: inherit;
+  pointer-events: none;
+  /* Fade efekt na okrajích - stejný jako na hlavní stránce */
+  -webkit-mask-image: linear-gradient(90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%)
+    , linear-gradient(180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(90deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%)
+    , linear-gradient(180deg,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,0.35) 6%,
+      rgba(0,0,0,0.75) 18%,
+      rgba(0,0,0,1) 32%,
+      rgba(0,0,0,1) 68%,
+      rgba(0,0,0,0.75) 82%,
+      rgba(0,0,0,0.35) 94%,
+      rgba(0,0,0,0) 100%);
+  -webkit-mask-composite: multiply;
+  mask-composite: intersect;
+}
+
+/* Na mobilních zařízeních použít alternativní přístup pro parallax */
+@media (max-width: 768px) {
+  #aromaterapie-featured {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    margin: 20px 8px;
+    border-radius: 16px;
+    padding: 20px 8px 40px 8px !important;
+  }
+
+  /* Menší padding pro vnitřní kontejner */
+  #aromaterapie {
+    padding: 12px 8px !important;
+  }
+
+  /* Parallax pozadí pro mobil - s transform místo fixed */
+  #aromaterapie-featured::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(180deg, rgba(255,248,240,0.3), rgba(255,248,240,0.5)), url('galerie/oleje.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: inherit;
+    pointer-events: none;
+    /* Fade efekt na okrajích - stejný jako na desktopu */
+    -webkit-mask-image: linear-gradient(90deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.35) 6%,
+        rgba(0,0,0,0.75) 18%,
+        rgba(0,0,0,1) 32%,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,0.75) 82%,
+        rgba(0,0,0,0.35) 94%,
+        rgba(0,0,0,0) 100%)
+      , linear-gradient(180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.35) 6%,
+        rgba(0,0,0,0.75) 18%,
+        rgba(0,0,0,1) 32%,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,0.75) 82%,
+        rgba(0,0,0,0.35) 94%,
+        rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(90deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.35) 6%,
+        rgba(0,0,0,0.75) 18%,
+        rgba(0,0,0,1) 32%,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,0.75) 82%,
+        rgba(0,0,0,0.35) 94%,
+        rgba(0,0,0,0) 100%)
+      , linear-gradient(180deg,
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.35) 6%,
+        rgba(0,0,0,0.75) 18%,
+        rgba(0,0,0,1) 32%,
+        rgba(0,0,0,1) 68%,
+        rgba(0,0,0,0.75) 82%,
+        rgba(0,0,0,0.35) 94%,
+        rgba(0,0,0,0) 100%);
+    -webkit-mask-composite: multiply;
+    mask-composite: intersect;
+  }
+
+  /* Aromaterapie - na mobilu jeden sloupec (rámečky pod sebou) */
+  #aromaterapie {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Barevné rámečky - více obdélníkový tvar na mobilu */
+  #aromaterapie > div[style*="background: rgba(124,200,120"],
+  #aromaterapie > div[style*="background: rgba(180,150,200"],
+  #aromaterapie > div[style*="background: rgba(255,165,80"],
+  #aromaterapie > div[style*="background: rgba(255, 200, 100"] {
+    padding: 12px 14px !important;
+    border-radius: 12px !important;
+    margin-bottom: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Nadpis a text v rámečcích - menší velikost na mobilu */
+  #aromaterapie h4 {
+    font-size: 0.95em !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+  }
+
+  #aromaterapie ul {
+    font-size: 0.8em !important;
+    margin-left: 1em !important;
+    line-height: 1.4 !important;
+    padding-left: 0.2em !important;
+  }
+
+  #aromaterapie li {
+    margin-bottom: 4px !important;
+  }
+
+  /* Informativní text - menší na mobilu */
+  #aromaterapie .classic-massage-info {
+    font-size: 0.85em !important;
+  }
+
+  #aromaterapie .classic-massage-info p {
+    font-size: 0.9em !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Prázdný div před obrázkem - skrýt */
+  #aromaterapie > div[style*="padding-bottom: 16px"]:last-of-type {
+    display: none !important;
+  }
+
+  /* Obrázek skrytý na mobilu - je v pozadí */
+  #aromaterapie .parallax-hidden-image {
+    display: none !important;
+  }
+}
+
+/* Styly pro sekci "Ostatní služby" na PC - dvousloupcový layout */
+@media (min-width: 769px) {
+  #ostatni {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    column-gap: 32px !important;
+    row-gap: 32px !important;
+    align-items: start !important;
+  }
+
+  /* Nadpis přes oba sloupce */
+  #ostatni .cenik-section-title {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 32px !important; /* Stejná mezera jako mezi řádky */
+  }
+
+  /* Aromaterapie - grid layout pro barevné rámečky ve 2 sloupcích */
+  #aromaterapie {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    align-items: start !important;
+  }
+
+  /* Nadpis přes oba sloupce */
+  #aromaterapie > div:nth-child(1) {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Informativní text přes oba sloupce */
+  #aromaterapie > div:nth-child(2) {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Barevné rámečky ve 2 sloupcích - automatické rozmístění */
+  #aromaterapie > div[style*="background: rgba(124,200,120"],
+  #aromaterapie > div[style*="background: rgba(180,150,200"],
+  #aromaterapie > div[style*="background: rgba(255,165,80"],
+  #aromaterapie > div[style*="background: rgba(255, 200, 100"] {
+    grid-column: span 1; /* Grid automaticky rozmístí do 2 sloupců */
+    margin-bottom: 16px; /* Přidá spodní mezeru mezi rámečky */
+  }
+
+  /* Prázdný div před obrázkem - skrýt */
+  #aromaterapie > div[style*="padding-bottom: 16px"]:last-of-type {
+    display: none !important;
+  }
+
+  /* Obrázek skrytý v parallax módu */
+  #aromaterapie .parallax-hidden-image {
+    display: none !important;
+  }
+
+  #aromaterapie .cards img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Skryjeme prázdné mezery */
+  #ostatni > div[style*="padding-bottom: 30px"] {
+    display: none !important;
+  }
+
+  /* Každý div služby zabere jeden sloupec */
+  #ostatni > div[style*="background"] {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Obrázky v sekcích */
+  #ostatni .cards {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+  }
+
+  #ostatni .cards img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.5)) !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  #ostatni .cards img:hover {
+    transform: scale(1.02) !important;
+  }
+}
+
+/* Jednoslovcový layout pro mobil */
+@media (max-width: 768px) {
+  #ostatni {
+    display: block;
+  }
+
+  #ostatni .cards img {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .page-services .hero-title,
   .page-services .offer-pricing-wrapper,
@@ -985,6 +1284,11 @@ header { /* 04. Navigation & Hero Components */
     display: flex; /* Nastaví způsob zobrazení prvku. */
     align-items: center; /* Zarovná děti v pomocné ose Flexboxu. */
     gap: 24px; /* Nastaví mezery mezi položkami. */
+  }
+
+  /* Zrušení speciálních stylů pro "Ostatní služby" na mobilech */
+  #ostatni .cards img {
+    max-width: 100%;
   }
   .parallax-section {
     margin: 36px 0; /* Odsadí prvek od okolního obsahu. */
