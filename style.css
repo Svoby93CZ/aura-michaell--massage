@@ -27,6 +27,16 @@
   --box-shadow-light: 0 2px 8px rgba(60,30,10,0.12);
   --box-shadow-medium: 0 4px 16px rgba(60,30,10,0.18);
   --box-shadow-heavy: 0 8px 24px rgba(60,30,10,0.24);
+
+  /* Vrstvy rozhraní */
+  --layer-ground: 0;
+  --layer-content: 10;
+  --layer-floating: 140;
+  --layer-nav: 200;
+  --layer-dropdown: 240;
+  --layer-overlay: 260;
+  --layer-scroll-button: 320;
+  --layer-modal: 400;
 }
 
 html { /* 02. Base Elements */
@@ -37,6 +47,7 @@ html { /* 02. Base Elements */
 body { /* ZÁKLADNÍ STYLY */
   margin: 0; /* Odsadí prvek od okolního obsahu. */
   padding: 0 var(--pad) 40px; /* Přidá vnitřní odsazení prvku. */
+  padding-top: 100px; /* Větší mezera mezi navbarem a obsahem */
   font-family: 'Tenor Sans', serif; /* Určuje použité písmo. */
   background: url('pozadi.jpg') center/cover fixed no-repeat; /* Definuje pozadí prvku. */
   color: #3e2f2a; /* Nastaví barvu textu. */
@@ -70,7 +81,7 @@ body { /* ZÁKLADNÍ STYLY */
   content: ""; /* Vloží obsah pseudo prvku. */
   position: absolute; /* Určuje způsob pozicování prvku. */
   inset: 0; /* Souhrnně nastaví odsazení ze všech stran. */
-  z-index: 0; /* Určuje pořadí překrytí prvku. */
+  z-index: var(--layer-ground); /* Určuje pořadí překrytí prvku. */
   background-image: var(--parallax-overlay), var(--parallax-image); /* Určuje obrázek pozadí. */
   background-position: center; /* Určuje pozici pozadí. */
   background-repeat: no-repeat; /* Řídí opakování pozadí. */
@@ -120,7 +131,7 @@ body { /* ZÁKLADNÍ STYLY */
 
 .parallax-content {
   position: relative; /* Určuje způsob pozicování prvku. */
-  z-index: 1; /* Určuje pořadí překrytí prvku. */
+  z-index: var(--layer-content); /* Určuje pořadí překrytí prvku. */
   max-width: 720px; /* Omezí maximální šířku prvku. */
   padding: 32px 28px; /* Přidá vnitřní odsazení prvku. */
   font-family: 'Raleway', sans-serif; /* Určuje použité písmo. */
@@ -706,8 +717,12 @@ header { /* 04. Navigation & Hero Components */
   }
 
   .page-services .cenik-section-title,
-  .page-services .cenik-section-titlemini {
-    font-size: clamp(1.3rem, 6vw, 2.4rem) !important; /* Přizpůsobí titulky šířce displeje a ponechá je v jednom řádku. */
+  .page-services .cenik-section-titlemini,
+  .cenik-section-title,
+  .cenik-section-titlemini {
+    font-size: clamp(1.45rem, 6.8vw, 2.6rem) !important; /* Zvýrazní nadpis kategorií na menších displejích. */
+    letter-spacing: 1px;
+    text-transform: uppercase;
     white-space: nowrap;
   }
 
@@ -1039,7 +1054,7 @@ header { /* 04. Navigation & Hero Components */
   mask-composite: intersect;
 }
 
-/* Na mobilních zařízeních použít alternativní přístup pro parallax */
+/* Mobilní verze s parallaxem */
 @media (max-width: 768px) {
   #aromaterapie-featured {
     position: relative;
@@ -1050,12 +1065,7 @@ header { /* 04. Navigation & Hero Components */
     padding: 20px 8px 40px 8px !important;
   }
 
-  /* Menší padding pro vnitřní kontejner */
-  #aromaterapie {
-    padding: 12px 8px !important;
-  }
-
-  /* Parallax pozadí pro mobil - s transform místo fixed */
+  /* Parallax pozadí pro mobil */
   #aromaterapie-featured::before {
     content: "";
     position: absolute;
@@ -1067,7 +1077,7 @@ header { /* 04. Navigation & Hero Components */
     background-size: cover;
     border-radius: inherit;
     pointer-events: none;
-    /* Fade efekt na okrajích - stejný jako na desktopu */
+    /* Fade efekt na okrajích */
     -webkit-mask-image: linear-gradient(90deg,
         rgba(0,0,0,0) 0%,
         rgba(0,0,0,0.35) 6%,
@@ -1106,6 +1116,10 @@ header { /* 04. Navigation & Hero Components */
         rgba(0,0,0,0) 100%);
     -webkit-mask-composite: multiply;
     mask-composite: intersect;
+  }
+
+  #aromaterapie {
+    padding: 12px 8px !important;
   }
 
   /* Aromaterapie - na mobilu jeden sloupec (rámečky pod sebou) */
@@ -1485,7 +1499,7 @@ footer img {
 .modal { /* MODAL */
   display: none; /* Nastaví způsob zobrazení prvku. */
   position: fixed; /* Určuje způsob pozicování prvku. */
-  z-index: 2000; /* Určuje pořadí překrytí prvku. */
+  z-index: var(--layer-modal); /* Určuje pořadí překrytí prvku. */
   left: 0; top: 0; right: 0; bottom: 0; /* Umístí prvek směrem zleva. */
   background: rgba(0,0,0,0.85); /* Definuje pozadí prvku. */
   justify-content: center; /* Zarovná děti v hlavní ose Flexboxu. */
@@ -1571,7 +1585,7 @@ footer img {
   opacity: 0; /* Nastaví průhlednost prvku. */
   visibility: hidden; /* Rozhodne, zda je prvek viditelný, aniž by zabral místo. */
   transition: opacity .3s, visibility .3s; /* Nastaví animaci změn vlastností. */
-  z-index: 1000; /* Určuje pořadí překrytí prvku. */
+  z-index: var(--layer-scroll-button); /* Určuje pořadí překrytí prvku. */
 }
 #scrollTopBtn.show {
   opacity: 1; /* Nastaví průhlednost prvku. */
@@ -2228,7 +2242,7 @@ footer img {
     margin-left: 0; /* Odsazení zleva pro prvek. */
   }
   .cenik-section-title {
-    font-size: 1.4em; /* Nastaví velikost písma. */
+    font-size: 3em; /* Nastaví velikost písma. */
     margin: 0 0 12px 0; /* Odsadí prvek od okolního obsahu. */
     text-align: center; /* Zarovná text. */
     background: none; /* Definuje pozadí prvku. */
@@ -2526,5 +2540,947 @@ footer img {
     margin: 0; /* Odsadí prvek od okolního obsahu. */
     text-align: left; /* Zarovná text. */
     width: 100%; /* Definuje šířku prvku. */
+  }
+}
+
+/* ========================================
+   Elektrický border efekt pro aromaterapii
+   ======================================== */
+
+:root {
+  --electric-border-color: #dd8448;
+  --electric-light-color: #f5a86b;
+  --gradient-color: rgba(221, 132, 72, 0.4);
+}
+
+.electric-card-wrapper {
+  padding: 2px;
+  border-radius: 24px;
+  position: relative;
+  max-width: 1200px;
+  margin: 60px auto;
+  background: transparent;
+}
+
+.electric-inner-container {
+  position: relative;
+}
+
+/* Animovaný border s filtrem - pouze pro okraj */
+.electric-animated-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--electric-border-color);
+  border-radius: 24px;
+  filter: url(#electric-border-filter);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Průhledná verze elektrického efektu pro aromaterapii */
+.electric-card-wrapper--transparent .electric-animated-border {
+  opacity: 0.5;
+}
+
+.electric-card-wrapper--transparent .electric-glow-layer-1,
+.electric-card-wrapper--transparent .electric-glow-layer-2 {
+  opacity: 0.5;
+}
+
+.electric-card-wrapper--transparent .electric-overlay-1,
+.electric-card-wrapper--transparent .electric-overlay-2 {
+  opacity: 0.25;
+}
+
+.electric-card-wrapper--transparent .electric-background-glow {
+  opacity: 0.15;
+}
+
+/* Hlavní karta s obsahem - BEZ filtru */
+.electric-main-card {
+  border-radius: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.electric-glow-layer-1 {
+  border: 2px solid rgba(221, 132, 72, 0.6);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.electric-glow-layer-2 {
+  border: 2px solid var(--electric-light-color);
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.electric-overlay-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 1;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(
+    -30deg,
+    white,
+    transparent 30%,
+    transparent 70%,
+    white
+  );
+  pointer-events: none;
+}
+
+.electric-overlay-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  transform: scale(1.1);
+  filter: blur(16px);
+  background: linear-gradient(
+    -30deg,
+    white,
+    transparent 30%,
+    transparent 70%,
+    white
+  );
+  pointer-events: none;
+}
+
+.electric-background-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  filter: blur(32px);
+  transform: scale(1.1);
+  opacity: 0.3;
+  z-index: -1;
+  background: linear-gradient(
+    -30deg,
+    var(--electric-light-color),
+    transparent,
+    var(--electric-border-color)
+  );
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .electric-card-wrapper {
+    margin: 20px 8px;
+  }
+}
+
+/* ========================================
+   Noční režim
+   ======================================== */
+
+/* ========================================
+   Hlavní navigace
+   ======================================== */
+
+body.nav-open {
+  overflow: hidden;
+}
+
+.primary-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--layer-nav);
+  background: linear-gradient(135deg, rgba(124,74,39,0.96), rgba(171,117,78,0.92));
+  border-bottom: 1px solid rgba(255,248,242,0.12);
+  box-shadow: 0 12px 28px rgba(60,30,10,0.32);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  pointer-events: auto;
+  transition: padding 0.25s ease, gap 0.25s ease;
+}
+
+.primary-nav__brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  border-radius: 50%;
+  background: #dcc7b1;
+  border: 2px solid rgba(62,47,42,0.85);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.25s ease, width 0.25s ease,
+    height 0.25s ease, padding 0.25s ease, border-width 0.25s ease;
+}
+
+.primary-nav__brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.25));
+}
+
+.primary-nav__brand:hover,
+.primary-nav__brand:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.primary-nav__title-link {
+  position: absolute;
+  top: 50%;
+  left: clamp(22px, 4vw, 36px);
+  transform: translateY(-50%);
+  font-family: 'Inknut Antiqua', serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.6px;
+  color: #2b1c12;
+  text-decoration: none;
+  -webkit-text-stroke: 0.5px #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
+  --nav-title-width: 18.5ch;
+  z-index: var(--layer-dropdown);
+  display: inline-flex;
+  align-items: center;
+  animation: none;
+}
+
+.primary-nav__title-link.is-typing {
+  animation: navTitleTyping 1.8s steps(22) forwards;
+}
+
+.primary-nav--show-title .primary-nav__title-link {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.primary-nav--show-title .primary-nav__title-link:not(.is-typing) {
+  width: var(--nav-title-width);
+}
+
+.primary-nav--show-title .primary-nav__menu {
+  margin-left: clamp(150px, 18vw, 220px);
+}
+
+.primary-nav--show-title.primary-nav--condensed .primary-nav__menu {
+  margin-left: clamp(140px, 16vw, 200px);
+}
+
+.primary-nav--condensed {
+  background: linear-gradient(135deg, rgba(124,74,39,0.9), rgba(130,86,52,0.88));
+  box-shadow: 0 6px 18px rgba(60,30,10,0.26);
+}
+
+.primary-nav--condensed .primary-nav__inner {
+  padding: 6px 18px;
+  gap: 14px;
+}
+
+.primary-nav--condensed .primary-nav__brand {
+  opacity: 0;
+  transform: scale(0.35);
+  width: 0;
+  height: 0;
+  padding: 0;
+  border-width: 0;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.primary-nav--condensed .primary-nav__link,
+.primary-nav--condensed .primary-nav__dropdown-toggle {
+  padding: 6px 14px;
+  background: linear-gradient(120deg, rgba(255,248,242,0.08) 0%, rgba(255,248,242,0.2) 100%);
+  border-color: rgba(255,248,242,0.28);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.24);
+}
+
+.primary-nav--condensed .primary-nav__link--cta {
+  background: linear-gradient(100deg, #590000 60%, #560000 100%);
+  border: 2px solid rgba(255,248,242,0.28);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.primary-nav--condensed .primary-nav__link--cta:hover,
+.primary-nav--condensed .primary-nav__link--cta:focus-visible {
+  background: linear-gradient(100deg, #8b1111 60%, #c62828 100%);
+}
+
+.primary-nav--condensed .primary-nav__menu {
+  gap: 8px;
+}
+
+@keyframes navTitleTyping {
+  from { width: 0; }
+  to { width: var(--nav-title-width); }
+}
+
+
+
+.primary-nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 38px;
+  padding: 0 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,248,242,0.35);
+  background: rgba(0,0,0,0.18);
+  color: #fff8f2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.primary-nav__toggle:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  transform: translateY(-1px);
+}
+
+.primary-nav__toggle:focus-visible {
+  outline: 2px solid rgba(255,248,242,0.8);
+  outline-offset: 3px;
+}
+
+.primary-nav__toggle-bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.primary-nav__toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.primary-nav.is-open .primary-nav__toggle-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.primary-nav.is-open .primary-nav__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.primary-nav.is-open .primary-nav__toggle-bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.primary-nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  z-index: var(--layer-dropdown);
+  pointer-events: auto;
+  margin-left: 0;
+  transition: margin-left 0.25s ease;
+}
+
+.primary-nav__link,
+.primary-nav__dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff8f2;
+  text-decoration: none;
+  border-radius: 10px;
+  background: linear-gradient(130deg, rgba(255,248,242,0.14) 0%, rgba(255,248,242,0.32) 100%);
+  border: 1px solid rgba(255,248,242,0.36);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease, padding 0.2s ease, border-color 0.3s ease, color 0.3s ease;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  -webkit-text-stroke: 0.1px #000000;
+}
+
+.primary-nav__dropdown-toggle {
+  cursor: pointer;
+}
+
+.primary-nav__link:hover,
+.primary-nav__link:focus-visible,
+.primary-nav__dropdown-toggle:hover,
+.primary-nav__dropdown-toggle:focus-visible {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.32);
+  background: linear-gradient(135deg, rgba(255,248,242,0.4) 0%, rgba(255,248,242,0.68) 100%);
+  border-color: rgba(255,248,242,0.62);
+  outline: none;
+}
+
+.primary-nav__link[data-tooltip] {
+  position: relative;
+}
+
+.primary-nav__link[data-tooltip]::after,
+.primary-nav__link[data-tooltip]::before {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.primary-nav__link[data-tooltip]::after {
+  content: attr(data-tooltip);
+  bottom: auto;
+  top: calc(100% + 10px);
+  background: rgba(33, 22, 17, 0.92);
+  color: #fff8f2;
+  padding: 10px 14px;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  white-space: pre-line;
+  z-index: var(--layer-dropdown);
+}
+
+.primary-nav__link[data-tooltip]::before {
+  content: "";
+  top: calc(100% + 6px);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(33, 22, 17, 0.92) transparent;
+}
+
+.primary-nav__link[data-tooltip]:hover::after,
+.primary-nav__link[data-tooltip]:hover::before,
+.primary-nav__link[data-tooltip]:focus-visible::after,
+.primary-nav__link[data-tooltip]:focus-visible::before {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.primary-nav__link--cta {
+  background: linear-gradient(100deg, #590000 60%, #560000 100%);
+  border: 2px solid rgba(255,248,242,0.28);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.primary-nav__link--cta:hover,
+.primary-nav__link--cta:focus-visible {
+  background: linear-gradient(100deg, #8b1111 60%, #c62828 100%);
+}
+
+.primary-nav__dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.primary-nav__dropdown-arrow {
+  transition: transform 0.25s ease;
+  opacity: 0.85;
+}
+
+.primary-nav__dropdown--open .primary-nav__dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.primary-nav__dropdown-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  min-width: 220px;
+  background: linear-gradient(135deg, rgba(82, 47, 2, 0.98)), rgba(171,117,78,0.96);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(60,30,10,0.45);
+  backdrop-filter: blur(12px);
+  z-index: var(--layer-dropdown);
+}
+
+.primary-nav__dropdown--open .primary-nav__dropdown-panel {
+  display: flex;
+}
+
+.primary-nav__dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  color: #fff8f2;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-text-stroke: 0.1px #000000;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.primary-nav__dropdown-link:hover,
+.primary-nav__dropdown-link:focus-visible {
+  background: rgba(255,248,242,0.18);
+  transform: translateX(4px);
+  outline: none;
+}
+
+.primary-nav__dropdown-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(1.05);
+}
+
+body.night-mode .primary-nav {
+  background: linear-gradient(135deg, rgba(15,31,58,0.96), rgba(30,50,80,0.94));
+  border-bottom: 1px solid rgba(120,160,220,0.35);
+  box-shadow: 0 12px 32px rgba(10,20,40,0.45);
+}
+
+body.night-mode .primary-nav__link,
+body.night-mode .primary-nav__dropdown-toggle {
+  color: #e8f4f8;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+body.night-mode .primary-nav.is-open .primary-nav__menu {
+  background: linear-gradient(135deg, rgba(18,38,68,0.96), rgba(34,60,96,0.94));
+}
+
+body.night-mode .primary-nav__dropdown-panel {
+  background: linear-gradient(135deg, rgba(20,40,70,0.98), rgba(40,70,110,0.95));
+}
+
+/* Mobilní zobrazení */
+@media (max-width: 920px) {
+  .primary-nav__inner {
+    padding: 8px 14px;
+    gap: 10px;
+  }
+
+  .primary-nav__brand {
+    width: 34px;
+    height: 34px;
+    padding: 2px;
+  }
+
+  .primary-nav__title-link {
+    position: static;
+    transform: none;
+    margin: 0 0 8px;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    width: 0;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .primary-nav--show-title .primary-nav__title-link,
+  .primary-nav--show-title.primary-nav--condensed .primary-nav__title-link {
+    width: var(--nav-title-width);
+    margin-bottom: 4px;
+  }
+
+  .primary-nav--show-title .primary-nav__menu,
+  .primary-nav--show-title.primary-nav--condensed .primary-nav__menu {
+    margin-left: 0;
+  }
+
+  .primary-nav__toggle {
+    display: flex;
+  }
+
+  .primary-nav__menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: min(76vw, 300px);
+    padding: 18px 16px;
+    background: linear-gradient(135deg, rgba(124,74,39,0.96), rgba(171,117,78,0.94));
+    border-radius: 18px;
+    box-shadow: 0 24px 46px rgba(60,30,10,0.5);
+    backdrop-filter: blur(12px);
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+
+  .primary-nav.is-open .primary-nav__menu {
+    display: flex;
+  }
+
+  .primary-nav__link,
+  .primary-nav__dropdown-toggle {
+    width: auto;
+    min-width: min(200px, 78vw);
+    max-width: min(260px, 90vw);
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .primary-nav__dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .primary-nav__dropdown-panel {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 6px;
+    padding: 12px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.35);
+    background: rgba(92,53,32,0.6);
+  }
+
+  .primary-nav__dropdown-link {
+    justify-content: center;
+  }
+
+  .primary-nav__link[data-tooltip]::after,
+  .primary-nav__link[data-tooltip]::before {
+    display: none !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .primary-nav__inner {
+    padding: 10px 14px;
+  }
+
+  .primary-nav__brand {
+    width: 34px;
+    height: 34px;
+    padding: 2px;
+  }
+}
+
+/* ========================================
+   Noční režim - přepínač den/noc
+   ======================================== */
+
+/* Skrýt checkbox */
+#night-mode-toggle {
+  display: none;
+}
+
+/* Přepínač v navbaru */
+#night-mode-toggle + label.night-mode-switch {
+  background-color: #040d1c;
+  width: 80px;
+  height: 32px;
+  border-radius: 20px;
+  display: block;
+  padding: 4px;
+  box-shadow: inset 2px 2px 8px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+/* Kruh (měsíc/slunce) - ještě menší */
+.night-mode-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 40px rgba(255,255,255,0.8);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Krátery na měsíci - ještě menší */
+.crater {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 100%;
+  position: absolute;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.crater1 {
+  width: 4px;
+  height: 4px;
+  top: 20px;
+  left: 8px;
+}
+
+.crater2 {
+  width: 4px;
+  height: 4px;
+  top: 20px;
+  left: 16px;
+}
+
+.crater3 {
+  width: 8px;
+  height: 8px;
+  top: 4px;
+  left: 16px;
+}
+
+/* Noční režim (CHECKED) */
+#night-mode-toggle:checked + label.night-mode-switch {
+  background-color: #2a5fba;
+}
+
+#night-mode-toggle:checked + label.night-mode-switch .night-mode-circle {
+  background-color: #f4e94e;
+  margin-left: calc(100% - 32px);
+  box-shadow: 0 0 40px rgba(249, 240, 104, 0.8);
+}
+
+#night-mode-toggle:checked + label.night-mode-switch .crater {
+  opacity: 0;
+}
+
+/* Noční pozadí s hvězdami */
+body.night-mode {
+  background-color: #0f1f3a !important;
+  background-image: none !important;
+  position: relative;
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hvězdy na pozadí */
+body.night-mode::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, white, transparent),
+    radial-gradient(1px 1px at 33% 80%, white, transparent),
+    radial-gradient(1px 1px at 15% 60%, white, transparent),
+    radial-gradient(2px 2px at 70% 40%, white, transparent),
+    radial-gradient(1px 1px at 25% 15%, white, transparent),
+    radial-gradient(1px 1px at 85% 85%, white, transparent),
+    radial-gradient(1px 1px at 40% 25%, white, transparent),
+    radial-gradient(2px 2px at 10% 90%, white, transparent),
+    radial-gradient(1px 1px at 95% 35%, white, transparent),
+    radial-gradient(1px 1px at 45% 65%, white, transparent),
+    radial-gradient(2px 2px at 5% 45%, white, transparent);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+}
+
+/* Container zůstává normální */
+body.night-mode .container {
+  filter: none;
+  position: relative;
+  z-index: 2;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Noční barvy textů */
+body.night-mode h1,
+body.night-mode h2,
+body.night-mode h3,
+body.night-mode h4,
+body.night-mode h5,
+body.night-mode h6 {
+  color: #e8f4f8 !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.night-mode p,
+body.night-mode li,
+body.night-mode span,
+body.night-mode a {
+  color: #d4e8f0 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.night-mode a:hover {
+  color: #ffffff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Speciální pravidla pro bílé boxy s černým textem */
+body.night-mode [style*="color: black"],
+body.night-mode [style*="color:black"] {
+  color: #f0f8ff !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Světlé pozadí v nočním režimu */
+body.night-mode [style*="background: rgba(255, 255, 255"],
+body.night-mode [style*="background-color: #ae865e2c"] {
+  background: rgba(30, 50, 80, 0.85) !important;
+  border-color: rgba(100, 150, 200, 0.5) !important;
+}
+
+/* Zvýraznění slevy v nočním režimu */
+body.night-mode [style*="border-color: #891915"] {
+  border-color: #ff6b6b !important;
+  background-color: rgba(255, 107, 107, 0.3) !important;
+  color: #ffdddd !important;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* SVG obrázky v nočním režimu */
+body.night-mode #about svg .info-bg,
+body.night-mode #about svg .praxe-bg {
+  fill: #1a2a3a !important;
+}
+
+body.night-mode #about svg .info-title,
+body.night-mode #about svg .praxe-year,
+body.night-mode #about svg .praxe-school {
+  fill: #e8f4f8 !important;
+}
+
+body.night-mode #about svg .info-text,
+body.night-mode #about svg .praxe-text {
+  fill: #d4e8f0 !important;
+}
+
+body.night-mode #about svg .praxe-graduation {
+  fill: #f4d4a4 !important;
+}
+
+/* Logo v nočním režimu - průhledné */
+body.night-mode .logo-bubble img {
+  filter: none;
+  opacity: 0.7;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.night-mode .logo-bubble img:hover {
+  opacity: 0.9;
+}
+
+/* Mobilní verze */
+@media (max-width: 768px) {
+  #night-mode-toggle + label.night-mode-switch {
+    width: 70px;
+    height: 28px;
+    padding: 3px;
+  }
+
+  .night-mode-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  #night-mode-toggle:checked + label.night-mode-switch .night-mode-circle {
+    margin-left: calc(100% - 28px);
+  }
+
+  .crater1 {
+    width: 3px;
+    height: 3px;
+    top: 18px;
+    left: 7px;
+  }
+
+  .crater2 {
+    width: 3px;
+    height: 3px;
+    top: 18px;
+    left: 14px;
+  }
+
+  .crater3 {
+    width: 6px;
+    height: 6px;
+    top: 3px;
+    left: 14px;
   }
 }

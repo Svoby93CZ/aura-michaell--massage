@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200">
+  <defs>
+    <style>
+      .info-bg { fill: #f5f0eb; transition: fill 0.8s ease; }
+      .info-title {
+        font-family: 'Inknut Antiqua', 'Georgia', serif;
+        font-size: 48px;
+        font-weight: 700;
+        fill: #5a4a3a;
+        transition: fill 0.8s ease;
+      }
+      .info-text {
+        font-family: 'Raleway', 'Arial', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        fill: #3a2a1a;
+        line-height: 1.6;
+        transition: fill 0.8s ease;
+      }
+
+      /* Noční režim */
+      .night-mode .info-bg { fill: #1a2a3a; }
+      .night-mode .info-title { fill: #e8f4f8; }
+      .night-mode .info-text { fill: #d4e8f0; }
+    </style>
+  </defs>
+
+  <!-- Pozadí -->
+  <rect class="info-bg" width="800" height="1200" rx="12"/>
+
+  <!-- Nadpis -->
+  <text class="info-title" x="400" y="80" text-anchor="middle">Kdo jsem?</text>
+
+  <!-- Text -->
+  <text class="info-text" x="60" y="150">
+    <tspan x="60" dy="0">Jmenuji se Michaela a jsem především</tspan>
+    <tspan x="60" dy="30">mámou úžasné holčičky, která mě každý</tspan>
+    <tspan x="60" dy="30">den žene kupředu.</tspan>
+
+    <tspan x="60" dy="50">Masáže mě pohltily už v dětství, kdy</tspan>
+    <tspan x="60" dy="30">jsem masírovala rodinu za drobný peníz.</tspan>
+    <tspan x="60" dy="30">Z malé holky vyrostla slečna, která se</tspan>
+    <tspan x="60" dy="30">rozhodla jít touto cestou naplno.</tspan>
+
+    <tspan x="60" dy="50">Vystudovala jsem obor Masér sportovní</tspan>
+    <tspan x="60" dy="30">a rekondiční zakončený maturitou.</tspan>
+
+    <tspan x="60" dy="50">Masíruji od roku 2016, kdy jsem</tspan>
+    <tspan x="60" dy="30">nastoupila na školu. Právě díky studiu</tspan>
+    <tspan x="60" dy="30">jsem měla možnost získat cenné</tspan>
+    <tspan x="60" dy="30">zkušenosti v lázních, rehabilitacích i</tspan>
+    <tspan x="60" dy="30">wellness centrech.</tspan>
+
+    <tspan x="60" dy="50">Věřím, že dotek má sílu uzdravovat.</tspan>
+    <tspan x="60" dy="30">Rozhodla jsem se proto vytvořit místo,</tspan>
+    <tspan x="60" dy="30">kde se tělo i mysl mohou zregenerovat</tspan>
+    <tspan x="60" dy="30">- místo klidu, pohody a nového</tspan>
+    <tspan x="60" dy="30">začátku.</tspan>
+
+    <tspan x="60" dy="50">Aura Michaell Massage je mojí oázou,</tspan>
+    <tspan x="60" dy="30">kam vás zvu k odpočinku i načerpání</tspan>
+    <tspan x="60" dy="30">nové energie.</tspan>
+  </text>
+</svg>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1400" width="800" height="1400">
+  <defs>
+    <style>
+      .praxe-bg { fill: #f5f0eb; transition: fill 0.8s ease; }
+      .praxe-year {
+        font-family: 'Inknut Antiqua', 'Georgia', serif;
+        font-size: 28px;
+        font-weight: 700;
+        fill: #5a4a3a;
+        transition: fill 0.8s ease;
+      }
+      .praxe-text {
+        font-family: 'Raleway', 'Arial', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        fill: #3a2a1a;
+        transition: fill 0.8s ease;
+      }
+      .praxe-school {
+        font-family: 'Raleway', 'Arial', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        fill: #5a4a3a;
+        transition: fill 0.8s ease;
+      }
+      .praxe-graduation {
+        font-family: 'Inknut Antiqua', 'Georgia', serif;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #8a6a4a;
+        transition: fill 0.8s ease;
+      }
+
+      /* Noční režim */
+      .night-mode .praxe-bg { fill: #1a2a3a; }
+      .night-mode .praxe-year { fill: #e8f4f8; }
+      .night-mode .praxe-text { fill: #d4e8f0; }
+      .night-mode .praxe-school { fill: #c8e4f8; }
+      .night-mode .praxe-graduation { fill: #f4d4a4; }
+    </style>
+  </defs>
+
+  <!-- Pozadí -->
+  <rect class="praxe-bg" width="800" height="1400" rx="12"/>
+
+  <!-- 2016-2017 -->
+  <text class="praxe-year" x="60" y="60">2016 - 2017</text>
+  <text class="praxe-text">
+    <tspan x="60" y="95">· Teorie masáží - 33 hodin</tspan>
+    <tspan x="60" dy="28">· Klasická masáž - 132 hodin</tspan>
+    <tspan x="60" dy="28">· Sportovní masáž - 132 hodin</tspan>
+  </text>
+
+  <!-- 2017-2018 -->
+  <text class="praxe-year" x="60" y="230">2017 - 2018</text>
+  <text class="praxe-text">
+    <tspan x="60" y="265">· Sportovní a rekondiční masáž - 66</tspan>
+    <tspan x="70" dy="28">hodin</tspan>
+    <tspan x="60" dy="28">· Klasická masáž - 66 hodin</tspan>
+    <tspan x="60" dy="28">· Reflexní masáž - 66 hodin</tspan>
+    <tspan x="60" dy="28">· Reflexní masáž plosky nohy - 33</tspan>
+    <tspan x="70" dy="28">hodin</tspan>
+    <tspan x="60" dy="28">· Baňková masáž a moxování - 33</tspan>
+    <tspan x="70" dy="28">hodin</tspan>
+    <tspan x="60" dy="28">· Souvislá odborná praxe - 60 hodin</tspan>
+  </text>
+
+  <!-- 2018-2019 -->
+  <text class="praxe-year" x="60" y="550">2018 - 2019</text>
+  <text class="praxe-text">
+    <tspan x="60" y="585">· Manuální lymfodrenáž - 99 hodin</tspan>
+    <tspan x="60" dy="28">· Krystaloterapie a masáž lávovými</tspan>
+    <tspan x="70" dy="28">kameny - 33 hodin</tspan>
+    <tspan x="60" dy="28">· Průběžné náslechy na pracovištích,</tspan>
+    <tspan x="70" dy="28">přístrojové masáže - 132 hodin</tspan>
+    <tspan x="60" dy="28">· Souvislá odborná praxe - 60 hodin</tspan>
+  </text>
+
+  <!-- 2019-2020 -->
+  <text class="praxe-year" x="60" y="800">2019 - 2020</text>
+  <text class="praxe-text">
+    <tspan x="60" y="835">· Měkké (jemné) manuální techniky -</tspan>
+    <tspan x="70" dy="28">58 hodin</tspan>
+    <tspan x="60" dy="28">· Aromaterapie - 29 hodin</tspan>
+    <tspan x="60" dy="28">· Základy alternativních a orientálních</tspan>
+    <tspan x="70" dy="28">technik - 58 hodin</tspan>
+    <tspan x="60" dy="28">· Příprava k maturitní zkoušce - 116</tspan>
+    <tspan x="70" dy="28">hodin</tspan>
+  </text>
+
+  <!-- Škola -->
+  <text class="praxe-school" x="60" y="1100">Gymnázium a Střední odborná škola,</text>
+  <text class="praxe-school" x="60" y="1130">Rýmařov, příspěvková organizace</text>
+
+  <!-- Hotovo -->
+  <text class="praxe-graduation" x="400" y="1250" text-anchor="middle">Hotovo 66G</text>
+</svg>
